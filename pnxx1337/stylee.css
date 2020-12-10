@@ -1,0 +1,56 @@
+body{
+    background: #000;
+    margin: 0;
+    font-family: Tahoma, sans-serif;
+}
+
+.intro {
+    width: 100%;
+    height: 100%;
+    display: block;
+    opacity: 0.6;
+    z-index: 2;
+    overflow: hidden;
+
+    
+}
+
+
+.video{
+    position: relative;
+    
+    z-index: 1;
+    
+}
+.videom{
+    
+    height: 100vh;
+    width: 100%;
+    
+    top: 200px;
+    left: 318px;
+}
+
+.introText{
+    display: flex;
+   justify-content: center;
+   align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    
+
+}
+
+
+.inn{
+    z-index: 4;
+    font-size: 45px;
+    color: snow;
+}
+h1{
+    z-index: 5;
+}
