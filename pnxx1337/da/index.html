@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <link href="ctyle.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="img/2.png">
+    <title>Новогодний депресняк </title>
+    <script src="wow.min.js"></script>
+    <script>
+              new WOW().init();
+              </script>
+</head>
+<body>
+
+    <div class="con">
+      
+      <div class="kart wow animate__animated animate__fadeInDown"> <a href="index.html" ><img src="img/3.png"> </a> </div>
+  <h2 class="textcorona"><span>С</span> н<span>о</span>вы<span>м</span> 2021 <span>короновирусным</span> годом!</h2>
+  <audio id="player" src="audio/2.mp3"></audio>
+  <audio id="player1" src="audio/3.mp3"></audio>
+  <div class="tt">
+    <input  data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInLeft" type="submit"  onclick="document.getElementById('player').play() + document.getElementById('player1').pause() " value="Play music №1">
+    
+    <input  data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInRight" type="submit"  onclick="document.getElementById('player').volume+=0.1" value="Громкость +1">
+</div>
+
+    <div class="tt">
+        <input  data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInLeft" type="submit"  onclick="document.getElementById('player').pause()" value="Pause music №1">
+    <input   data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInRight" type="submit"  onclick="document.getElementById('player').volume-=0.1" value="Громкость -1">
+    
+    </div>
+    <div class="tt1"></div>
+
+    <div class="tt">
+      <input  data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInLeft" type="submit"  onclick="document.getElementById('player1').play() + document.getElementById('player').pause()" value="Play music №2">
+      <input  data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInRight" type="submit"  onclick="document.getElementById('player1').volume+=0.1" value="Громкость +1">
+  </div>
+  <div class="tt">
+    <input  data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInLeft" type="submit"  onclick="document.getElementById('player1').pause()" value="Pause music №2">
+<input   data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInRight" type="submit"  onclick="document.getElementById('player1').volume-=0.1" value="Громкость -1">
+
+</div>
+
+    
+    <a class= "downvk" href="https://vk.com/mivina_xd"> <img src="img/вк.png">  </a> </div>
+</div>
+  
+<div class="calendar ">
+  <div class="calendarpolosh wow animate__animated animate__fadeInDown">
+  <p id="monthName"> </p>
+  <p id="dayName"> </p>
+  <p id="dayNumber"> </p>
+  <p id="year"> </p>
+  <script> 
+
+
+
+
+
+  const lang= navigator.language;
+let date = new Date();
+let dayNumber= date.getDate();
+let month= date.getMonth();
+let dayName= date.toLocaleString(lang,{weekday: 'long'})
+let monthName= date.toLocaleString(lang,{month: 'long'})
+let year= date.getFullYear()
+
+document.getElementById('monthName').innerHTML= monthName;
+document.getElementById('dayName').innerHTML= dayName;
+document.getElementById('dayNumber').innerHTML= dayNumber;
+document.getElementById('year').innerHTML= year;
+  </script>
+</div>
+</div>
+
+<div class="fooon">
+<div class="products__title wow animate__animated animate__slideInUp"> Расчитать свои бичевские расходы
+  <div class="po wow animate__animated animate__slideInUp"> 
+  <form class="calculator" name="calc">
+      <input class="value" type="text" name="txt" readonly="">
+      <span class="num clear" onclick="document.calc.txt.value = ''"> c</span>
+      <span class="num" onclick="document.calc.txt.value += '/'"> /</span>
+      <span class="num" onclick="document.calc.txt.value += '*'"> *</span>
+      <span class="num" onclick="document.calc.txt.value += '7'"> 7</span>
+      <span class="num" onclick="document.calc.txt.value += '8'"> 8</span>
+      <span class="num" onclick="document.calc.txt.value += '9'"> 9</span>
+      <span class="num" onclick="document.calc.txt.value += '-'"> -</span>
+      <span class="num" onclick="document.calc.txt.value += '4'"> 4</span>
+      <span class="num" onclick="document.calc.txt.value += '5'"> 5</span>
+      <span class="num" onclick="document.calc.txt.value += '6'"> 6</span>
+      <span class="num plus" onclick="document.calc.txt.value += '+'"> +</span>
+      <span class="num" onclick="document.calc.txt.value += '3'"> 3</span>
+      <span class="num" onclick="document.calc.txt.value += '2'"> 2</span>
+      <span class="num" onclick="document.calc.txt.value += '1'"> 1</span>
+      <span class="num" onclick="document.calc.txt.value += '0'"> 0</span>
+      <span class="num" onclick="document.calc.txt.value += '00'"> 00</span>
+      <span class="num" onclick="document.calc.txt.value += '.'"> .</span>
+      <span class="num qu" onclick="document.calc.txt.value = eval(calc.txt.value)"> =</span>
+    </form>
+  </div>
+</div>
+</div>
+<footer class="footer">
+  <div class="container6">
+  
+     <center><div class="coopyright">
+     <div class="container7">
+        <div class="coopyight-text">Bye-bye</div>
+  <a href="index.html" class="coopyight-text1">C вами был "Новогодний депресняк"</a>
+     </div>
+  
+  </div></center>
+     </div>
+  
+      </footer>
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
+
+  </div>
+</body>
+</html>
