@@ -1,0 +1,39 @@
+body{
+    background: #000;
+    margin: 0;
+    font-family: Tahoma, sans-serif;
+}
+.intro {
+    width: 100%;
+    height: 100%;
+    display: block;
+    opacity: 0.6;
+    overflow: hidden;
+}
+.video{
+    position: relative;
+}
+.videom{
+    
+    height: 100vh;
+    width: 100%;
+    top: 200px;
+    left: 318px;
+    z-index: 1;
+}
+.introText{
+    display: flex;
+   justify-content: center;
+   align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+.inn{
+    font-size: 55px;
+    color: snow;
+    z-index: 5;
+}

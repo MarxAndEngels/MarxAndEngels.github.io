@@ -1,2 +1,0 @@
-# MarxAndEngels.github.io
-pnx
