@@ -73,7 +73,7 @@ body{
 .sidebarul{
     font-family: 'Tahoma', sans-serif;
     color:black;
-    font-size: 29px;
+    font-size: 30px;
     font-weight: 600;
     list-style: none;
 padding-bottom: 10px;
@@ -83,7 +83,7 @@ padding-bottom: 10px;
 .sidebarli{
     font-family: 'Tahoma', sans-serif;
   color:black;
-    font-size: 21px;
+    font-size: 22px;
     list-style: none;
 }
 
@@ -728,40 +728,72 @@ transform: translate(10px,-10px);
 
    
     .buuut{
-        
        width: 170px;
        height: 50px;
-       background-color:#ff6331;
+       background-color:#ff6331; 
        text-decoration: none;
        border: 1px solid #000;
        font-family: 'Tahoma ', sans-serif;
        color: #fff;
-       border-radius: 20px;
        font-size: 19px;
        cursor: pointer;
        outline:0;outline-offset:0;
        transition-duration: 0.5s;
-       transition: transform .3s ease-in-out;
-    transition-duration: 0.4s;
-
 }
 .buuut:hover{
-background-color:#ff6331;
-transform: translate3d(0px, -2px, 0px);
-           
+background-color:  #232323;
+color: #fff;
+transform: translate3d(0px, -2px, 0px);     
+border: 3px solid #ff6331;    
 }
-       .buuut:active{
-        background-color:#b13f19;
-           outline: none;
-         }
-    .downvk{
-        position: absolute;
-        top: 90%;
-        left:95%;
-    }
-    .downvk:hover{
-       transform: scale(1.2,1.2);
-    }
+
+#buuut_dec {
+  position: absolute;
+  right: 2%;
+  bottom: 8%;
+  width: 151px;
+  height: 35px;
+  background-color: #fff;
+  text-decoration: none;
+  border: 1px solid #000;
+  font-family: 'Tahoma ', sans-serif;
+  color: #ff6331; 
+  font-size: 15px;
+  border-radius: 12px;
+  cursor: pointer;
+  outline:0;outline-offset:0;
+  transition-duration: 0.6s;
+  border: 3px solid #ff6331;
+}
+#buuut_prev{
+  position: absolute;
+  left: 2%;
+  bottom: 8%;
+  width: 151px;
+  height: 35px;
+  background-color: #fff;
+  text-decoration: none;
+  border: 1px solid #000;
+  font-family: 'Tahoma ', sans-serif;
+  color: #ff6331; 
+  font-size: 15px;
+  border-radius: 12px;
+  cursor: pointer;
+  outline:0;outline-offset:0;
+  transition-duration: 0.6s;
+  border: 3px solid #ff6331;
+}
+
+.buuut:active{
+  background-color:#ee754d;
+  outline: none;
+}
+
+#buuut_prev:hover ,#buuut_dec:hover {
+    color:#fff;
+    background-color: #ff6331;
+}
+
     .imgClass{
         padding-top: 5%;
     }

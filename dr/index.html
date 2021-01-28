@@ -41,7 +41,7 @@
             <li class="sidebarul">Как такое могло случиться со мной?!</li>
             <li class="sidebarli">1.Возможны вы хороший человек, который мыслит интересно シ</li>
             <li class="sidebarli">2.А может быть с вами просто приятно общаться? (o_O) </li>
-            <li class="sidebarli">3.День рождения это, конечно, пустое гавно, но мб будет приятно получить такой прикольный сайт シ </li>
+            <li class="sidebarli">3.День рождения это, конечно, пустое гавно, но мб будет приятно получить такой сайт シ </li>
         </ul>
         <div class="kartinka">
 <img src="img/торт.png" alt="">
@@ -286,6 +286,8 @@
     <p id="dayName"> </p>
     <p id="dayNumber"> </p>
     <p id="year"> </p>
+    <input  id="buuut_dec" type="submit" value="😱 Вернуть 2007">
+     <input id="buuut_prev" class="buuut_prevv" type="submit"  value="🤣 Вернуть сейчас">
     <script> 
   const lang= navigator.language;
   let date = new Date();
@@ -299,6 +301,19 @@
   document.getElementById('dayName').innerHTML= dayName;
   document.getElementById('dayNumber').innerHTML= dayNumber;
   document.getElementById('year').innerHTML= year;
+
+  buuut_prev.onclick = function(){
+  document.getElementById('monthName').innerHTML= monthName;
+  document.getElementById('dayName').innerHTML= dayName;
+  document.getElementById('dayNumber').innerHTML= dayNumber;
+  document.getElementById('year').innerHTML= year;
+  };
+  buuut_dec.onclick = function(){
+    document.getElementById('year').innerHTML=2007;
+    document.getElementById('monthName').innerHTML='декабрь';
+    document.getElementById('dayNumber').innerHTML= 1;
+    document.getElementById('dayName').innerHTML= 'понедельник';
+  };
     </script>
   </div>
   </div>
@@ -320,7 +335,7 @@
                 <a href="https://vk.com/mivina_xd" target="_blank" data-wow-delay = "0.5s" data-wow-duration=3s class="social-item wow animate__animated animate__fadeIn">
                     <img src="img/вк.png" alt="">
                 </a>
-                <a href="https://code.visualstudio.com/" target="_blank" data-wow-delay = "1.5s" data-wow-duration=3s class="social-item wow animate__animated animate__fadeIn">
+                <a href="https://code.visualstudio.com/" data-wow-delay = "1.5s" data-wow-duration=3s class="social-item wow animate__animated animate__fadeIn">
                     <img src="img/visual.png" alt="">
                 </a>
                 <a href="https://www.livelib.ru/reader/Fantazer1337/read" data-wow-delay = "2.5s" target="_blank"data-wow-duration=3s class="social-item wow animate__animated animate__fadeIn">
