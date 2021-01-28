@@ -209,6 +209,12 @@ top: 0;
 .otstup2{
     min-height: 20vh;
 }
+.otstup6{
+    padding: 30px;
+}
+.otstup7{
+    padding: 20px;
+}
 
 
 
@@ -354,7 +360,7 @@ top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 60vh;
+    height: 26.25vw;
 }
 .calculator{
    position: relative;
@@ -453,13 +459,13 @@ top: 0;
 }
 
 .footer_title{
-font-size: 20px;
+font-size: 22px;
     font-weight: 600;
     line-height: 30px;
 }
 
 .footer_text{
-    font-size: 17px;
+    font-size: 19px;
     font-weight: 400;
     line-height: 1.7;
 }
@@ -468,7 +474,7 @@ font-size: 20px;
     margin: 0;
     padding: 0;
     list-style: none;
-    font-size: 17px;
+    font-size: 19px;
     line-height: 1.5;
 }
 .footer-list_item{
@@ -528,47 +534,44 @@ flex-direction: row;
     .footer{
         padding-top:70px;
     }
-    
+    .calendar{
+        min-height: 40vh;
+    }
+    .verh{
+        min-height: 45vh;
+     }
 }
 
 @media only screen and ( max-width: 992px){
-
     .mac2{
         left: -300px;
     }
     .mac{
         left: 314px;
     }
+    .mac1{
+        left: 0px;
+    }
     .container6{
         margin-left:0;
     }
-}
-@media only screen and ( max-width: 768px){
-   
-    .mac1{
-        display: none;
+    .dvoynoy {
+        flex-direction: column;
     }
-    
-    .mac2{
-        display: none;
+    .dv1{
+        text-align: center;
     }
-    .container6{
-        margin-left:52px;
+    .dv2{
+        display: flex;
+        justify-content: center;
     }
     .footer_row{
-        flex-wrap: wrap ;
+        flex-wrap: wrap;
+        justify-content: center;
     }
-
-    .footer_column{
-        max-width: 139px;
-    }
-    .footer_title{
-        font-size: 21px;
-        line-height: 23px;
-        display: block;
-    }
-    
 }
+
+
 
 .popup{
     padding: 2.5%;
@@ -646,7 +649,7 @@ transition-duration: 1s;
    justify-content: center;
    align-items: center;
    flex-direction: column;
-   min-height: 100vh;
+   min-height: 35vw;
    background-color: #232323;
    overflow: hidden;
 }
@@ -701,7 +704,6 @@ transform: translate(10px,-10px);
 
 .dvoynoy{
     background-color: #232323;
-    min-height: 90vh;
     display: flex;
     justify-content: center;
 }
@@ -798,19 +800,6 @@ border: 3px solid #ff6331;
         padding-top: 5%;
     }
 
-    @media only screen and ( max-width: 992px){
-
-        .dvoynoy {
-            flex-direction: column;
-        }
-        .dv1{
-            text-align: center;
-        }
-        .dv2{
-            display: flex;
-            justify-content: center;
-        }
-    }
 
     .parallax{
         background-color: #232323;
@@ -842,7 +831,7 @@ border: 3px solid #ff6331;
     }
 
  .calendar{
-    min-height: 90vh;
+    height: 32.25vw;
     display: flex;
     justify-content: center;
 }
