@@ -134,9 +134,13 @@ class Clock {
  let clock = new Clock({template: 'h:m:s'});
  clock.start();
 
+
+ butStart.disabled= true;
  butStart.onclick = function(){
     clock.start();
+    butStart.disabled= true;
   };
   butStop.onclick = function(){
     clock.stop();
+    butStart.disabled= false;
   };
