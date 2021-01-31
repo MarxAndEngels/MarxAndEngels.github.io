@@ -780,12 +780,12 @@ border: 3px solid #ff6331;
   border: 3px solid #ff6331;
 }
 
-.buuut:active, .buuut:focus{
+.buuut:active{
   background-color:#ee754d;
   outline: none;
 }
 
-#buuut_prev:hover ,#buuut_dec:hover,#buuut_prev:focus, #buuut_dec:focus {
+#buuut_prev:hover ,#buuut_dec:hover {
     color:#fff;
     background-color: #ff6331;
     outline: none;
