@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,600;1,800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 <link rel="shortcut icon" type="image/x-icon" href="img/ссср.png">
 <link href="style.css" rel="stylesheet">
     <script src="wow.min.js"></script>
@@ -138,21 +139,21 @@
     <input  data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInLeft" type="submit" 
      onclick="document.getElementById('player').play() + document.getElementById('player2').pause() " value="Play music №1">
     
-    <input  data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInRight" type="submit"  onclick="document.getElementById('player').volume+=0.1" value="Громкость +1">
+    <input  data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInRight" type="submit"  onclick="document.getElementById('player').volume+=0.2" value="Громкость +1">
 </center>
 <center>
-    <input  data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInLeft" type="submit"  onclick="document.getElementById('player').pause()" value="Pause music №1">
-<input   data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInRight" type="submit"  onclick="document.getElementById('player').volume-=0.1" value="Громкость -1">
+    <input  data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInLeft" type="submit"  onclick="document.getElementById('player').pause()+document.getElementById('player2').pause()" value="Pause music №1">
+<input   data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInRight" type="submit"  onclick="document.getElementById('player').volume-=0.2" value="Громкость -1">
 </center>
     
 <center>
     <input  data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInLeft" type="submit" 
      onclick="document.getElementById('player2').play() + document.getElementById('player').pause()" value="Play music №2">
-          <input  data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInRight" type="submit"  onclick="document.getElementById('player2').volume+=0.1" value="Громкость +1">
+          <input  data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInRight" type="submit"  onclick="document.getElementById('player2').volume+=0.2" value="Громкость +1">
         </center>
         <center>
-        <input  data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInLeft" type="submit"  onclick="document.getElementById('player2').pause()" value="Pause music №2">
-<input   data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInRight" type="submit"  onclick="document.getElementById('player2').volume-=0.1" value="Громкость -1">
+        <input  data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInLeft" type="submit"  onclick="document.getElementById('player2').pause() + document.getElementById('player').pause()" value="Pause music №2">
+<input   data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInRight" type="submit"  onclick="document.getElementById('player2').volume-=0.2" value="Громкость -1">
 </center>
 <center>
     <input id="prev" data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInLeft" type="submit" value="Prev Picture">
@@ -271,12 +272,13 @@
    </div>
    <div class="otstup6"></div>
 
-   <div class="parallax">
+   <div class="parallax1">
     <div class="parallax-content">
     </div>
     <div class="mask"></div>
 </div>
-<div class="otstup2"></div>
+<div class="otstup6"></div>
+<div class="otstup6"></div>
 
 <div data-wow-duration=1s class="products__title1 wow animate__animated animate__slideInUp">Ой, а что это за дата интересная?</div>
 <div class="calendar wow animate__animated animate__slideInUp">
@@ -309,13 +311,25 @@
   };
   buuut_dec.onclick = function(){
     document.getElementById('year').innerHTML=2007;
-    document.getElementById('monthName').innerHTML='декабрь';
+    document.getElementById('monthName').innerHTML='январь';
     document.getElementById('dayNumber').innerHTML= 1;
     document.getElementById('dayName').innerHTML= 'понедельник';
   };
     </script>
   </div>
   </div>
+  <div class="otstup6"></div>
+<div class="parallax">
+    <div class="parallax-content">
+        <center><div class="parallax-time-name">Время</div></center>
+        <div class="parallax-text"></div>
+        <center><input id="buuut_stop" type="submit"  value="Остановить настоящее время">
+        <input id="buuut_play" type="submit"  value="Включить настоящее время"></center>
+    </div>
+    <div class="mask1"></div>
+</div>
+<div class="otstup1"></div>
+<div class="otstup6"></div>
 
 <!-- страничка 4 -->
 <footer class="footer">
