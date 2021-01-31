@@ -144,3 +144,19 @@ class Clock {
     clock.stop();
     butStart.disabled= false;
   };
+
+
+  //якорь
+  function scrollTo(element) {
+    window.scroll({
+      left: 0, 
+      top: element.offsetTop, 
+      behavior: 'smooth'
+    })
+  }
+  var button = document.querySelector('#top');
+  var footer = document.querySelector('.up-main');
+  
+  footer.addEventListener('click', () => {
+    scrollTo(button);
+  })
