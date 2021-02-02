@@ -127,7 +127,6 @@ padding-bottom: 10px;
     width: 841px;
     height: 654px;
 }
-
 .mactext{
     display: flex;
     flex-direction: column;
@@ -136,13 +135,14 @@ margin: 70px;
 left:0;
 top: 0;
 }
-.mactext1{
+
+.mactext1, .mactext2{
     font-family: 'Tahoma';
     font-size: 52px;
     color: snow;
 }
 
-.mactext2{
+.mactext3, .mactext4, .mactext5 {
     font-family: 'Tahoma';
     font-size: 66.5px;
     color: snow;
@@ -162,12 +162,12 @@ margin: 60px;
 left:0;
 top: 0;
 }
-.mactext3{
+.mactext6,.mactext7 {
     font-family: 'Tahoma';
     font-size: 30px;
     color: snow;
 }
-.mactext4{
+.mactext8, .mactext9, .mactext10{
     font-family: 'Tahoma';
     font-size: 44px;
     color: snow;
@@ -188,12 +188,12 @@ margin: 55px;
 left:0;
 top: 0;
 }
-.mactext5{
+.mactext11, .mactext12 {
     font-family: 'Tahoma';
     font-size: 16px;
     color: snow;
 }
-.mactext6{
+.mactext13, .mactext14, .mactext15 {
     font-family: 'Tahoma';
     font-size: 28px;
     color: snow;
@@ -416,6 +416,7 @@ top: 0;
 }
 .calculator span.qu:hover {
     background:  #6ecaf5;
+    box-shadow: 0 0 10px #7ecff5 ;
 }
 
 
@@ -953,8 +954,21 @@ border: 3px solid #ff6331;
     top: 0;
     right: 4%;
     font-size: 30px;
+    animation: animate_top 1s infinite; 
+    animation-timing-function: linear;
+}
+
+@keyframes animate_top{
+  0%{
+      margin-top: 6px;
+  }
+  50%{
+    margin-top: 0px; 
+  }
+  100%{
+    margin-top: 6px;
+  }
 }
 .up-main:hover{
     cursor: pointer;
-    transform: scale(1.1 , 1.1);
 }
