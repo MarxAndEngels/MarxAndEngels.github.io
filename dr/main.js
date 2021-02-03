@@ -170,13 +170,13 @@ var svet1=  setInterval( function svet1() {
 
 var svet2= setInterval( function svet2() {
   m3.classList.remove("mactext55");
-}, 8000);
+}, 7000);
 
 setTimeout( () => {
   clearInterval(svet1);
   clearInterval(svet2);
   m3.classList.remove("mactext55");
-}, 11050);
+}, 10050);
 
 
 
