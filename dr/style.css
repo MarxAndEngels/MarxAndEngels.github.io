@@ -144,6 +144,34 @@ top: 0;
     font-size: 66.5px;
     color: snow;
     font-weight: 900;
+    transition-duration: 2.5s;
+}
+.mactext5:hover{
+    font-family: 'Tahoma';
+    font-size: 66.5px;
+    color: snow;
+    font-weight: 900;
+    text-shadow:
+    0 0 2px rgba(255,255,255,.8),
+    0 0 8px rgba(255,255,255,.8),
+    0 0 12px rgb(108, 101, 153),
+    0 0 20px rgb(108, 101, 153),
+    0 0 40px rgb(108, 101, 153),
+    0 0 80px rgb(108, 101, 153);  
+}
+
+.mactext55{
+    font-family: 'Tahoma';
+    font-size: 66.5px;
+    color: snow;
+    font-weight: 900;
+    text-shadow:
+    0 0 2px rgba(255,255,255,.8),
+    0 0 8px rgba(255,255,255,.8),
+    0 0 12px rgb(108, 101, 153),
+    0 0 20px rgb(108, 101, 153),
+    0 0 40px rgb(108, 101, 153),
+    0 0 80px rgb(108, 101, 153);
 }
 
 .mac1{
@@ -169,6 +197,15 @@ top: 0;
     font-size: 44px;
     color: snow;
     font-weight: 900;
+    transition-duration: 1s;
+}
+
+.mactext10:hover{
+    text-shadow:
+    0 0 2px rgba(255,255,255,.8),
+    0 0 8px rgba(255,255,255,.8),
+    0 0 12px rgb(108, 101, 153),
+    0 0 20px rgb(108, 101, 153);
 }
 
 .mac2{
@@ -195,6 +232,15 @@ top: 0;
     font-size: 28px;
     color: snow;
     font-weight: 900;
+    transition-duration: 1s;
+}
+
+.mactext15:hover{
+    text-shadow:
+    0 0 2px rgba(255,255,255,.8),
+    0 0 8px rgba(255,255,255,.8),
+    0 0 12px rgb(108, 101, 153),
+    0 0 20px rgb(108, 101, 153);
 }
 .otstup{
     margin-top: 15px;

@@ -161,32 +161,31 @@ class Clock {
     scrollTo(button);
   })
 
-function inter(text,ele, speed){
-  this.text = text;
-  this.ele = document.querySelector(ele);
 
-  let txt = this.text.split("");
-    var interval = setInterval(function(){
-      if(!txt[0]){
-        return clearInterval(interval);
-     };
-      this.ele.innerHTML += txt.shift();
-   }, speed != undefined ? speed : 80 );
-}
+  let m3=document.querySelector(".mactext5");
+var svet1=  setInterval( function svet1() {
+  m3.classList.add("mactext55");
+}, 2900);
 
-var str = document.getElementById('mactext').innerHTML.toString();
-var i=0;
-document.getElementById('mactext').innerHTML = "";
-setTimeout(function () {
-    var se = setInterval(function() {
-        document.getElementById('mactext').innerHTML = str.slice(0, i) + "|";
-        if (i == str.length) {
-            clearInterval(se);
-        }
-        i++;
-        console.log(i);
-    }, 60);
-});
+
+var svet2= setInterval( function svet2() {
+  m3.classList.remove("mactext55");
+}, 8000);
+
+setTimeout( () => {
+  clearInterval(svet1);
+  clearInterval(svet2);
+  m3.classList.remove("mactext55");
+}, 11050);
+
+
+
+ 
+
+
+
+
+
 
 
 
