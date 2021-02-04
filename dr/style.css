@@ -291,6 +291,9 @@ top: 0;
     height: 100%;
     object-fit: cover;
 }
+.perviy-class-video:focus{
+    outline: none;
+}
 .info{
     position: relative;
     width: 418px;
@@ -314,6 +317,7 @@ top: 0;
 .info-content:hover{
     opacity: 0.5;
     cursor: pointer;
+    text-shadow:
 }
 
 .info-content-title{
@@ -326,7 +330,7 @@ top: 0;
     font-size: 25px;
     font-weight: 600;
     color:snow;
-    
+    z-index: 10;
     letter-spacing: 2.73px;
 }
 

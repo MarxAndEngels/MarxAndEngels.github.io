@@ -100,7 +100,7 @@ class Clock {
    constructor({ template }) {
      this.template = template;
    }
- 
+
    render() {
      let date = new Date();
  
@@ -165,18 +165,18 @@ class Clock {
   let m3=document.querySelector(".mactext5");
 var svet1=  setInterval( function svet1() {
   m3.classList.add("mactext55");
-}, 2900);
+}, 3900);
 
 
 var svet2= setInterval( function svet2() {
   m3.classList.remove("mactext55");
-}, 7000);
+}, 8900);
 
 setTimeout( () => {
   clearInterval(svet1);
   clearInterval(svet2);
   m3.classList.remove("mactext55");
-}, 10050);
+}, 11950);
 
 
 
