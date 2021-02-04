@@ -58,6 +58,7 @@ body{
 .sidebar{
     position: absolute;
     width: 275px;
+    height: 680px;
     background-color: #665eaf;
     border-right: 4px solid #665eaf;
     left: -280px;
@@ -108,8 +109,15 @@ padding-bottom: 10px;
 .kartinka{
     display: flex;
     justify-content: center;
+    font-size: 50px;
+   align-items: center;
+   transition-duration: 1s;
 }
-
+.kartinka:hover{
+    text-shadow: 0 0 10px rgb(66, 162, 241),
+     0 0 20px rgb(66, 162, 241),
+     0 0 40px rgb(66, 162, 241);
+}
 
 .texttt1{
     display: flex;
