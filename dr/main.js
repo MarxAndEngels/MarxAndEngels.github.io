@@ -165,18 +165,18 @@ class Clock {
   let m3=document.querySelector(".mactext5");
 var svet1=  setInterval( function svet1() {
   m3.classList.add("mactext55");
-}, 3900);
+}, 4900);
 
 
 var svet2= setInterval( function svet2() {
   m3.classList.remove("mactext55");
-}, 9000);
+}, 10500);
 
 setTimeout( () => {
   clearInterval(svet1);
   clearInterval(svet2);
   m3.classList.remove("mactext55");
-}, 13100);
+}, 15900);
 
 
 
