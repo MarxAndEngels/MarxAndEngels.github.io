@@ -1,14 +1,17 @@
 
 
+
 #canvas{
     padding-top: 25px;
     
 }
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
 
 .tex{
-    padding-top: 15px;
+    padding-top: 12px;
     color: black;
-    font-family: 'Press Start 2P';
-    font-size: 17px;
-    font-weight: 900;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    font-weight: 800;
 }

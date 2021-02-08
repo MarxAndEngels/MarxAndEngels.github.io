@@ -1,6 +1,7 @@
 *{
     box-sizing: border-box;
 }
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 body{
     background:#000000;
 }
@@ -13,7 +14,7 @@ canvas{
 .tex{
     padding-top: 35px;
     color: #FFFAFA;
-    font-family: Courier;
-    font-size: 45px;
-    font-weight: 900;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-weight: 800;
 }

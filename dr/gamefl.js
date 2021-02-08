@@ -18,7 +18,6 @@ mus.src= "audio/p.mp3";
 
 
 
-
 var gap=165;
 var constant;
 
@@ -96,7 +95,7 @@ function draw(){
     bY += gravity;
 
     ctx.fillStyle = "#0BDA51";
-    ctx.font= "17px Tahoma";
+    ctx.font= '16px Montserrat';
     ctx.fillText("Очков набранно : "+score,10,cvs.height-90);
 
     requestAnimationFrame(draw);

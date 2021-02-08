@@ -153,7 +153,7 @@ function draw(){
     snake.unshift(newHead);
     
     ctx.fillStyle = "white";
-    ctx.font = "45px Courier";
+    ctx.font = "34px Montserrat";
     ctx.fillText(score,3*box,2*box);
 }
 

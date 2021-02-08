@@ -160,6 +160,7 @@ class Clock {
   footer.addEventListener('click', () => {
     scrollTo(button);
   })
+  //
 
 
   let m3=document.querySelector(".mactext5");
