@@ -25,11 +25,11 @@ imgPict.push('img/выы.jpg');
 popupPict.src=imgPict[colPict];
 
 
-var colPict1 = 0;
-var imgPict1 = [];
+let colPict1 = 0;
+let imgPict1 = [];
 imgPict1.push('img/NBDj.txt');
+imgPict1.push('img/gift.gif');
 imgPict1.push('img/11.png');
-
 Pict2.src=imgPict1[colPict1];
 
 
@@ -55,13 +55,25 @@ function PoevleniePopapa4(){
     popupPict.src=imgPict[colPict];
     popup.style.display= "block";
 }
+
+ButtPrev.disabled = true;
+
 function PoevleniePictPrev(){
-    colPict1=0;
+  colPict1--;
     Pict2.src=imgPict1[colPict1];
+    if(colPict1 === 0){
+      ButtPrev.disabled =true;
+      ButtNext.disabled =false;
+   }
 }
 function PoevleniePictNext(){
-    colPict1=1;
+  colPict1++;
+    ButtPrev.disabled=false;
     Pict2.src=imgPict1[colPict1];
+    if(colPict1 === (imgPict1.length -1)){
+      ButtPrev.disabled =false;
+      ButtNext.disabled =true;
+   }
 }
 
 
@@ -89,8 +101,8 @@ popupPoevlenie1.addEventListener('click',PoevleniePopapa1);
 popupPoevlenie2.addEventListener('click',PoevleniePopapa2);
 popupPoevlenie3.addEventListener('click',PoevleniePopapa3);
 popupPoevlenie4.addEventListener('click',PoevleniePopapa4);
-ButtPrev.addEventListener('click',PoevleniePictPrev);
-ButtNext.addEventListener('click',PoevleniePictNext);
+ButtPrev.addEventListener('click', PoevleniePictPrev);
+ButtNext.addEventListener('click', PoevleniePictNext);
 
 let time=document.querySelector(".parallax-text");
 let butStart= document.getElementById("buuut_play");
@@ -181,7 +193,17 @@ setTimeout( () => {
 
 
 
- 
+let range= document.getElementById('range');
+range.value = 0.9;
+
+
+range.onchange = function(){
+  let vol=document.getElementById('player');
+  vol.volume=range.value;
+  let vol1=document.getElementById('player2');
+  vol1.volume=range.value;
+}
+
 
 
 

@@ -135,37 +135,39 @@
   <audio id="player2" src="audio/3.mp3"></audio>
 <div class="dvoynoy">
     <div class="dv1">Песни о ДР
- <center>
+        <center>
+            <p class="music_range_smile">🔊
+                <input id="range" type="range" min="0" max="1" step="0.05">
+            </p>
+           
+        </center>
+        <center>
     <input  data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInLeft" type="submit" 
      onclick="document.getElementById('player').play() + document.getElementById('player2').pause() " value="Play music №1">
     
-    <input  data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInRight" type="submit"  onclick="document.getElementById('player').volume+=0.2" value="Громкость +1">
+     <input  data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInRight" type="submit"  onclick="document.getElementById('player').pause()+document.getElementById('player2').pause()" value="Pause music №1">
+   
 </center>
-<center>
-    <input  data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInLeft" type="submit"  onclick="document.getElementById('player').pause()+document.getElementById('player2').pause()" value="Pause music №1">
-<input   data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInRight" type="submit"  onclick="document.getElementById('player').volume-=0.2" value="Громкость -1">
-</center>
+
     
 <center>
     <input  data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInLeft" type="submit" 
      onclick="document.getElementById('player2').play() + document.getElementById('player').pause()" value="Play music №2">
-          <input  data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInRight" type="submit"  onclick="document.getElementById('player2').volume+=0.2" value="Громкость +1">
-        </center>
-        <center>
-        <input  data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInLeft" type="submit"  onclick="document.getElementById('player2').pause() + document.getElementById('player').pause()" value="Pause music №2">
-<input   data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInRight" type="submit"  onclick="document.getElementById('player2').volume-=0.2" value="Громкость -1">
-</center>
+     <input  data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInRight" type="submit"
+       onclick="document.getElementById('player2').pause() + document.getElementById('player').pause()" value="Pause music №2">
+    </center>
+
 <center>
     <input id="prev" data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInLeft" type="submit" value="Prev Picture">
     <input id="next"  data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInRight" type="submit" value="Next Picture">
 </center>
 <div class="imgClass">
-    <center>  <img src="img/teddy-bear.png" width="115px" height="115px" alt=""> </center>
+    <center>  <img src="img/teddy-bear.png" width="205px" height="205px" alt=""> </center>
 </div> 
 
 </div>
 <div class="dv2">
-    <img class="pict_krug" src="img/NBDj.txt" width="670px" height="600px" alt="">
+    <img class="pict_krug" src="" width="670px" height="600px" alt="">
 </div>
 </div>
 <div class="otstup6"></div>
@@ -187,11 +189,8 @@
         <div class="products-cart wow animate__animated animate__slideInUp"> 
             <a class="products-cart__img"  href="https://salatoff.ru/shop/store/buterbrody-i-sendvichi" target="_blank" title="Переход на не мой сайт">
                 <img src="img/Беfdfdfdfdfз имени-1.png" alt=""> <p class="products-cart__title" href="https://salatoff.ru/shop/store/buterbrody-i-sendvichi">Жми на картинку,чтобы заказать закуски от шеф-повара!</p>
-        
             </a>
-
         </div>
-
         <div class="products-cart wow animate__animated animate__slideInUp">
             <a class="products-cart__img" href="https://shaurma-best.ru/menu/shaurma/" target="_blank" title="Переход на не мой сайт">
                 <img src="img/шава1.png" alt=""> <p class="products-cart__title"> Жми на картинку,чтобы заказать шавы!</p>
@@ -215,7 +214,6 @@
             <a class="products-cart__img" href="snake.html" target="_blank" title="Snake">
                 <img src="img/ссср1.png" alt=""> <p class="products-cart__title">Жми на картинку,чтобы поиграть в страшику 2!</p>
             </a>
-
         </div>
 
          <div class="products-cart wow animate__animated animate__slideInUp">

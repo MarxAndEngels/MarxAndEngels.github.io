@@ -73,8 +73,8 @@ body{
     position: absolute;
     width: 275px;
     height: 680px;
-    background-color: #665eaf;
-    border-right: 4px solid #665eaf;
+    background-color: #5e56a5;
+    border-right: 4px solid #5e56a5;
     left: -280px;
     -moz-transition: all 1200ms;
     -webkit-transition: all 1200ms;
@@ -381,18 +381,15 @@ top: 0;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-
 }
 .products-cart{
     position: relative;
     margin-bottom: 60px;
     overflow: hidden;    /* не выходит за картинку */
- 
 }
 .products-cart__img{
     height: 380px;
     width: 410px;
-
 }
 
 .products-cart__title {
@@ -424,10 +421,6 @@ top: 0;
     transform: scale(1) rotate(0deg);
 }
 
-
-.products__title23{
-    margin-top: 60px;
-}
 
 
 .po{
@@ -805,6 +798,14 @@ transform: translate(10px,-10px);
 }
 .pict_krug:hover{
     transform: translate3d(-5px, -2.5px, 0px);
+}
+
+#range{
+    width: 200px;
+}
+.music_range_smile{
+    margin: 10px;
+    font-size: 28px;
 }
     .buuut{
        width: 170px;
