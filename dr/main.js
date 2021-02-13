@@ -2,6 +2,7 @@ function openMenu() {
     document.querySelector(".sidebar").classList.toggle('active');
 }
 
+
 let popup = document.getElementById('mypopup'),
 popupPoevlenie = document.getElementById('myBtn'),
 popup_center = document.getElementById('popup_center'),
@@ -9,7 +10,13 @@ popupClose= document.querySelector('.close'),
 popupPict= document.querySelector('.pict_popap'),
 ButtPrev = document.getElementById('prev'),
 ButtNext = document.getElementById('next'),
-Pict2= document.querySelector('.pict_krug'),
+Pict2= document.querySelector('.pict_krug');
+
+function openMenuAdaptive() {
+  document.querySelector(".header__nav-row").classList.toggle('openTogl');
+}
+
+
 
 popupPoevlenie1 = document.getElementById('nasvanie');
 popupPoevlenie2 = document.getElementById('nasvanie1');
@@ -56,6 +63,8 @@ function PoevleniePopapa4(){
     popup.style.display= "block";
 }
 
+
+
 ButtPrev.disabled = true;
 
 function PoevleniePictPrev(){
@@ -71,7 +80,6 @@ function PoevleniePictNext(){
     ButtPrev.disabled=false;
     Pict2.src=imgPict1[colPict1];
     if(colPict1 === (imgPict1.length -1)){
-      ButtPrev.disabled =false;
       ButtNext.disabled =true;
    }
 }

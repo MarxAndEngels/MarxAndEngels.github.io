@@ -90,7 +90,28 @@ main {
 }
 
 #display1{
+    margin-bottom: 5%;
     height: 32px;
-    padding-bottom: 60px;
-    padding-left: 40px;
+}
+
+
+@media ( max-width: 1231px){
+    #display1{
+        margin-bottom: 20%;
+    }
+}
+@media ( max-width: 620px){
+    #display1{
+        margin-bottom: 40%;
+    }
+}
+@media ( max-width: 500px){
+    #display1{
+        margin-bottom: 50%;
+    }
+}
+@media ( max-width: 320px){
+    #display1{
+        margin-bottom: 60%;
+    }
 }
