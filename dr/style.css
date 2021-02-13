@@ -311,7 +311,6 @@ top: 0;
     position: absolute;
     top: 5%;
     right: 2%;
-    z-index: 3000;
 }
 #popup_menu_id img:hover , #popup_menu_id p:hover{
     cursor: pointer;
@@ -1120,6 +1119,9 @@ border: 4px solid #ff6331;
      .popup_content{
          width: 50%;
      }
+     .Andry{
+         margin-top: 40px;
+     }
 }
 
 @media ( max-width: 991px){
@@ -1411,7 +1413,7 @@ border: 4px solid #ff6331;
         width: 250px;  
     }
     .calendarpolosh{
-        max-width: 60%;
+        max-width: 70%;
     }
     #monthName {
         font-size: 24px;
@@ -1426,12 +1428,12 @@ border: 4px solid #ff6331;
         font-size: 18px;
     }
     #buuut_prev {
-        width: 117px;
-        font-size: 10px;
+        width: 135px;
+        font-size: 12px;
     }
     #buuut_dec {
-        width: 117px;
-        font-size: 11px;
+        width: 135px;
+        font-size: 12px;
     }
     .otstup_cross{
         margin-top: 18em;
@@ -1604,12 +1606,12 @@ border: 4px solid #ff6331;
         top: 479px;
     }
     #buuut_dec {
-        width: 100px;
-        font-size: 9px;
+        width: 116px;
+        font-size: 10px;
     }
     #buuut_prev {
-        width: 100px;
-        font-size: 9px;
+        width: 116px;
+        font-size: 10px;
     }
     .buuut {
         font-size: 15px;
@@ -1637,7 +1639,31 @@ border: 4px solid #ff6331;
     .popup_content{
         width: 90%;
     }
+    .calendarpolosh {
+        max-width: 74%;
+    }
 }
+
+@media ( max-width: 376px){
+
+    .pict_krug {
+        max-width: 289px;
+        margin-left: 0;
+    }
+    .coopyight-text1 {
+        font-size: 15px;
+    }
+
+    #buuut_dec {
+        width: 105px;
+        font-size: 9px;
+    }
+    #buuut_prev {
+        width: 105px;
+        font-size: 9px;
+    }
+}
+
 @media ( max-width: 370px){
     .parallax-text {
         font-size: 34px;
@@ -1648,17 +1674,6 @@ border: 4px solid #ff6331;
         margin-left: 0;
     }
 }
-@media ( max-width: 376px){
-
-    .pict_krug {
-        max-width: 289px;
-        margin-left: 0;
-    }
-    .coopyight-text1 {
-        font-size: 15px;
-    }
-}
-
 
 @media ( max-width: 350px){
 
@@ -1706,11 +1721,11 @@ border: 4px solid #ff6331;
     }
     #buuut_dec {
         width: 87px;
-        font-size: 8px;
+        font-size: 7px;
     }
     #buuut_prev {
         width: 88px;
-        font-size: 8px;
+        font-size: 7px;
     }
 
 }
