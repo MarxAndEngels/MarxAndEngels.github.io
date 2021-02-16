@@ -1121,6 +1121,12 @@ border: 4px solid #ff6331;
      .Andry{
          margin-top: 40px;
      }
+     .sidebar{
+         height: auto;
+     }
+     .kartinka{
+         margin-bottom: 20px;
+     }
 }
 
 @media ( max-width: 991px){
@@ -1231,7 +1237,6 @@ border: 4px solid #ff6331;
     } 
     .info-content{
     }
-
 } 
 
  @media ( max-width: 767px){
