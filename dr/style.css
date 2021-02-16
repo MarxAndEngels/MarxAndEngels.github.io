@@ -545,7 +545,7 @@ top: 0;
     font-family: 'Montserrat', sans-serif;
     width: 210px;
     height: 120px;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
     font-size: 20px;
     text-align: right;
     border: none;
@@ -593,64 +593,6 @@ top: 0;
     box-shadow: 0 0 10px #f681aa;
     cursor: pointer;
 }
-
-
-/* .calculator{
-   position: relative;
-   display: grid;
-
-}
-
-.calculator .value{
-   grid-column: span 4;
-   height: 100px;
-   text-align: right;
-   border: none;
-   outline: none;
-   padding: 10px;
-   font-size: 18px;
-}
-.calculator span{
-    display: grid;
-    width: 60px;
-    height: 60px;
-    color: #fff;
-    background: #0c2835;
-    place-items: center;
-    border: 1px solid rgba(0,0,0,.1);
-    transition-duration: 0.8s;
-    
-}
-
-.calculator span:hover {
-    background: #183b4b;
-    cursor: pointer;
-}
-
-
-.calculator span.clear{
-    grid-column: span 2;
-    width: 120px;
-    background: #ff3077 ;
-
-}
-
-.calculator span.clear:hover {
-    background:  #f681aa;
-}
-
-.calculator span.plus{
-    grid-row: span 2;
-    height: 120px;
-}
-.calculator span.qu{
-    transition-duration: 0.8s;
-    background: #03b1ff;
-}
-.calculator span.qu:hover {
-    background:  #6ecaf5;
-    box-shadow: 0 0 10px #7ecff5 ;
-} */
 
 
 .footer{
