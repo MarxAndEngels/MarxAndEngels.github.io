@@ -232,7 +232,7 @@
 
 <div data-wow-duration=1s class="products__title wow animate__animated animate__slideInUp">Расчитать расходы</div>
 <div class="otstup7"></div>
-    <div data-wow-duration=1.5s class="po wow animate__animated animate__slideInUp"> 
+    <!-- <div data-wow-duration=1.5s class="po wow animate__animated animate__slideInUp"> 
     <form class="calculator" name="calc">
         <input class="value" type="text" name="txt" readonly="">
         <span class="num clear" onclick="document.calc.txt.value = ''"> c</span>
@@ -255,7 +255,68 @@
         <span class="num qu" onclick="document.calc.txt.value = eval(calc.txt.value)"> =</span>
       </form>
     </div>
-</div>
+</div> -->
+    <div class="mainCalculator">
+       <center> <form name="form">
+            <input class="textweu" name="textweu"> 
+        </form>
+        <table>
+            <tr>
+                <td colspan="2"><input class="buttonCalcC" type="button" value="C" onclick="clean()"></td> 
+                <td><input class="buttonCalc"  type="button" value="/" onclick="take('/')"></td> 
+                <td><input class="buttonCalc" type="button" value="x" onclick="take('*')"></td> 
+            </tr>
+
+           <tr>
+            <td><input class="buttonCalc" type="button" value="1" onclick="take(1)"></td> 
+            <td><input class="buttonCalc" type="button" value="2" onclick="take(2)"></td> 
+            <td><input class="buttonCalc" type="button" value="3" onclick="take(3)"></td> 
+            <td><input class="buttonCalc" type="button" value="-" onclick="take('-')"></td> 
+           </tr>
+
+           <tr>
+            <td><input class="buttonCalc" type="button" value="4" onclick="take(4)"></td> 
+            <td><input class="buttonCalc" type="button" value="5" onclick="take(5)"></td> 
+            <td><input class="buttonCalc" type="button" value="6" onclick="take(6)"></td> 
+            <td><input class="buttonCalc" type="button" value="+" onclick="take('+')"></td> 
+        </tr>
+
+        <tr>
+            <td><input class="buttonCalc" type="button" value="7" onclick="take(7)"></td> 
+            <td><input class="buttonCalc" type="button" value="8" onclick="take(8)"></td> 
+            <td><input class="buttonCalc" type="button" value="9" onclick="take(9)"></td> 
+            <td rowspan="2"><input class="buttonCalcEval" type="button" value="=" onclick="equal()"></td> 
+        </tr>
+
+        <tr>
+            <td><input class="buttonCalc" type="button" value="0" onclick="take(0)"></td> 
+            <td><input class="buttonCalc" type="button" value="00" onclick="take('00')"></td> 
+            <td><input class="buttonCalc" type="button" value="." onclick="take('.')"></td> 
+        </tr>
+        </table>
+    </center>
+    </div>
+    <script>
+      function take(num){
+          document.form.textweu.value = document.form.textweu.value + num;
+      }
+      function equal(num){
+          var exp=document.form.textweu.value;
+          if (exp){
+            document.form.textweu.value = eval(exp);
+          }
+      }
+      function clean(){
+        document.form.textweu.value = "";
+      }
+    </script>
+
+ 
+
+
+
+
+
 <div class="otstup6"></div>
 
 <div class="otstup6"></div>
@@ -301,17 +362,17 @@
   let monthName= date.toLocaleString(lang,{month: 'long'})
   let year= date.getFullYear()
   
-  document.getElementById('monthName').innerHTML= monthName;
-  document.getElementById('dayName').innerHTML= dayName;
-  document.getElementById('dayNumber').innerHTML= dayNumber;
-  document.getElementById('year').innerHTML= year;
+  buuut_prev.onclick = function (){
+    DateJs();
+  };
 
-  buuut_prev.onclick = function(){
+  function DateJs(){
   document.getElementById('monthName').innerHTML= monthName;
   document.getElementById('dayName').innerHTML= dayName;
   document.getElementById('dayNumber').innerHTML= dayNumber;
   document.getElementById('year').innerHTML= year;
   };
+  DateJs();
   buuut_dec.onclick = function(){
     document.getElementById('year').innerHTML=2007;
     document.getElementById('monthName').innerHTML='январь';
