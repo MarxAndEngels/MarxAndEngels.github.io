@@ -273,17 +273,18 @@
     </center>
     </div>
     <script>
+        let textweu=document.querySelector('.textweu');
       function take(num){
-          document.form.textweu.value = document.form.textweu.value + num;
+        textweu.value = textweu.value + num;
       }
       function equal(num){
-          var exp=document.form.textweu.value;
+          var exp=textweu.value;
           if (exp){
-            document.form.textweu.value = eval(exp);
+            textweu.value = eval(exp);
           }
       }
       function clean(){
-        document.form.textweu.value = "";
+        textweu.value = "";
       }
     </script>
 
