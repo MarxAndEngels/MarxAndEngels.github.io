@@ -213,7 +213,7 @@ range.onchange = function(){
 }
 
 
-if (document.documentElement.clientWidth < 768) {
+if (document.documentElement.clientWidth < 992) {
  removeAtribl(mactextJS1);
  removeAtribl(mactextJS2);
  removeAtribl(mactextJS3);
