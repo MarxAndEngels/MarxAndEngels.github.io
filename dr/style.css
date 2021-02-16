@@ -1467,6 +1467,7 @@ border: 4px solid #ff6331;
     }
 }
 @media ( max-width: 569px){
+
       .mactext6 , .mactext7{
         font-size: 19px;
         padding: 0;
