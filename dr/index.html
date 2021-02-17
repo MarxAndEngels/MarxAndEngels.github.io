@@ -266,8 +266,8 @@
 
         <tr>
             <td><input class="buttonCalc" type="button" value="0" onclick="take(0)"></td> 
-            <td><input class="buttonCalc" type="button" value="00" onclick="take('00')"></td> 
             <td><input class="buttonCalc" type="button" value="." onclick="take('.')"></td> 
+            <td><input class="buttonCalc" type="button" value="<<<" onclick="BackLast()"></td> 
         </tr>
         </table>
     </center>
@@ -286,6 +286,15 @@
       function clean(){
         textweu.value = "";
       }
+      function BackLast(){
+        textweu.value = textweu.value.slice(0, -1);
+      }
+      document.onkeydown = function(e) {
+      if (e.keyCode === 8) {
+    textweu.value = textweu.value.slice(0, -1);
+     }
+};
+
     </script>
 
  
