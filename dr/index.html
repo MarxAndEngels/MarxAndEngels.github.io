@@ -135,8 +135,7 @@
     </main>
 
 
-    <audio id="player" src="audio/1.mp3"></audio>
-  <audio id="player2" src="audio/3.mp3"></audio>
+    <audio id="player" src="audio/морген.mp3"> </audio>
 <div class="dvoynoy">
     <div class="dv1">Песни о ДР
         <center>
@@ -145,28 +144,32 @@
             </p>
            
         </center>
+         <center>
+            <p class="NameMusic"> </p>
+         </center>
+
         <center>
     <input  data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInLeft" type="submit" 
-     onclick="document.getElementById('player').play() + document.getElementById('player2').pause() " value="Play music №1">
+     onclick="playMus('player')" value="Play music">
     
-     <input  data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInRight" type="submit"  onclick="document.getElementById('player').pause()+document.getElementById('player2').pause()" value="Pause music №1">
+     <input  data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInRight" type="submit"  onclick="pauseMus('player')" value="Pause music">
    
 </center>
 
     
 <center>
-    <input  data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInLeft" type="submit" 
-     onclick="document.getElementById('player2').play() + document.getElementById('player').pause()" value="Play music №2">
-     <input  data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInRight" type="submit"
-       onclick="document.getElementById('player2').pause() + document.getElementById('player').pause()" value="Pause music №2">
+    <input id="prevMus"  data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInLeft" type="submit" 
+      value="◀ Prev Song">
+     <input id="nextMus"  data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInRight" type="submit"
+        value="Next Song ▶">
     </center>
 
 <center>
-    <input id="prev" data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInLeft" type="submit" value="Prev Picture">
-    <input id="next"  data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInRight" type="submit" value="Next Picture">
+    <input id="prev" data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInLeft" type="submit" value="◀ Prev Picture">
+    <input id="next"  data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInRight" type="submit" value="Next Picture ▶">
 </center>
 <div class="imgClass">
-    <center>  <img src="img/teddy-bear.png" width="205px" height="205px" alt=""> </center>
+    <center>  <img src="img/teddy-bear.png" width="185px" height="185px" alt=""> </center>
 </div> 
 
 </div>

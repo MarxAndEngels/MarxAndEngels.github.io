@@ -208,8 +208,6 @@ range.value = 0.9;
 range.onchange = function(){
   let vol=document.getElementById('player');
   vol.volume=range.value;
-  let vol1=document.getElementById('player2');
-  vol1.volume=range.value;
 }
 
 
@@ -230,9 +228,60 @@ el.removeAttribute('data-wow-delay');
 }
 
 
+let playlist=[];
+playlist.push('С др, Морген!');
+playlist.push('Черный пистолет');
+playlist.push('Эта черный пистолет');
+
+colMus=0;
+
+let player= document.getElementById('player');
+player.src= 'audio/' + playlist[colMus] + '.mp3';
+
+let prevMus= document.getElementById('prevMus');
+let nextMus= document.getElementById('nextMus');
 
 
 
+function playMus(el){
+ document.getElementById(el).play();
+}
+ function pauseMus(el){
+   document.getElementById(el).pause();
+ }
+
+prevMus.disabled = true;
+
+function PoevlenieMusPrev(){
+  colMus--;
+  player.src= 'audio/' + playlist[colMus] + '.mp3';
+  if(colMus === 0){
+  prevMus.disabled =true;
+  nextMus.disabled =false;
+  }
+  player.play();
+  console.log(1);
+  NameMusic.innerHTML='Song name : ' + playlist[colMus];
+  
+}
+function PoevlenieMusNext(){
+  colMus++;
+  prevMus.disabled=false;
+  player.src= 'audio/' + playlist[colMus] + '.mp3';
+  if(colMus === (playlist.length-1)){
+  nextMus.disabled =true;
+  }
+  console.log(2);
+  player.play();
+  NameMusic.innerHTML='Song name : ' + playlist[colMus];
+}
+
+prevMus.addEventListener('click', PoevlenieMusPrev);
+nextMus.addEventListener('click', PoevlenieMusNext);
+
+
+let NameMusic = document.querySelector('.NameMusic');
+NameMusic.innerHTML='Song name : ' + playlist[colMus];
 
 
 
