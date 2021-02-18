@@ -34,9 +34,9 @@ popupPict.src=imgPict[colPict];
 
 let colPict1 = 0;
 let imgPict1 = [];
-imgPict1.push('img/NBDj.txt');
-imgPict1.push('img/gift.gif');
-imgPict1.push('img/11.png');
+imgPict1.push('img/NBDj.txt'); 
+imgPict1.push('img/gift.gif'); 
+imgPict1.push('img/11.png'); 
 Pict2.src=imgPict1[colPict1];
 
 
@@ -65,23 +65,23 @@ function PoevleniePopapa4(){
 
 
 
-ButtPrev.disabled = true;
-
-function PoevleniePictPrev(){
+function PoevleniePictPrev(){  
   colPict1--;
-    Pict2.src=imgPict1[colPict1];
-    if(colPict1 === 0){
-      ButtPrev.disabled =true;
-      ButtNext.disabled =false;
+    if(colPict1 === -1){
+      colPict1=imgPict1.length-1;
    }
+   Pict2.src=imgPict1[colPict1];
+  document.querySelector('.pict_krug').classList.add('pict_krug_Animation');
+  setTimeout( ()=> document.querySelector('.pict_krug').classList.remove('pict_krug_Animation') ,1000 );
 }
-function PoevleniePictNext(){
+function PoevleniePictNext(){  
   colPict1++;
-    ButtPrev.disabled=false;
-    Pict2.src=imgPict1[colPict1];
-    if(colPict1 === (imgPict1.length -1)){
-      ButtNext.disabled =true;
+    if(colPict1 === (imgPict1.length)){
+      colPict1=0;
    }
+   Pict2.src=imgPict1[colPict1];
+  document.querySelector('.pict_krug').classList.add('pict_krug_Animation');
+  setTimeout( ()=> document.querySelector('.pict_krug').classList.remove('pict_krug_Animation') ,1000 );
 }
 
 
@@ -202,7 +202,7 @@ setTimeout( () => {
 
 
 let range= document.getElementById('range');
-range.value = 0.9;
+range.value = 0.8;
 
 
 range.onchange = function(){
@@ -231,7 +231,7 @@ el.removeAttribute('data-wow-delay');
 let playlist=[];
 playlist.push('С др, Морген!');
 playlist.push('Черный пистолет');
-playlist.push('Эта черный пистолет');
+playlist.push('Грустный день рождения');
 
 colMus=0;
 
@@ -250,30 +250,27 @@ function playMus(el){
    document.getElementById(el).pause();
  }
 
-prevMus.disabled = true;
 
 function PoevlenieMusPrev(){
   colMus--;
-  player.src= 'audio/' + playlist[colMus] + '.mp3';
-  if(colMus === 0){
-  prevMus.disabled =true;
-  nextMus.disabled =false;
+  if(colMus === -1){
+    colMus=playlist.length-1;
   }
+  player.src= 'audio/' + playlist[colMus] + '.mp3';
   player.play();
-  console.log(1);
   NameMusic.innerHTML='Song name : ' + playlist[colMus];
   
 }
 function PoevlenieMusNext(){
   colMus++;
-  prevMus.disabled=false;
-  player.src= 'audio/' + playlist[colMus] + '.mp3';
-  if(colMus === (playlist.length-1)){
-  nextMus.disabled =true;
+  if(colMus === playlist.length){
+    colMus=0;
   }
-  console.log(2);
+  
+  player.src= 'audio/' + playlist[colMus] + '.mp3';
   player.play();
   NameMusic.innerHTML='Song name : ' + playlist[colMus];
+
 }
 
 prevMus.addEventListener('click', PoevlenieMusPrev);
@@ -282,10 +279,6 @@ nextMus.addEventListener('click', PoevlenieMusNext);
 
 let NameMusic = document.querySelector('.NameMusic');
 NameMusic.innerHTML='Song name : ' + playlist[colMus];
-
-
-
-
 
 
 
