@@ -182,14 +182,26 @@ class Clock {
   })
   //
 
-  setInterval( ()=> {
-    if (document.documentElement.scrollTop > 2392) {
+  let TopElemlet = setInterval( function TopElem() {
+    if (document.documentElement.scrollTop > 2492) {
       footer.style.display ="block";
      }
      else {
       footer.style.display ="none";
      }
   } , 1000 )
+
+  if (document.documentElement.clientWidth < 992) {
+   clearInterval(TopElemlet);
+   setInterval( function TopElem1() {
+    if (document.documentElement.scrollTop > 3592) {
+      footer.style.display ="block";
+     }
+     else {
+      footer.style.display ="none";
+     }
+     } , 1000 )
+   }
    
 
 

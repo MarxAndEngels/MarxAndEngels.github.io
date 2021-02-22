@@ -285,6 +285,7 @@
           if (exp){
             textweu.value = eval(exp);
           }
+          
       }
       function clean(){
         textweu.value = "";
@@ -293,8 +294,9 @@
         textweu.value = textweu.value.slice(0, -1);
       }
       document.onkeydown = function(e) {
-      if (e.keyCode === 8) {
+      if (e.keyCode === 8 && document.documentElement.scrollTop >= 3800 && document.documentElement.scrollTop<= 4800) {
     textweu.value = textweu.value.slice(0, -1);
+    console.log(document.documentElement.scrollTop);
      }
 };
 
@@ -380,7 +382,7 @@
 </div>
 <div class="otstup1"></div>
 
-<div class="up-main" title="Вверх"> <img src="img/up.png" width="50px" height="50px"> </div>
+<div class="up-main" title="Вверх"> <img src="img/up.png" width="40px" height="40px"> </div>
 
 <div class="otstup6"></div>
 
