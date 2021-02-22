@@ -183,9 +183,8 @@ class Clock {
   //
 
   setInterval( ()=> {
-    if (window.pageYOffset > 2392) {
+    if (document.documentElement.scrollTop > 2392) {
       footer.style.display ="block";
-      console.log(window.pageYOffset);
      }
      else {
       footer.style.display ="none";
