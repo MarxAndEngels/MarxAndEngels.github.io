@@ -1097,6 +1097,7 @@ border: 4px solid #ff6331;
     opacity: 0.4;
     display: none;
     animation: animateup 1.5s ease-in-out;
+    z-index: 9999999;
 }
 @keyframes animateup{
     from{
