@@ -330,6 +330,73 @@
 <div class="otstup6"></div>
 <div class="otstup6"></div>
 
+<div class="textBox">Нажми на сундук, чтобы открыть его! 🎁</div>
+<div class="containerBox">
+    <img id="box_present" onclick="Openbox()" src="img/сундук1.png">
+    <img class="doshick" src="img/прозрачныйформат.png" width="210px" height="210px">
+    
+</div>
+<center>
+    <input class="boxButton" type="submit" onclick="closeBox()" value="Закрыть Сундук">
+</center>
+
+<script>
+let doshick = document.querySelector('.doshick');
+let box= document.getElementById('box_present');
+
+function Openbox(){
+ box.src="img/Сундук.gif";
+ setTimeout( ()=> {
+    box.src="img/cундук2.png";
+    box.onclick="null";
+    doshick.style.display="block";
+    document.querySelector('.textBox').innerHTML="Сундук открыт, теперь ты можешь взять свой подарок и перетаскивать его";
+ }, 500 )
+}
+
+doshick.onmousedown = function(event) {
+let shiftX = event.clientX - doshick.getBoundingClientRect().left;
+let shiftY = event.clientY - doshick.getBoundingClientRect().top;
+
+doshick.style.zIndex = 1000;
+
+moveAt(event.pageX, event.pageY);
+
+// переносит мяч на координаты (pageX, pageY),
+// дополнительно учитывая изначальный сдвиг относительно указателя мыши
+function moveAt(pageX, pageY) {
+    doshick.style.left = pageX - shiftX + 'px';
+    doshick.style.top = pageY - shiftY + 'px';
+}
+
+function onMouseMove(event) {
+  moveAt(event.pageX, event.pageY);
+}
+
+// передвигаем мяч при событии mousemove
+document.addEventListener('mousemove', onMouseMove);
+
+// отпустить мяч, удалить ненужные обработчики
+doshick.onmouseup = function() {
+  document.removeEventListener('mousemove', onMouseMove);
+  doshick.onmouseup = null;
+};
+};
+doshick.ondragstart = function() {
+return false;
+};
+
+function closeBox(){
+    box.src="img/сундук1.png";
+    box.onclick= Openbox;
+    document.querySelector('.textBox').innerHTML="Сундук был закрыт, можешь снова открыть его";
+    doshick.style.display="none";
+    doshick.style.left="auto";
+    doshick.style.top="auto";
+}
+</script>
+
+
 <div data-wow-duration=1s class="products__title wow animate__animated animate__slideInUp">Ой, а что это за дата интересная?</div>
 <div class="calendar wow animate__animated animate__slideInUp">
     <div class="calendarpolosh">
