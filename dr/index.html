@@ -331,6 +331,7 @@
 <div class="otstup6"></div>
 
 <div class="textBox">Нажми на сундук, чтобы открыть его! 🎁</div>
+<div class="soundtoggle_wrap"><img id="soundtoggle" onclick="sound()" src="img/no-sound.png" width="38px" height="38px"></div>
 <div class="containerBox">
     <img id="box_present" onclick="Openbox()" src="img/сундук1.png">
     <img class="doshick" src="img/прозрачныйформат.png" width="210px" height="210px">
@@ -344,8 +345,29 @@
 let doshick = document.querySelector('.doshick');
 let box= document.getElementById('box_present');
 
+
+
+let shest = new Audio();
+shest.src="audio/Сундук.mp3";
+shest.volume=0;
+
+function sound(){
+    let soundtoggle= document.getElementById('soundtoggle');
+    if (!soundtoggle.getAttribute('pict')) {
+     soundtoggle.setAttribute("pict", "2");
+    soundtoggle.src="img/volume.png";
+    shest.volume=1;
+    }
+    else{ 
+        soundtoggle.src="img/no-sound.png";
+        setTimeout( () => {soundtoggle.removeAttribute("pict") } , 100);
+        shest.volume=0;
+    }
+}
+
 function Openbox(){
  box.src="img/Сундук.gif";
+ shest.play();
  setTimeout( ()=> {
     box.src="img/cундук2.png";
     box.onclick="null";
@@ -387,6 +409,7 @@ return false;
 };
 
 function closeBox(){
+    shest.play();
     box.src="img/сундук1.png";
     box.onclick= Openbox;
     document.querySelector('.textBox').innerHTML="Сундук был закрыт, можешь снова открыть его";
