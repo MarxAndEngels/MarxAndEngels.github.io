@@ -411,19 +411,17 @@ doshick.ondragstart = function() {
 return false;
 };
 
-
-doshick.onpointerdown = function(event) {
-  // все события указателя перенаправить на thumb (пока не произойдёт 'pointerup')
-  doshick.setPointerCapture(event.pointerId);
-};
-
-doshick.onpointermove = function(event) {
-  // перемещение ползунка: все события перенаправлены на этот обработчик
-  let newLeft = event.clientX - doshick.getBoundingClientRect().left;
-let newRight = event.clientY - doshick.getBoundingClientRect().top;
-  doshick.style.left = newLeft + 'px';
-  doshick.style.top = newRight + 'px';
-};
+// doshick.onpointerdown = function(event) {
+//   // все события указателя перенаправить на thumb (пока не произойдёт 'pointerup')
+//   doshick.setPointerCapture(event.pointerId);
+// };
+// doshick.onpointermove = function(event) {
+//   // перемещение ползунка: все события перенаправлены на этот обработчик
+//   let newLeft = event.clientX - doshick.getBoundingClientRect().left;
+// let newRight = event.clientY - doshick.getBoundingClientRect().top;
+//   doshick.style.left = newLeft + 'px';
+//   doshick.style.top = newRight + 'px';
+// };
 
 function closeBox(){
     shest.play();
