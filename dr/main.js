@@ -296,5 +296,3 @@ NameMusic.innerHTML='Song name : ' + playlist[colMus];
 
 
 
-
-

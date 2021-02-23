@@ -1021,6 +1021,7 @@ border: 4px solid #ff6331;
         display: none;
         animation: doshic 1s ease-in-out ;
         cursor: pointer;
+        touch-action: none;
     }
    @keyframes doshic{
        from{
