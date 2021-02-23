@@ -182,14 +182,24 @@ class Clock {
   })
   //
 
-  let TopElemlet = setInterval( function TopElem() {
-    if (document.documentElement.scrollTop > 2292) {
-      footer.style.display ="block";
-     }
-     else {
+  // let TopElemlet = setInterval( function TopElem() {
+  //   if (document.documentElement.scrollTop > 2292) {
+  //     footer.style.display ="block";
+  //    }
+  //    else {
+  //     footer.style.display ="none";
+  //    }
+  // } , 1000 )
+
+   //на сколько прокрутили и высота браузера
+  window.addEventListener('scroll', function() {
+    if (pageYOffset < document.documentElement.clientHeight*3){
       footer.style.display ="none";
-     }
-  } , 1000 )
+    }
+    else{
+      footer.style.display ="block";
+    }
+  });
 
    
 
