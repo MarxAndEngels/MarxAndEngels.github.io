@@ -6,9 +6,13 @@
 <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 <link rel="shortcut icon" type="image/x-icon" href="img/ссср.png">
 <link href="style.css" rel="stylesheet">
+<link async
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="wow.min.js"></script>
-    <script>
+    <script async src="wow.min.js"></script>
+    <script async>
               new WOW().init();
               </script>
     <title>С ДР</title>
@@ -411,10 +415,12 @@ doshick.ondragstart = function() {
 return false;
 };
 
+
 // doshick.onpointerdown = function(event) {
 //   // все события указателя перенаправить на thumb (пока не произойдёт 'pointerup')
 //   doshick.setPointerCapture(event.pointerId);
 // };
+
 // doshick.onpointermove = function(event) {
 //   // перемещение ползунка: все события перенаправлены на этот обработчик
 //   let newLeft = event.clientX - doshick.getBoundingClientRect().left;
@@ -569,9 +575,6 @@ function closeBox(){
     </footer>
 </main>
 <script src="main.js" >   </script>
-<link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+
 </body>
 </html>
