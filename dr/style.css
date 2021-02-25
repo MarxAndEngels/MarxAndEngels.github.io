@@ -128,16 +128,22 @@ padding-bottom: 10px;
 
 .kartinka{
     display: flex;
-    justify-content: center;
     font-size: 50px;
    align-items: center;
    transition-duration: 1s;
+   animation: leftRight 5.5s ease-in-out alternate infinite;  
+   /* длительность , функция, направление(сначало в пярмом потом в обратном направлении работает), кол  */
+   cursor: pointer;
 }
-.kartinka:hover{
-    text-shadow: 0 0 10px rgb(66, 162, 241),
-     0 0 20px rgb(66, 162, 241),
-     0 0 40px rgb(66, 162, 241);
+@keyframes leftRight{
+    from {
+		margin-left: 35px;
+	}
+	to {
+		margin-left: 180px;
+	}
 }
+
 
 .texttt1{
     display: flex;
@@ -181,6 +187,7 @@ top: 0;
     font-weight: 800;
     transition-duration: 2.5s;
 }
+
 .mactext5:hover{
     font-family: 'Montserrat', sans-serif;
     font-size: 67px;
@@ -775,7 +782,8 @@ cursor: pointer;
     -webkit-text-stroke: 1px #232323;
     cursor: pointer;
 }
-.Andry:before,
+/* attr(дает поулчить свойство из html) */
+.Andry:before,                                        
 .Andry:after{
     content: attr(data-text);
     position: absolute;
@@ -848,7 +856,7 @@ transform: translate(10px,-10px);
   to {opacity: 1;}
 }
 .pict_krug:hover{
-    transform: translate3d(-5px, -2.5px, 0px);
+	transform: rotate(2deg);
 }
 
 #range{

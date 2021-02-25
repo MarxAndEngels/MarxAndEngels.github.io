@@ -64,6 +64,19 @@ function PoevleniePopapa4(){
 }
 
 
+function stopAnim(){
+  let stop = document.querySelector('.kartinka');
+    if (!stop.getAttribute('stop')) {
+      stop.setAttribute("stop" , "2");
+      stop.style.animationPlayState = 'paused';
+     }
+     else{ 
+         setTimeout( () => {stop.removeAttribute("stop");
+         stop.style.animationPlayState ='running';
+        } , 100);
+     }
+}
+
 
 function PoevleniePictPrev(){  
   colPict1--;
