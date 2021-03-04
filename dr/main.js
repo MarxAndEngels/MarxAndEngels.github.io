@@ -323,6 +323,6 @@ function toggle(objNameText , togl1) {
   objTextStyle.display = (objTextStyle.display == 'flex') ? 'none' : 'flex';
   togl.classList.toggle('toglactive');
   let text= document.querySelector('.products__span');
-  text.innerHTML = (text.innerHTML == 'Открой меня ;))') ? 'Закрой меня ;))' : 'Открой меня ;))';
+  text.innerHTML = (text.innerHTML == 'Открой меня 😋😱😮') ? 'Закрой меня 😋😣😐' : 'Открой меня 😋😱😮';
 }
 

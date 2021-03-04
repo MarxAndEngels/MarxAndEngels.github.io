@@ -475,7 +475,7 @@ top: 0;
 .products__title1{
     color:snow;
     font-family: 'Montserrat', sans-serif;
-    font-size: 56px;
+    font-size: 50px;
     font-weight: 800;
     text-transform: uppercase;
     margin-bottom: 20px;
@@ -496,6 +496,23 @@ top: 0;
 .toglactive{
     transform:rotate(-45deg);
     margin-bottom: 0;
+}
+
+.togl-product{
+    box-shadow: -1024px 20px 0 -17px #eee,
+             1024px -20px 0 -17px #eee,
+            20px 20px 0 -20px #592385,
+            0 0 0 2px #592385;
+    padding: 10px;
+}
+.ligth{
+    box-shadow: -1024px 20px 0 -17px #eee,
+    1024px -20px 0 -17px #eee,
+   20px 20px 0 -20px #592385,
+   0 0 0 2px #592385;
+      margin-top: 50px;
+      width: 100%;
+      animation: opacity-text 1.5s ease-in-out;
 }
 
 .products__row{
