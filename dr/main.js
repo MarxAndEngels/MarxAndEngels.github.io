@@ -317,5 +317,12 @@ NameMusic.innerHTML='Song name : ' + playlist[colMus];
 
 
 
-
+function toggle(objNameText , togl1) {
+  let objTextStyle = document.querySelector(objNameText).style;
+  let togl = document.querySelector(togl1);
+  objTextStyle.display = (objTextStyle.display == 'flex') ? 'none' : 'flex';
+  togl.classList.toggle('toglactive');
+  let text= document.querySelector('.products__span');
+  text.innerHTML = (text.innerHTML == 'Открой меня ;))') ? 'Закрой меня ;))' : 'Открой меня ;))';
+}
 

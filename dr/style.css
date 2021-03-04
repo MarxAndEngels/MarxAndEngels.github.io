@@ -309,6 +309,9 @@ top: 0;
     display: none;
     z-index: 3000;
 }
+.otstup11{
+    margin-bottom: 60px;
+}
 
 #popup_menu_id{
     
@@ -434,7 +437,6 @@ top: 0;
     font-family: 'Teko' , sans-serif;
     transition: opacity 0.2s ease-in;
     transition-duration: 0.8s;
-
 }
 .info-content:hover{
     opacity: 0.5;
@@ -458,7 +460,6 @@ top: 0;
 .products{
     padding-top: 60px;
     padding-bottom: 65px;
-
 }
 
 .products__title{
@@ -471,6 +472,32 @@ top: 0;
     margin-bottom: 55px;
     text-align: center;
 }
+.products__title1{
+    color:snow;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 56px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    margin-top: 45px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.togl{
+    width: 45px;
+    height: 45px;
+    border-right: 4px solid black;
+    border-top: 4px solid black;
+    transform:rotate(135deg);
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+.toglactive{
+    transform:rotate(-45deg);
+    margin-bottom: 0;
+}
+
 .products__row{
     display: flex;
     justify-content: space-around;
@@ -764,9 +791,18 @@ cursor: pointer;
    justify-content: center;
    align-items: center;
    flex-direction: column;
-   min-height: 35vw;
    background-color: #232323;
    overflow: hidden;
+   display: none;
+   animation: opacity-text 1.5s ease-in-out;
+}
+@keyframes opacity-text{
+     from{
+      opacity: 0;
+     }
+     to{
+        opacity: 1;
+     }
 }
 .Andry{
     position: relative;
