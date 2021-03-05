@@ -323,6 +323,13 @@ function toggle(objNameText , togl1) {
   objTextStyle.display = (objTextStyle.display == 'flex') ? 'none' : 'flex';
   togl.classList.toggle('toglactive');
   let text= document.querySelector('.products__span');
-  text.innerHTML = (text.innerHTML == 'Открой меня 😋😱😮') ? 'Закрой меня 😋😣😐' : 'Открой меня 😋😱😮';
+  text.innerHTML = (text.innerHTML == 'Открой меня 😋😱😮') ? 'Закрой меня 🔘🔴🔵' : 'Открой меня 😋😱😮';
 }
 
+function toggleAction(objNameText , togl2) {
+  let objTextStyle = document.querySelector(objNameText).style;
+  let togl = document.querySelector(togl2);
+  objTextStyle.display = (objTextStyle.display == 'none') ? 'flex' : 'none';
+  togl.classList.toggle('togl-product-action-two');
+  document.querySelector('.togl-actions').classList.toggle('togl-actions-two');
+}

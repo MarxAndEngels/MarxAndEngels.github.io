@@ -196,7 +196,13 @@
 <main>
 <section class="products">
 <div class="container3">
-    <div class="products__title wow animate__animated animate__jackInTheBox">Твои варианты действий</div>
+    <div class="products__title act wow animate__animated animate__jackInTheBox">Твои варианты действий</div>
+    <div class="togl-container wow animate__animated animate__slideInUp">
+    <div class="togl-actions" onclick="toggleAction('.products__row','.togl-product-action')">
+        <div class="togl-text"> Close/Open Actions </div>
+        <div class="togl-product-action"></div>
+    </div>
+</div>
     <div class="products__row">
         <div class="products-cart wow animate__animated animate__slideInUp"> 
             <a class="products-cart__img"  href="https://salatoff.ru/shop/store/buterbrody-i-sendvichi" target="_blank" title="Переход на не мой сайт">
@@ -239,7 +245,7 @@
 
 <div data-wow-duration=1s class="products__title wow animate__animated animate__slideInUp">Расчитать расходы</div>
 <div class="otstup7"></div>
-    <div class="mainCalculator">
+    <div class="mainCalculator wow animate__animated animate__slideInUp">
        <center> <form name="form">
             <input onkeydown="return checkPhoneKey(event.key)"  class="textweu" name="textweu" autocomplete="off"> 
         </form>
