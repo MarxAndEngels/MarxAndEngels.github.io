@@ -132,7 +132,7 @@ padding-bottom: 10px;
    align-items: center;
    transition-duration: 1s;
    animation: leftRight 5.5s ease-in-out alternate infinite;  
-   /* длительность , функция, направление(сначало в пярмом потом в обратном направлении работает), кол  */
+   /* длительность , функция, направление(сначало в прямом потом в обратном направлении работает), кол  */
    cursor: pointer;
 }
 @keyframes leftRight{
