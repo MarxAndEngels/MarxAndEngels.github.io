@@ -125,58 +125,77 @@ popupPoevlenie4.addEventListener('click',PoevleniePopapa4);
 ButtPrev.addEventListener('click', PoevleniePictPrev);
 ButtNext.addEventListener('click', PoevleniePictNext);
 
+
+
+// class Clock {
+//    constructor({ template }) {
+//      this.template = template;
+//    }
+
+//    render() {
+//      let date = new Date();
+ 
+//      let hours = date.getHours();
+//      if (hours < 10) hours = '0' + hours;
+ 
+//      let mins = date.getMinutes();
+//      if (mins < 10) mins = '0' + mins;
+ 
+//      let secs = date.getSeconds();
+//      if (secs < 10) secs = '0' + secs;
+ 
+//      let output = this.template
+//        .replace('h', hours)
+//        .replace('m', mins)
+//        .replace('s', secs);
+
+//        time.innerHTML=output;
+//    }
+ 
+//    stop() {
+//      clearInterval(this.timer);
+//    }
+ 
+//    start() {
+//      this.render();
+//      this.timer = setInterval(() => this.render(), 1000);
+//    }
+//  }
+
+//  let clock = new Clock({template: 'h:m:s'});
+//  clock.start();
+
 let time=document.querySelector(".parallax-text");
-let butStart= document.getElementById("buuut_play");
-let butStop= document.getElementById("buuut_stop");
+timer();
+let timerPlay = setInterval( () =>{ timer() } , 1000);
+function timer(){
+   let now = new Date();
+   let target = new Date(now.getFullYear(),
+   now.getMonth(),
+   now.getDate() + 1,
+   0,
+   0,
+   0);
+      let diff= Math.ceil((target.getTime() - now.getTime()) / (1000)); 
+      
+      let hours = Math.floor(diff/(60*60));
+      diff = diff - hours * 60 * 60; //seconds - hours
+   
+      let minutes = Math.floor(diff/(60));
+      diff = diff - minutes * 60;
+   
+      let seconds = diff;
 
-class Clock {
-   constructor({ template }) {
-     this.template = template;
-   }
-
-   render() {
-     let date = new Date();
- 
-     let hours = date.getHours();
-     if (hours < 10) hours = '0' + hours;
- 
-     let mins = date.getMinutes();
-     if (mins < 10) mins = '0' + mins;
- 
-     let secs = date.getSeconds();
-     if (secs < 10) secs = '0' + secs;
- 
-     let output = this.template
-       .replace('h', hours)
-       .replace('m', mins)
-       .replace('s', secs);
-
-       time.innerHTML=output;
-   }
- 
-   stop() {
-     clearInterval(this.timer);
-   }
- 
-   start() {
-     this.render();
-     this.timer = setInterval(() => this.render(), 1000);
-   }
- }
-
- let clock = new Clock({template: 'h:m:s'});
- clock.start();
+      time.innerHTML = addZero(hours) + ':' + addZero(minutes) + ':' +  addZero(seconds) ;
+}
+function addZero(num){
+  if( num<= 9){
+     num = '0' + num;
+  }
+  return num;
+}
 
 
- butStart.disabled= true;
- butStart.onclick = function(){
-    clock.start();
-    butStart.disabled= true;
-  };
-  butStop.onclick = function(){
-    clock.stop();
-    butStart.disabled= false;
-  };
 
 
   //якорь

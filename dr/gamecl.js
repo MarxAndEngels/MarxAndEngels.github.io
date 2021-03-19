@@ -18,7 +18,7 @@ function start() {
 
     const interval = setInterval( ()=>{
       const delta = Date.now() - startTime;
-      display.textContent = time- delta;
+      display.textContent = time - delta;
     } ,100  );
 
     const timeout = setTimeout( ()=> {
