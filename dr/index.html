@@ -195,46 +195,47 @@
 <!-- страничка 3 -->
 <main>
 <section class="products">
-<div class="container3">
-    <div class="products__title act wow animate__animated animate__jackInTheBox">Твои варианты действий</div>
-    <div class="togl-container wow animate__animated animate__slideInUp">
-    <div class="togl-actions" onclick="toggleAction('.products__row','.togl-product-action')">
-        <div class="togl-text"> Close/Open Actions </div>
-        <div class="togl-product-action"></div>
+    <div data-wow-duration=2s class="togl-container wow animate__animated animate__bounce">
+        <div class="togl-actions" onclick="toggleAction('.container3','.togl-product-action')">
+            <div class="togl-text"> Open/Close Actions </div>
+            <div class="togl-product-action"></div>
+        </div>
     </div>
-</div>
+    <div class="line"></div>
+<div class="container3">
+    <div class="products__title act">Твои варианты действий</div>
     <div class="products__row">
-        <div class="products-cart wow animate__animated animate__slideInUp"> 
+        <div class="products-cart"> 
             <a class="products-cart__img"  href="https://salatoff.ru/shop/store/buterbrody-i-sendvichi" target="_blank" title="Переход не на мой сайт">
                 <img src="img/Беfdfdfdfdfз имени-1.png" alt=""> <p class="products-cart__title" href="https://salatoff.ru/shop/store/buterbrody-i-sendvichi">Жми на картинку,чтобы заказать закуски от шеф-повара!</p>
             </a>
         </div>
-        <div class="products-cart wow animate__animated animate__slideInUp">
+        <div class="products-cart">
             <a class="products-cart__img" href="https://shaurma-best.ru/menu/shaurma/" target="_blank" title="Переход не на мой сайт">
                 <img src="img/шава1.png" alt=""> <p class="products-cart__title"> Жми на картинку,чтобы заказать шавы!</p>
             </a>
 
         </div>
-        <div class="products-cart wow animate__animated animate__slideInUp">
+        <div class="products-cart">
             <a class="products-cart__img" href="https://nn.buytort.ru/" target="_blank" title="Переход не на мой сайт">
                 <img src="img/столовая1.png" alt=""> <p class="products-cart__title"  >Жми на картинку,чтобы заказать торт!</p>
             </a>
 
         </div>
 
-         <div class="products-cart wow animate__animated animate__slideInUp">
+         <div class="products-cart">
             <a class="products-cart__img" href="flappy.html" target="_blank" title="Flappy-Bird">
                 <img src="img/облака.png" alt=""> <p class="products-cart__title">Жми на картинку, чтобы поиграть в старшилку 1!</p>
             </a>
         </div>
 
-         <div class="products-cart wow animate__animated animate__slideInUp">
+         <div class="products-cart">
             <a class="products-cart__img" href="snake.html" target="_blank" title="Snake">
                 <img src="img/ссср1.png" alt=""> <p class="products-cart__title">Жми на картинку,чтобы поиграть в страшику 2!</p>
             </a>
         </div>
 
-         <div class="products-cart wow animate__animated animate__slideInUp">
+         <div class="products-cart">
             <a class="products-cart__img" href="cl.html" target="_blank" title="Clicker">
                 <img src="img/ааввроппп.png" alt=""> <p class="products-cart__title">Жми на картинку,чтобы поиграть в страшику 3!</p>
             </a>
@@ -501,6 +502,7 @@ function closeBox(){
         <center><div class="parallax-time-name">До конца дня</div></center>
         <div class="parallax-time-name">осталось :</div>
         <div class="parallax-text"></div>
+        <center><div class="line-parallax"></div></center>
     </div>
     <div class="mask1"></div>
 </div>

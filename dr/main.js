@@ -348,7 +348,9 @@ function toggle(objNameText , togl1) {
 function toggleAction(objNameText , togl2) {
   let objTextStyle = document.querySelector(objNameText).style;
   let togl = document.querySelector(togl2);
-  objTextStyle.display = (objTextStyle.display == 'none') ? 'flex' : 'none';
+  objTextStyle.display = (objTextStyle.display == 'block') ? 'none' : 'block';
   togl.classList.toggle('togl-product-action-two');
   document.querySelector('.togl-actions').classList.toggle('togl-actions-two');
+  let line = document.querySelector('.line').style;
+  line.display = (line.display == 'none') ? 'block' : 'none';
 }
