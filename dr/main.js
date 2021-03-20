@@ -239,7 +239,7 @@ function addZero(num){
   let m3=document.querySelector(".mactext5");
 var svet1=  setInterval( function svet1() {
   m3.classList.add("mactext55");
-}, 4900);
+}, 4600);
 
 
 var svet2= setInterval( function svet2() {
@@ -264,21 +264,6 @@ range.onchange = function(){
 }
 
 
-if (document.documentElement.clientWidth < 992) {
- removeAtribl(mactextJS1);
- removeAtribl(mactextJS2);
- removeAtribl(mactextJS3);
- removeAtribl(mactextJS4);
- removeAtribl(mactextJS5);
- removeAtribl(mactextJS6);
- removeAtribl(mactextJS7);
- removeAtribl(mactextJS8);
- removeAtribl(mactextJS9);
- removeAtribl(mactextJS10);
-}
-function removeAtribl(el ){
-el.removeAttribute('data-wow-delay');
-}
 
 
 let playlist=[];
