@@ -4,7 +4,6 @@ function openMenu() {
 
 
 let popup = document.getElementById('mypopup'),
-popupPoevlenie = document.getElementById('myBtn'),
 popup_center = document.getElementById('popup_center'),
 popupClose= document.querySelector('.close'),
 popupPict= document.querySelector('.pict_popap'),
@@ -18,10 +17,6 @@ function openMenuAdaptive() {
 
 
 
-popupPoevlenie1 = document.getElementById('nasvanie');
-popupPoevlenie2 = document.getElementById('nasvanie1');
-popupPoevlenie3 = document.getElementById('nasvanie2');
-popupPoevlenie4 = document.getElementById('nasvanie3');
 
 var colPict = 0;
 var imgPict = [];
@@ -30,6 +25,28 @@ imgPict.push('img/2696988810.jpg');
 imgPict.push('img/unnamed.jpg');
 imgPict.push('img/выы.jpg');
 popupPict.src=imgPict[colPict];
+
+let popupPoivlenie = document.querySelector('.verh');
+popupPoivlenie.addEventListener('click', function(){
+  let dataID = event.target.dataset.id;
+  if(dataID === 'nasvanie') {
+    colPict=0;
+    popupPict.src=imgPict[colPict];
+  }
+  if(dataID === 'nasvanie1'){
+    colPict=1;
+    popupPict.src=imgPict[colPict];
+  }
+  if(dataID === 'nasvanie2'){
+    colPict=2;
+    popupPict.src=imgPict[colPict];
+  }
+  if(dataID === 'nasvanie3'){
+    colPict=3;
+    popupPict.src=imgPict[colPict];
+  }
+  popup.style.display= "block";
+})
 
 
 let colPict1 = 0;
@@ -40,41 +57,10 @@ imgPict1.push('img/11.png');
 Pict2.src=imgPict1[colPict1];
 
 
-
-function PoevleniePopapa1(){
-    colPict=0;
-    popupPict.src=imgPict[colPict];
-    popup.style.display= "block";
-}
-
-function PoevleniePopapa2(){
-    colPict=1;
-    popupPict.src=imgPict[colPict];
-    popup.style.display= "block";
-}
-function PoevleniePopapa3(){
-    colPict=2;
-    popupPict.src=imgPict[colPict];
-    popup.style.display= "block";
-}
-function PoevleniePopapa4(){
-    colPict=3;
-    popupPict.src=imgPict[colPict];
-    popup.style.display= "block";
-}
-
-
 function stopAnim(){
   let stop = document.querySelector('.kartinka');
-    if (!stop.getAttribute('stop')) {
-      stop.setAttribute("stop" , "2");
-      stop.style.animationPlayState = 'paused';
-     }
-     else{ 
-         setTimeout( () => {stop.removeAttribute("stop");
-         stop.style.animationPlayState ='running';
-        } , 100);
-     }
+  let style = stop.style.animationPlayState;
+    stop.style.animationPlayState = (style === 'paused') ? 'running' : 'paused';
 }
 
 
@@ -98,30 +84,22 @@ function PoevleniePictNext(){
 }
 
 
-// popupPoevlenie.onclick = function(){
-//     popup.style.display= "block";
-// }
+
 popupClose.onclick = function(){
     popup.style.display= "none";
 }
 
 popup.addEventListener("click", function(event) {
-    e = event || window.event
-    if (e.target == popup_center) {
-        popup.style.display= "none";
+    // e = event || window.event
+    // if (e.target == 'popup_center') {
+    //     popup.style.display= "none";
+    // }
+    if ( event.target === popup_center){
+      popup.style.display= "none";
     }
   });
-  popup.addEventListener("click", function(event) {
-    e = event || window.event
-    if (e.target == popup) {
-        popup.style.display= "none";
-    }
-  });
+
   
-popupPoevlenie1.addEventListener('click',PoevleniePopapa1);
-popupPoevlenie2.addEventListener('click',PoevleniePopapa2);
-popupPoevlenie3.addEventListener('click',PoevleniePopapa3);
-popupPoevlenie4.addEventListener('click',PoevleniePopapa4);
 ButtPrev.addEventListener('click', PoevleniePictPrev);
 ButtNext.addEventListener('click', PoevleniePictNext);
 
