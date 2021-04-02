@@ -178,7 +178,7 @@
 
 </div>
 <div class="dv2">
-    <img class="pict_krug" src="" width="670px" height="580px" alt="">
+    <img onclick="funcRotate()" class="pict_krug" src="" width="670px" height="580px" alt="">
 </div>
 </div>
 
@@ -387,9 +387,10 @@ function sound(){
     }
 }
 
-function Openbox(){
+function Openbox(){ 
  box.src="img/Сундук.gif";
  shest.play();
+ box.classList.remove('active_box');
  setTimeout( ()=> {
     box.src="img/cундук2.png";
     box.onclick="null";
@@ -446,6 +447,7 @@ return false;
 
 function closeBox(){
     shest.play();
+    box.classList.add('active_box');
     box.src="img/сундук1.png";
     box.onclick= Openbox;
     document.querySelector('.textBox').innerHTML="Сундук был закрыт, можешь снова открыть его";
@@ -480,14 +482,22 @@ function closeBox(){
   };
 
   function DateJs(){
+    buuut_prev.disabled=true; 
+    buuut_dec.disabled=false;
   document.getElementById('monthName').innerHTML= monthName;
   document.getElementById('dayName').innerHTML= dayName;
   document.getElementById('dayNumber').innerHTML= dayNumber;
   document.getElementById('year').innerHTML= year;
+  document.getElementById('dayNumber').classList.toggle('active_data');
+   setTimeout( function(){document.getElementById('dayNumber').classList.remove('active_data')}, 1000);
   };
   DateJs();
   buuut_dec.onclick = function(){
+    buuut_prev.disabled=false; 
+    buuut_dec.disabled=true;
     document.getElementById('year').innerHTML=2007;
+    document.getElementById('dayNumber').classList.toggle('active_data');
+    setTimeout( function(){document.getElementById('dayNumber').classList.remove('active_data')}, 1000);
     document.getElementById('monthName').innerHTML='январь';
     document.getElementById('dayNumber').innerHTML= 1;
     document.getElementById('dayName').innerHTML= 'понедельник';

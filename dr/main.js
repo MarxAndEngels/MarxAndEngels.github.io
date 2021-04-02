@@ -15,7 +15,10 @@ function openMenuAdaptive() {
   document.querySelector(".header__nav-row").classList.toggle('openTogl');
 }
 
-
+function funcRotate(){
+  let picture = document.querySelector('.pict_krug');
+  picture.classList.toggle('activPicture');
+}
 
 
 var colPict = 0;
@@ -70,8 +73,8 @@ function PoevleniePictPrev(){
       colPict1=imgPict1.length-1;
    }
    Pict2.src=imgPict1[colPict1];
-  document.querySelector('.pict_krug').classList.add('pict_krug_Animation');
-  setTimeout( ()=> document.querySelector('.pict_krug').classList.remove('pict_krug_Animation') ,1000 );
+
+  animatePictOpacity();
 }
 function PoevleniePictNext(){  
   colPict1++;
@@ -79,6 +82,11 @@ function PoevleniePictNext(){
       colPict1=0;
    }
    Pict2.src=imgPict1[colPict1];
+  animatePictOpacity();
+
+}
+
+function animatePictOpacity(){
   document.querySelector('.pict_krug').classList.add('pict_krug_Animation');
   setTimeout( ()=> document.querySelector('.pict_krug').classList.remove('pict_krug_Animation') ,1000 );
 }
@@ -257,6 +265,8 @@ player.src= 'audio/' + playlist[colMus] + '.mp3';
 let prevMus= document.getElementById('prevMus');
 let nextMus= document.getElementById('nextMus');
 
+let NameMusic = document.querySelector('.NameMusic');
+NameMusic.innerHTML='Song name : ' + playlist[colMus];
 
 
 function playMus(el){
@@ -272,6 +282,7 @@ function PoevlenieMusPrev(){
   if(colMus === -1){
     colMus=playlist.length-1;
   }
+  ShakeNameSong();
   player.src= 'audio/' + playlist[colMus] + '.mp3';
   player.play();
   NameMusic.innerHTML='Song name : ' + playlist[colMus];
@@ -282,19 +293,22 @@ function PoevlenieMusNext(){
   if(colMus === playlist.length){
     colMus=0;
   }
-  
+  ShakeNameSong();
   player.src= 'audio/' + playlist[colMus] + '.mp3';
   player.play();
   NameMusic.innerHTML='Song name : ' + playlist[colMus];
 
 }
 
+function ShakeNameSong(){
+  NameMusic.classList.add('active_box');
+  setTimeout(function(){NameMusic.classList.remove('active_box') }, 1000);
+}
+
 prevMus.addEventListener('click', PoevlenieMusPrev);
 nextMus.addEventListener('click', PoevlenieMusNext);
 
 
-let NameMusic = document.querySelector('.NameMusic');
-NameMusic.innerHTML='Song name : ' + playlist[colMus];
 
 
 

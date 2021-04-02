@@ -983,8 +983,9 @@ transform: translate(10px,-10px);
 .pict_krug{
     margin-left: 2em;
     clip-path: polygon(5% 5%, 100% 10%, 900% 75%, 75% 75% , 75% 100% , 60% 75% , 20% 80%);
-    transition: .4s ease-in-out;
+    transition: 1s ease-in-out;
     max-width: 100%;
+    cursor: pointer;
 }
 
 .pict_krug_Animation{
@@ -996,8 +997,54 @@ transform: translate(10px,-10px);
     }
   to {opacity: 1;}
 }
-.pict_krug:hover{
-	transform: rotate(2deg);
+
+
+.activPicture{
+    clip-path: polygon(5% 10%, 100% 5%, 900% 75%, 75% 75% , 70% 100% , 60% 75% , 20% 80%);
+}
+
+.active_box{
+    animation: activebox 1s ease;
+}
+
+@keyframes activebox{
+    15% {
+        -webkit-transform: translateX(9px);
+        transform: translateX(9px);
+      }
+      30% {
+        -webkit-transform: translateX(-9px);
+        transform: translateX(-9px);
+      }
+      40% {
+        -webkit-transform: translateX(6px);
+        transform: translateX(6px);
+      }
+      50% {
+        -webkit-transform: translateX(-6px);
+        transform: translateX(-6px);
+      }
+      65% {
+        -webkit-transform: translateX(3px);
+        transform: translateX(3px);
+      }
+      100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+    }
+
+.active_data{
+   animation: activedata 1s ease;
+}
+
+@keyframes activedata{
+from{
+transform: rotate(0deg);
+}
+to{
+    transform: rotate(-360deg); 
+}
 }
 
 #range{
@@ -1034,6 +1081,7 @@ color: #fff;
 transform: translate3d(0px, -2px, 0px);     
 border: 4px solid #ff6331;    
 }
+
 
 
 #buuut_dec {
@@ -1182,9 +1230,11 @@ border: 4px solid #ff6331;
    @keyframes doshic{
        from{
            opacity: 0;
+           margin-top: 25px;
        }
        to{
            opacity: 1;
+           margin-top: 0;
        }
    }
 
