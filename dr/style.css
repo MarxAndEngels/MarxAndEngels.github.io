@@ -82,7 +82,7 @@ body{
     -moz-transition: all 1200ms;
     -webkit-transition: all 1200ms;
     transition: all 1200ms;
-    z-index: 1;
+    z-index: 5;
 }
 .sidebar.active{
         left:0;
@@ -118,18 +118,19 @@ body{
     cursor: pointer;
     z-index: 3;
 }
+
 .toggle-btn::after{
  content: '';
  position: absolute;
- box-shadow: 1px 1px 2px 2px #E0E5EA, 1px 2px 3px 3px #b5c7da , 2px 1px 4px 3px #b5c7da ;
+ box-shadow: 1px 1px 2px 2px #E0E5EA, 1px 2px 3px 3px #b5c7da , 2px 1px 6px 3px #b5c7da ;
  border-collapse: collapse;  
- left: -3px;
- right: -3px;
- top: -3px;
- bottom: -3px;
- animation: liff 8s ease-in-out alternate infinite;
+ left: -5px;
+ right: -5px;
+ top: -5px;
+ bottom: -5px;
+ animation: liff 10s ease-in-out alternate infinite;
  border-radius: 12px;
- z-index: 1;
+ z-index: -10;
 }
 .toggle-btn.tool::after{
     display: none;
@@ -143,21 +144,22 @@ body{
     position: absolute;
     box-shadow: 1px 1px 2px 2px #E0E5EA, 2px 1px 3px 3px #b5c7da, 1px 2px 4px 3px #b5c7da ;
     border-collapse: collapse;  
-    left: -3px;
-    right: -3px;
-    top: -3px;
-    bottom: -3px;
-    animation: liff 10s ease-in-out alternate infinite;
+    left: -5px;
+    right: -5px;
+    top: -5px;
+    bottom: -5px;
+    animation: liff 8s ease-in-out alternate infinite;
     border-radius: 12px;
-    z-index: 0;
+    z-index: -8;
    }
 
 @keyframes liff {
     from{
-       transform: rotate(0deg);
+       transform: rotate(0deg) scale(0.8) ;
+
     }
     to{
-        transform: rotate(360deg);
+        transform: rotate(360deg) scale(0.9);
     }
 }
 
