@@ -4,6 +4,7 @@ function openMenu() {
     document.querySelector("#span1").classList.toggle('active');
     document.querySelector("#span2").classList.toggle('active');
     document.querySelector("#span3").classList.toggle('active');
+    document.querySelector(".toggle-btn").classList.toggle('tool');
 }
 
 
