@@ -388,7 +388,7 @@ function sound(){
 }
 
 function Openbox(){ 
- box.src="img/Сундук.gif";
+ setTimeout( ()=>{box.src="img/Сундук.gif"},100)   
  shest.play();
  box.classList.remove('active_box');
  setTimeout( ()=> {
