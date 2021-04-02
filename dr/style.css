@@ -120,6 +120,7 @@ body{
 }
 
 .toggle-btn::after{
+display: none;
  content: '';
  position: absolute;
  box-shadow: 1px 1px 2px 2px #E0E5EA, 1px 2px 3px 3px #b5c7da , 2px 1px 6px 3px #b5c7da ;
@@ -133,13 +134,14 @@ body{
  z-index: -10;
 }
 .toggle-btn.tool::after{
-    display: none;
+    display: block;
 }
 .toggle-btn.tool::before{
-    display: none;
+    display: block;
 }
 
 .toggle-btn::before{
+    display: none;
     content: '';
     position: absolute;
     box-shadow: 1px 1px 2px 2px #E0E5EA, 2px 1px 3px 3px #b5c7da, 1px 2px 4px 3px #b5c7da ;

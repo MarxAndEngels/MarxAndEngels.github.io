@@ -26,6 +26,8 @@ function funcRotate(){
 }
 
 
+
+
 var colPict = 0;
 var imgPict = [];
 imgPict.push('img/a3ddPbRAvIU.jpg');
@@ -243,6 +245,10 @@ setTimeout( () => {
   m3.classList.remove("mactext55");
 }, 16900);
 
+
+setTimeout( () => {
+  document.querySelector(".toggle-btn").classList.toggle('tool');
+}, 7000);
 
 
 let range= document.getElementById('range');
