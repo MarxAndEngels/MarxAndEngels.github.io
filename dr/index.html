@@ -388,7 +388,9 @@ function sound(){
 }
 
 function Openbox(){ 
- setTimeout( ()=>{box.src="img/Сундук.gif"},100)   
+ box.src="img/Сундук.gif"
+ setTimeout( ()=>{
+
  shest.play();
  box.classList.remove('active_box');
  setTimeout( ()=> {
@@ -396,7 +398,9 @@ function Openbox(){
     box.onclick="null";
     doshick.style.display="block";
     document.querySelector('.textBox').innerHTML="Сундук открыт, теперь ты можешь взять свой подарок и перетаскивать его";
- }, 500 )
+ }, 200);
+ 
+ },300 )   
 }
 
 doshick.onmousedown = function(event) {
