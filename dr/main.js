@@ -1,5 +1,9 @@
 function openMenu() {
     document.querySelector(".sidebar").classList.toggle('active');
+    document.querySelector(".toggle-btn").classList.toggle('active');
+    document.querySelector("#span1").classList.toggle('active');
+    document.querySelector("#span2").classList.toggle('active');
+    document.querySelector("#span3").classList.toggle('active');
 }
 
 
