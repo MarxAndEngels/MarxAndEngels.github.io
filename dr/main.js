@@ -245,7 +245,7 @@ setTimeout( () => {
 
 
 let range= document.getElementById('range');
-range.value = 0.75;
+range.value = 0.55;
 
 
 range.onchange = function(){
