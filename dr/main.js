@@ -342,3 +342,58 @@ function toggleAction(objNameText , togl2) {
   let line = document.querySelector('.line').style;
   line.display = (line.display == 'none') ? 'block' : 'none';
 }
+
+
+//-------------------- TO DO LIST
+let input_do = document.querySelector('.input-to-do');
+let button_input = document.querySelector('.button-input');
+let result = document.querySelector('.result');
+let total = document.querySelector('.span-total');
+let stor;
+let count;
+
+function toLocalStore(){
+   stor = result.innerHTML;
+   localStorage.setItem('story', stor);
+   
+   count = result.getElementsByTagName('li').length;
+   localStorage.setItem('col', count);
+}
+
+result.addEventListener('click', function(event){
+ if(event.target.tagName === 'LI'){
+   event.target.classList.toggle('li-active');
+ }
+ else if(event.target.tagName === 'BUTTON'){
+   let div = event.target.parentNode;
+   result.removeChild(div);
+ }
+ toLocalStore();
+ total.innerHTML = 'Total: ' + result.getElementsByTagName('li').length;
+})
+
+button_input.addEventListener('click' , function(e){
+   if (input_do.value === '') return;
+  CreateAndDeleteElements(input_do.value);
+  input_do.value = '';
+  toLocalStore();
+  total.innerHTML = 'Total: ' + result.getElementsByTagName('li').length;
+})
+
+function CreateAndDeleteElements(value){  
+ let li = document.createElement('li');
+ let butt = document.createElement('button');
+ li.className = 'li';
+ li.innerHTML = value;
+ butt.className = 'btn_to_do';
+ butt.innerHTML = 'X';
+ li.appendChild(butt);
+ result.appendChild(li);
+}
+
+if(localStorage.getItem('story')){
+   result.innerHTML = localStorage.getItem('story');
+
+   total.innerHTML = 'Total: ' + localStorage.getItem('col');
+}
+//--------------------------------------------------------------------

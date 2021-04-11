@@ -111,7 +111,7 @@
             <div data-wow-duration=1s class="info--wide wow animate__animated animate__slideInUp" >
                 <video class="perviy-class-video" src="video/пух.mp4" controls></video>
             </div>
-            <div data-wow-duration=1s  class="info wow animate__animated animate__slideInUp">
+            <div data-wow-duration=1s onclick="foo()"  class="info wow animate__animated animate__slideInUp">
                 <img class="vtoroy-class-img" src="img/без текста.png" alt="">
                 <div class="info-content">
                 <div class="info-content-title">
@@ -137,6 +137,24 @@
     </div>
     </section>
     </main>
+
+    <div class="content">
+        <div class="background">
+        <div class="content-to-do">
+            <div class="anim-to-do"></div>
+            <div class="text-to-do">- TO DO LIST -</div>
+            <p class="name-to-do">💬 (Это просто список дел, который работает с вашим локальным хранилищем браузера и все запоминает. 
+                Запиши в него все свои "важные дела" или мечты, чтобы не забыть о них ) 💬 </p>
+         <textarea class="input-to-do" placeholder="Введите новое дело..." type="text"></textarea>
+         <button class="button-input">Add</button>
+         <ul class="result">  
+         </ul>
+         <div class="span-div"> 
+             <span class="span-total">Total: </span>
+         </div>
+        </div>
+    </div>
+    </div>
 
 
     <audio id="player" src="audio/морген.mp3"> </audio>
