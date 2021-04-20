@@ -7,14 +7,10 @@ for(let accordion of accordions){
 function a(){
     let content = this.nextElementSibling;
     content.style.display = (content.style.display == 'block') ? 'none' : 'block';
-    tagName = this.getAttribute('data-togl');
-    SelectToggle(tagName); 
-}
-function SelectToggle(tagName){
-    document.querySelector('.'+ tagName).classList.toggle('toglactive')
-}
 
-
+    let togl =this.previousElementSibling;
+    togl.classList.toggle('toglactive');
+}
 
 
 let picts = document.querySelectorAll('.rewiews-item')
@@ -24,32 +20,21 @@ let prev = document.querySelector('.toglLeft');
 
 next.addEventListener('click', function(){
    count++;
-   if(count === 3){
-      count = 0;
+   if(count === picts.length){                 //3
+       count = 0;
    }
    for(let pict of picts){
-      pict.classList.remove('active');
+    pict.classList.remove('active');
    }
-   for(let pict of picts){
-      if(pict.classList.contains(count)){
-         pict.classList.add('active')
-      }
-   }
-   console.log(count);
+   picts[count].classList.add('active');
 })
-
 prev.addEventListener('click', function(){
-   count--;
+   count--; 
    if(count === -1){
-      count = 2;
+      count = picts.length-1;                //2
    }
    for(let pict of picts){
       pict.classList.remove('active');
-   }
-   for(let pict of picts){
-      if(pict.classList.contains(count)){
-         pict.classList.add('active')
-      }
-   }
-   console.log(count);
+     }
+     picts[count].classList.add('active');
 })
