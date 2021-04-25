@@ -63,7 +63,7 @@ let colPict1 = 0;
 let imgPict1 = [];
 imgPict1.push('img/NBDj.txt'); 
 imgPict1.push('img/gift.gif'); 
-imgPict1.push('img/11.png'); 
+imgPict1.push('img/12.png'); 
 Pict2.src=imgPict1[colPict1];
 
 

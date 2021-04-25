@@ -196,7 +196,7 @@
 
 </div>
 <div class="dv2">
-    <img onclick="funcRotate()" class="pict_krug" src="" width="670px" height="580px" alt="">
+    <img onclick="funcRotate()" class="pict_krug" src="" alt="">
 </div>
 </div>
 
@@ -368,116 +368,6 @@
 </div>
 <div class="otstup6"></div>
 <div class="otstup6"></div>
-
-
-<div class="textBox">Нажми на сундук, чтобы открыть его! 🎁</div>
-<div class="soundtoggle_wrap"><img id="soundtoggle" onclick="sound()" src="img/no-sound.png" width="38px" height="38px"></div>
-<div class="containerBox">
-    <img id="box_present" onclick="Openbox()" src="img/сундук1.png">
-    <img class="doshick" src="img/прозрачныйформат.png" width="210px" height="210px">
-    
-</div>
-<center>
-    <input class="boxButton" type="submit" onclick="closeBox()" value="Закрыть Сундук">
-</center>
-
-<script>
-let doshick = document.querySelector('.doshick');
-let box= document.getElementById('box_present');
-
-
-
-let shest = new Audio();
-shest.src="audio/Сундук.mp3";
-shest.volume=0;
-
-function sound(){
-    let soundtoggle= document.getElementById('soundtoggle');
-    if (!soundtoggle.getAttribute('pict')) {
-     soundtoggle.setAttribute("pict", "2");
-    soundtoggle.src="img/volume.png";
-    shest.volume=1;
-    }
-    else{ 
-        soundtoggle.src="img/no-sound.png";
-        setTimeout( () => {soundtoggle.removeAttribute("pict") } , 100);
-        shest.volume=0;
-    }
-}
-
-function Openbox(){ 
- box.src="img/Сундук.gif"
- setTimeout( ()=>{
-
- shest.play();
- box.classList.remove('active_box');
- setTimeout( ()=> {
-    box.src="img/cундук2.png";
-    box.onclick="null";
-    doshick.style.display="block";
-    document.querySelector('.textBox').innerHTML="Сундук открыт, теперь ты можешь взять свой подарок и перетаскивать его";
- }, 200);
- 
- },300 )   
-}
-
-doshick.onmousedown = function(event) {
-let shiftX = event.clientX - doshick.getBoundingClientRect().left;
-let shiftY = event.clientY - doshick.getBoundingClientRect().top;
-
-doshick.style.zIndex = 1000;
-
-moveAt(event.pageX, event.pageY);
-
-// переносит мяч на координаты (pageX, pageY),
-// дополнительно учитывая изначальный сдвиг относительно указателя мыши
-function moveAt(pageX, pageY) {
-    doshick.style.left = pageX - shiftX + 'px';
-    doshick.style.top = pageY - shiftY + 'px';
-}
-
-function onMouseMove(event) {
-  moveAt(event.pageX, event.pageY);
-}
-
-// передвигаем мяч при событии mousemove
-document.addEventListener('mousemove', onMouseMove);
-
-// отпустить мяч, удалить ненужные обработчики
-doshick.onmouseup = function() {
-  document.removeEventListener('mousemove', onMouseMove);
-  doshick.onmouseup = null;
-};
-};
-doshick.ondragstart = function() {
-return false;
-};
-
-
-// doshick.onpointerdown = function(event) {
-//   // все события указателя перенаправить на thumb (пока не произойдёт 'pointerup')
-//   doshick.setPointerCapture(event.pointerId);
-// };
-
-// doshick.onpointermove = function(event) {
-//   // перемещение ползунка: все события перенаправлены на этот обработчик
-//   let newLeft = event.clientX - doshick.getBoundingClientRect().left;
-// let newRight = event.clientY - doshick.getBoundingClientRect().top;
-//   doshick.style.left = newLeft + 'px';
-//   doshick.style.top = newRight + 'px';
-// };
-
-function closeBox(){
-    shest.play();
-    box.classList.add('active_box');
-    box.src="img/сундук1.png";
-    box.onclick= Openbox;
-    document.querySelector('.textBox').innerHTML="Сундук был закрыт, можешь снова открыть его";
-    doshick.style.display="none";
-    doshick.style.left="auto";
-    doshick.style.top="auto";
-}
-</script>
 
 
 <div data-wow-duration=1s class="products__title wow animate__animated animate__slideInUp">Ой, а что это за дата интересная?</div>
