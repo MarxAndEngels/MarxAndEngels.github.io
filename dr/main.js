@@ -277,8 +277,14 @@ playlist.push('Грустный день рождения');
 
 colMus=0;
 
+
+
+
+
 let player= document.getElementById('player');
 player.src= 'audio/' + playlist[colMus] + '.mp3';
+
+
 
 let prevMus= document.getElementById('prevMus');
 let nextMus= document.getElementById('nextMus');
@@ -315,7 +321,6 @@ function PoevlenieMusNext(){
   player.src= 'audio/' + playlist[colMus] + '.mp3';
   player.play();
   NameMusic.innerHTML='Song name : ' + playlist[colMus];
-
 }
 
 function ShakeNameSong(){
@@ -327,6 +332,37 @@ prevMus.addEventListener('click', PoevlenieMusPrev);
 nextMus.addEventListener('click', PoevlenieMusNext);
 
 
+let proggres = document.querySelector('.progress');
+
+let ptime = document.querySelector('.progress-p');
+
+player.ontimeupdate = proggresUpdate;
+function proggresUpdate(){
+  let d = Math.floor(player.duration);
+  let c = Math.floor(player.currentTime + 0,0001);
+  proggres.value = c/d*100;
+  let hours = Math.floor(c/(60*60));
+  c = c-hours*60*60;
+  let min = Math.floor(c/(60));
+  c= c-min*60;
+  let sec = c;
+  ptime.innerHTML = addZero(hours) + ':' + addZero(min) + ':' + addZero(sec);
+
+  if(player.duration === player.currentTime){
+    PoevlenieMusNext();
+  }
+}
+
+proggres.onclick = MusRewind;
+
+function MusRewind(){
+  let w = proggres.offsetWidth;
+  let pos = event.offsetX;
+  proggres.value = pos/w*100;
+  player.pause();
+  player.currentTime= player.duration*(pos/w);
+  player.play();
+}
 
 
 
