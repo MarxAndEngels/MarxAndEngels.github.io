@@ -119,44 +119,51 @@ ButtPrev.addEventListener('click', PoevleniePictPrev);
 ButtNext.addEventListener('click', PoevleniePictNext);
 
 
+//mouse 
+let mouse = document.querySelector('.mouse');
+let marginLeft = 0;
+let marginTop = 0;
+mouse.tabIndex = 0;
 
-// class Clock {
-//    constructor({ template }) {
-//      this.template = template;
-//    }
+mouse.onfocus = function(){
+   mouse.style.border = '1px solid snow';
+   mouse.style.boxShadow = '0px 0px 3px rgba(255,255,255,.8),2px 2px 5px rgba(255,255,255,.8),5px 5px 10px rgba(255,255,255,.8),8px 8px 10px rgba(255,255,255,.8)'
+}
+mouse.onblur = function(){
+   mouse.style.border = 'none';
+   mouse.style.boxShadow = 'none';
+   mouse.classList.add('active_box');
+  setTimeout(function(){mouse.classList.remove('active_box') }, 1000);
+}
 
-//    render() {
-//      let date = new Date();
- 
-//      let hours = date.getHours();
-//      if (hours < 10) hours = '0' + hours;
- 
-//      let mins = date.getMinutes();
-//      if (mins < 10) mins = '0' + mins;
- 
-//      let secs = date.getSeconds();
-//      if (secs < 10) secs = '0' + secs;
- 
-//      let output = this.template
-//        .replace('h', hours)
-//        .replace('m', mins)
-//        .replace('s', secs);
+    mouse.onkeydown = function(e) {
+      switch (e.key) {
+        case 'ArrowLeft':
+         this.style.marginLeft = marginLeft + 'px';
+         this.style.marginLeft = parseInt(this.style.marginLeft) - 400 + 'px'; 
+         marginLeft = this.style.marginLeft;
+          return false;
+        case 'ArrowUp':
+         this.style.marginTop = marginTop + 'px';
+         this.style.marginTop = parseInt(this.style.marginTop) - 200 + 'px'; 
+         marginTop = this.style.marginTop;
+          return false;
+        case 'ArrowRight':
+         this.style.marginLeft = marginLeft + 'px';
+         this.style.marginLeft = parseInt(this.style.marginLeft) + 400 + 'px'; 
+         marginLeft = this.style.marginLeft;
+          return false;
+        case 'ArrowDown':
+         this.style.marginTop = marginTop + 'px';
+         this.style.marginTop = parseInt(this.style.marginTop) + 200 + 'px'; 
+         marginTop = this.style.marginTop;
+          return false;
+      }
+    };
+//mouse
 
-//        time.innerHTML=output;
-//    }
- 
-//    stop() {
-//      clearInterval(this.timer);
-//    }
- 
-//    start() {
-//      this.render();
-//      this.timer = setInterval(() => this.render(), 1000);
-//    }
-//  }
 
-//  let clock = new Clock({template: 'h:m:s'});
-//  clock.start();
+
 
 let time=document.querySelector(".parallax-text");
 timer();

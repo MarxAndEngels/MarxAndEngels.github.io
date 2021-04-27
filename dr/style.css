@@ -1421,6 +1421,34 @@ border: 4px solid #ff6331;
         transition-duration: 1s;
     }
 
+    .text-mouse{
+        color: snow;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 25px;
+        text-align: center;
+        margin: 40px 0px 60px 0;
+        padding: 0px 40px;
+    }
+    .mouse{
+        padding: 30px 0px 20px 20px;
+        width: 100%;
+        max-width: 330px;
+        transition-duration: 0.8s;
+        cursor: pointer;
+        color: #000;
+        border-radius: 2px;
+      }
+
+      .wrapper-pre{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: auto;
+      }
+
+
+
+
  .calendar{
     height: 32.25vw;
     display: flex;
@@ -1627,7 +1655,6 @@ border: 4px solid #ff6331;
     .popup_content{
         width: 60%;
     }
-    
 }
 
 @media( max-width: 850px){
@@ -1989,6 +2016,9 @@ border: 4px solid #ff6331;
         width: 124px;
         font-size: 11px;
     }
+    .text-mouse{
+        font-size: 22px;
+    }
 }
 @media ( max-width: 470px){
    
@@ -2146,7 +2176,9 @@ border: 4px solid #ff6331;
     .background {
         max-width: 318px;
     }
-
+    .text-mouse{
+        font-size: 20px;
+    }
 }
 
 @media ( max-width: 370px){
