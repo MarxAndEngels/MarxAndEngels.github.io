@@ -119,51 +119,6 @@ ButtPrev.addEventListener('click', PoevleniePictPrev);
 ButtNext.addEventListener('click', PoevleniePictNext);
 
 
-//mouse 
-let mouse = document.querySelector('.mouse');
-let marginLeft = 0;
-let marginTop = 0;
-mouse.tabIndex = 0;
-
-mouse.onfocus = function(){
-   mouse.style.border = '1px solid snow';
-   mouse.style.boxShadow = '0px 0px 3px rgba(255,255,255,.8),2px 2px 5px rgba(255,255,255,.8),5px 5px 10px rgba(255,255,255,.8),8px 8px 10px rgba(255,255,255,.8)'
-}
-mouse.onblur = function(){
-   mouse.style.border = 'none';
-   mouse.style.boxShadow = 'none';
-   mouse.classList.add('active_box');
-  setTimeout(function(){mouse.classList.remove('active_box') }, 1000);
-}
-
-    mouse.onkeydown = function(e) {
-      switch (e.key) {
-        case 'ArrowLeft':
-         this.style.marginLeft = marginLeft + 'px';
-         this.style.marginLeft = parseInt(this.style.marginLeft) - 400 + 'px'; 
-         marginLeft = this.style.marginLeft;
-          return false;
-        case 'ArrowUp':
-         this.style.marginTop = marginTop + 'px';
-         this.style.marginTop = parseInt(this.style.marginTop) - 200 + 'px'; 
-         marginTop = this.style.marginTop;
-          return false;
-        case 'ArrowRight':
-         this.style.marginLeft = marginLeft + 'px';
-         this.style.marginLeft = parseInt(this.style.marginLeft) + 400 + 'px'; 
-         marginLeft = this.style.marginLeft;
-          return false;
-        case 'ArrowDown':
-         this.style.marginTop = marginTop + 'px';
-         this.style.marginTop = parseInt(this.style.marginTop) + 200 + 'px'; 
-         marginTop = this.style.marginTop;
-          return false;
-      }
-    };
-//mouse
-
-
-
 
 let time=document.querySelector(".parallax-text");
 timer();
@@ -407,10 +362,19 @@ result.addEventListener('click', function(event){
  if(event.target.tagName === 'LI'){
    event.target.classList.toggle('li-active');
  }
- else if(event.target.tagName === 'BUTTON'){
+ else if(event.target.classList.contains('btn_to_do')){
    let div = event.target.parentNode;
    result.removeChild(div);
  }
+ else if(event.target.classList.contains('listen')){
+   let inner = event.target.parentNode;
+   let listen = inner.firstChild.textContent;
+   let utterance = new SpeechSynthesisUtterance(listen);
+   utterance.rate = 0.8;
+   utterance.lang = "ru-RU";
+   speechSynthesis.speak(utterance);
+ }
+
  toLocalStore();
  total.innerHTML = 'Total: ' + result.getElementsByTagName('li').length;
 })
@@ -418,6 +382,7 @@ result.addEventListener('click', function(event){
 button_input.addEventListener('click' , function(e){
    if (input_do.value === '') return;
   CreateAndDeleteElements(input_do.value);
+  console.log(input_do.value);
   input_do.value = '';
   toLocalStore();
   total.innerHTML = 'Total: ' + result.getElementsByTagName('li').length;
@@ -426,10 +391,14 @@ button_input.addEventListener('click' , function(e){
 function CreateAndDeleteElements(value){  
  let li = document.createElement('li');
  let butt = document.createElement('button');
+ let sound = new Image();
+ sound.src = 'img/volume.png';
+ sound.className = 'listen';
  li.className = 'li';
- li.innerHTML = value;
+ li.textContent = value;
  butt.className = 'btn_to_do';
  butt.innerHTML = 'X';
+ li.appendChild(sound);
  li.appendChild(butt);
  result.appendChild(li);
 }
@@ -439,4 +408,12 @@ if(localStorage.getItem('story')){
 
    total.innerHTML = 'Total: ' + localStorage.getItem('col');
 }
+
+let butt_stop = document.querySelector('.button-stop');
+let synth = window.speechSynthesis;
+
+butt_stop.onclick = function stopTalking(){
+ synth.cancel(); 
+}
+
 //--------------------------------------------------------------------

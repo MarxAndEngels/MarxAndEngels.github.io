@@ -594,6 +594,10 @@ top: 0;
     font-family: 'Montserrat', sans-serif;
   }
   
+  .wrapper-todo{
+      display: flex;
+      justify-content: space-between;
+  }
   
   .btn_to_do{
     background: crimson;
@@ -601,15 +605,23 @@ top: 0;
     padding: 4px;
     cursor: pointer;
     font-size: 12px;
-    float: right;
     height: 20px;
     width: 20px;
     margin-left: 10px;
     color: #fff;
     z-index: 10;
   }
+
+  .listen{
+       width: 20px;
+       height: 20px;
+       cursor: pointer;
+       margin-left: 10px;
+  }
   
   .li{
+    display: grid;
+    grid-template-columns: 6fr 1fr 1fr;
     padding: 10px 16px;
     background: #fff;
     border: 1px solid #232323;
@@ -628,23 +640,22 @@ top: 0;
   .li-active{
     text-decoration: line-through;
     background: #008000;
-    
   }
   
   .li-active .btn_to_do{
-    background: snow;
-    color: #232323;
+    background: #232323;
+    color: snow;
+    text-decoration: none;
   }
   
   .button-input{
-    float: right;
+    margin-left: 8px;
     background-color: #232323;
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
     color: #fff;
     cursor: pointer;
-    width: 54px;
-    margin-right: 6px;
+    width: 60px;
     height: 30px;
     box-shadow: 5px 5px 2px rgb(255 255 255 / 80%), 
     5px 5px 4px rgb(255 255 255 / 80%), 
@@ -652,13 +663,30 @@ top: 0;
      5px 5px 8px rgb(108 101 153);
      outline:0;outline-offset:0;
   }
+   .button-stop{
+    margin-left:8px;
+    margin-top: 20px;
+    background-color: #232323;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    box-shadow: 5px 5px 2px rgb(255 255 255 / 80%), 
+    5px 5px 4px rgb(255 255 255 / 80%), 
+    5px 5px 6px rgb(108 101 153),
+     5px 5px 8px rgb(108 101 153);
+     outline:0;outline-offset:0;
+   }
+
   .input-to-do{
     font-family: 'Montserrat', sans-serif;
     font-size: 17px;
     padding: 6px 16px;
-    width: 100%;
-    max-width: 188px;
-    height: 126px;
+    width: 150%;
+    max-width: 190px;
+    height: 200px;
     font-weight: 500;
   }
   
@@ -1451,33 +1479,6 @@ border: 4px solid #ff6331;
         transition-duration: 1s;
     }
 
-    .text-mouse{
-        color: snow;
-        font-family: 'Montserrat', sans-serif;
-        font-size: 25px;
-        text-align: center;
-        margin: 40px 0px 60px 0;
-        padding: 0px 40px;
-    }
-    .mouse{
-        padding: 30px 0px 20px 20px;
-        width: 100%;
-        max-width: 330px;
-        transition-duration: 0.8s;
-        cursor: pointer;
-        color: #000;
-        border-radius: 2px;
-      }
-
-      .wrapper-pre{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: auto;
-      }
-
-
-
 
  .calendar{
     height: 32.25vw;
@@ -2046,9 +2047,6 @@ border: 4px solid #ff6331;
         width: 124px;
         font-size: 11px;
     }
-    .text-mouse{
-        font-size: 22px;
-    }
 }
 @media ( max-width: 470px){
    
@@ -2205,9 +2203,6 @@ border: 4px solid #ff6331;
     }
     .background {
         max-width: 318px;
-    }
-    .text-mouse{
-        font-size: 20px;
     }
 }
 
