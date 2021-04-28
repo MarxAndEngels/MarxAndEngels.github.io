@@ -420,6 +420,10 @@
     document.getElementById('monthName').innerHTML='январь';
     document.getElementById('dayNumber').innerHTML= 1;
     document.getElementById('dayName').innerHTML= 'понедельник';
+    let utterance = new SpeechSynthesisUtterance('Верните мне мой 2007-ой');
+   utterance.rate = 0.8;
+   utterance.lang = "ru-RU";
+   speechSynthesis.speak(utterance);
   };
     </script>
   </div>
