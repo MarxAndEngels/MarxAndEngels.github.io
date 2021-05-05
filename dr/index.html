@@ -23,9 +23,9 @@
 <header id="top" class="header">
     <div class="container">
         <div class="header__nav-row">
-        <a href="index.html" class="header__logo">
+        <span class="header__logo">
         C DNUXAY.NET
-    </a>
+        </span>
     <nav class="header__nav">
 <a href="index.html" class="header__nav-link">HOME</a>
 <a href="flappy.html" target="_blank" class="header__nav-link" title="Flappy-Bird">GAME 1</a>
@@ -38,14 +38,16 @@
     </div>
 
     <div class="sidebar">
-        <div data-wow-delay = "17.5s" data-wow-duration=2s class="toggle-btn" onclick="openMenu()" title="Нажми на меня:)">
+        <div class="wrapper-side">
+        <div data-wow-delay = "17.5s" data-wow-duration=2s class="toggle-btn" onclick="openMenu()">
             <span id='span1'></span>
             <span id='span2'></span>
             <span id='span3'></span>
         </div>
+    </div>
         <ul>
             <li class="sidebarul">Как такое могло случиться со мной?!</li>
-            <li class="sidebarli">1.Возможно вы хороший человек, который мыслит интересно シ</li>
+            <li class="sidebarli">1.Возможно вы хороший человек, который мыслит интересно? シ</li>
             <li class="sidebarli">2.А может быть с вами просто приятно общаться? (o_O) </li>
             <li class="sidebarli"><br> </li>
             <li class="sidebarli"><b>День рождения</b> это, конечно,<b> пустое гавно </b>, но мб будет приятно получить такой прикольный сайт シ </li>
@@ -57,7 +59,7 @@
         <img src="img/menu.png" width="50px" height="50px"> <p>Меню(open/close) </p>
     </div>
 </div>
-    <div class="texttt ">
+    <div class="texttt">
         <div class="texttt1">
             <div class="mac">
                 <img src="img/1.png">
@@ -109,7 +111,7 @@
 
         <div class="top-info__row">
             <div data-wow-duration=1s class="info--wide wow animate__animated animate__slideInUp" >
-                <video class="perviy-class-video" src="video/пух.mp4" controls></video>
+                <video class="perviy-class-video" onloadstart="this.volume=0.6" src="video/пух.mp4" controls></video>
             </div>
             <div data-wow-duration=1s onclick="foo()"  class="info wow animate__animated animate__slideInUp">
                 <img class="vtoroy-class-img" src="img/без текста.png" alt="">
@@ -131,7 +133,7 @@
                 </div>
             </div>
             <div data-wow-duration=1.5s  class="info--wide wow animate__animated animate__slideInUp" >
-                <video class="perviy-class-video" src="video/винни.mp4" controls></video>
+                <video class="perviy-class-video" onloadstart="this.volume=0.7" src="video/винни.mp4" controls></video>
             </div>
             </div>
     </div>
@@ -164,41 +166,43 @@
     <audio id="player" src=""> </audio>
 <div class="dvoynoy">
     <div class="dv1"><center>Песни о ДР</center>
+        <span class="soundpad">
         <center>
-            <p class="music_range_smile">🔊
-                <input id="range" type="range" min="0" max="1" step="0.05">
-            </p>
+            <p class="music_range_smile"><span class="mus-smile-volume">🔊</span></p>
+               <div class="wrapper-range">
+                   <div class="value-upper-range">fdfdffd</div>
+                   <input id="range" type="range" min="0" max="1" step="0.05">
+                </div> 
         </center> 
         <div class="wrap-progress">
         <p>💽</p> 
         <progress class="progress" max='100' value ='30'> </progress> <span class="progress-p">00:00:00</span>
     </div>
+</span>
          <center>
             <p class="NameMusic"></p>
          </center>
 
-        <center>
-    <input  data-wow-duration=2s  class="buuut wow animate__animated animate__bounce" type="submit" 
-     onclick="playMus('player')" value="Play music">
-    
-     <input  data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInRight" type="submit"  onclick="pauseMus('player')" value="Pause music">
-   
-</center>
 
-    
-<center>
-    <input id="prevMus"  data-wow-duration=1.2s class="buuut blue wow animate__animated animate__fadeInLeft" type="submit" 
-      value="⮜ Prev Song">
-     <input id="nextMus"  data-wow-duration=1.2s class="buuut blue wow animate__animated animate__fadeInRight" type="submit"
-        value="Next Song ⮞">
-    </center>
+     <div class="wrapper-sound-func">
+         <div class="wrapper-s-f">
+         <img data-wow-duration=1.2s class="rewind wow animate__animated animate__fadeInLeft" src="img/rewind.png" alt="rewind">
+         <img data-wow-duration=1.2s class="play wow animate__animated animate__bounce" onclick="playOrPauseMus()" src="img/play.png" alt="play">
+         <img data-wow-duration=1.2s class="fast-forward wow animate__animated animate__fadeInRight" src="img/fast-forward.png" alt="fast-forward">
+     </div></div>
 
 <center>
-    <input id="prev" data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInLeft" type="submit" value="⮜ Prev Picture">
-    <input id="next"  data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInRight" type="submit" value="Next Picture ⮞">
+    <input id="prev" data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInLeft" type="submit" value="◀ Prev Picture">
+    <input id="next"  data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInRight" type="submit" value="Next Picture ▶">
 </center>
 <div class="imgClass">
-    <center>  <img class="teddy" src="img/teddy-bear.png" width="125px" height="125px" alt=""> </center>
+    <center>  
+        <img class="teddy" src="img/gift-box.png" width="100px" height="100px" alt="">
+       <div class="dropup">
+           <div class="dropup-text">Убрать картинку</div>
+      <img src="img/delete.png" alt="" class="delete">
+    </div>
+    </center>
 </div> 
 
 </div>
@@ -209,65 +213,23 @@
 
 <div class="otstup6"></div>
 
-<div class="parallax">
+<!-- <div class="parallax">
     <div class="parallax-content">
     
     </div>
     <div class="mask"></div>
 </div>
-<div class="otstup1"></div>
+<div class="otstup1"></div> -->
+<div class="parallax1">
+    <div class="parallax-content">
+    </div>
+    <div class="mask"></div>
+</div>
 
 <!-- страничка 3 -->
 <main>
-<section class="products">
-    <div data-wow-duration=2s class="togl-container wow animate__animated animate__bounce">
-        <div class="togl-actions" onclick="toggleAction('.container3','.togl-product-action')">
-            <div class="togl-text"> Open/Close Actions </div>
-            <div class="togl-product-action"></div>
-        </div>
-    </div>
-    <div class="line"></div>
-<div class="container3">
-    <div class="products__title act">Твои варианты действий</div>
-    <div class="products__row">
-        <div class="products-cart"> 
-            <a class="products-cart__img"  href="https://salatoff.ru/shop/store/buterbrody-i-sendvichi" target="_blank" title="Переход не на мой сайт">
-                <img src="img/Беfdfdfdfdfз имени-1.png" alt=""> <p class="products-cart__title" href="https://salatoff.ru/shop/store/buterbrody-i-sendvichi">Жми на картинку,чтобы заказать закуски от шеф-повара!</p>
-            </a>
-        </div>
-        <div class="products-cart">
-            <a class="products-cart__img" href="https://shaurma-best.ru/menu/shaurma/" target="_blank" title="Переход не на мой сайт">
-                <img src="img/шава1.png" alt=""> <p class="products-cart__title"> Жми на картинку,чтобы заказать шавы!</p>
-            </a>
-
-        </div>
-        <div class="products-cart">
-            <a class="products-cart__img" href="https://nn.buytort.ru/" target="_blank" title="Переход не на мой сайт">
-                <img src="img/столовая1.png" alt=""> <p class="products-cart__title"  >Жми на картинку,чтобы заказать торт!</p>
-            </a>
-
-        </div>
-
-         <div class="products-cart">
-            <a class="products-cart__img" href="flappy.html" target="_blank" title="Flappy-Bird">
-                <img src="img/облака.png" alt=""> <p class="products-cart__title">Жми на картинку, чтобы поиграть в старшилку 1!</p>
-            </a>
-        </div>
-
-         <div class="products-cart">
-            <a class="products-cart__img" href="snake.html" target="_blank" title="Snake">
-                <img src="img/ссср1.png" alt=""> <p class="products-cart__title">Жми на картинку,чтобы поиграть в страшику 2!</p>
-            </a>
-        </div>
-
-         <div class="products-cart">
-            <a class="products-cart__img" href="cl.html" target="_blank" title="Clicker">
-                <img src="img/ааввроппп.png" alt=""> <p class="products-cart__title">Жми на картинку,чтобы поиграть в страшику 3!</p>
-            </a>
-        </div>
-    </div>
+<div class="products">
 </div>
-</section>
 
 <div data-wow-duration=1s class="products__title wow animate__animated animate__slideInUp">Расчитать расходы</div>
 <div class="otstup7"></div>
@@ -352,7 +314,7 @@
 <div class="verh">
   <div class="Andry" data-id="nasvanie" data-text="Я Андрей , нажми на меня!">Я Андрей , нажми на меня!</div>
   <div class="Andry" data-id="nasvanie1" data-text="Я мем , нажми на меня!">Я мем , нажми на меня!</div>
-  <div class="Andry" data-id="nasvanie2" data-text="Я кот , нажми на меня!">Я кот , нажми на меня!</div>
+  <div class="Andry" data-id="nasvanie2" data-text="Я подарок , нажми на меня!">Я подарок , нажми на меня!</div>
   <div class="Andry" data-id="nasvanie3" data-text="А на меня лучше не нажимай!">А на меня лучше не нажимай!</div>
   <div class="ligth"></div>
 </div>
@@ -383,9 +345,9 @@
     <p id="monthName"> </p>
     <p id="dayName"> </p>
     <p id="dayNumber"> </p>
+    <input id="buuut_prev" class="buuut_prevv" type="submit"  value="🤣 Вернуть сейчас">
     <p id="year"> </p>
     <input  id="buuut_dec" type="submit" value="😱 Вернуть 2007">
-     <input id="buuut_prev" class="buuut_prevv" type="submit"  value="🤣 Вернуть сейчас">
     <script> 
   const lang= navigator.language;
   let date = new Date();
@@ -421,7 +383,7 @@
     document.getElementById('dayNumber').innerHTML= 1;
     document.getElementById('dayName').innerHTML= 'понедельник';
     let utterance = new SpeechSynthesisUtterance('Верните мне мой 2007-ой');
-   utterance.rate = 0.8;
+   utterance.rate = 1;
    utterance.lang = "ru-RU";
    speechSynthesis.speak(utterance);
   };
@@ -461,19 +423,19 @@
                 <a href="https://vk.com/mivina_xd" target="_blank" data-wow-delay = "0.5s" data-wow-duration=3s class="social-item wow animate__animated animate__fadeIn" title="Переход на вконтакли">
                     <img src="img/вк.png" alt="">
                 </a>
-                 <a href="https://code.visualstudio.com/" target="_blank" data-wow-delay = "1.5s"  data-wow-duration=3s class="social-item wow animate__animated animate__fadeIn">
+                 <!-- <a href="https://code.visualstudio.com/" target="_blank" data-wow-delay = "1.5s"  data-wow-duration=3s class="social-item wow animate__animated animate__fadeIn">
                     <img src="img/visual.png" alt="">
-                </a> 
-                <a href="https://twitter.com/banana13373228" data-wow-delay = "2.5s" target="_blank" data-wow-duration=3s class="social-item wow animate__animated animate__fadeIn">
+                </a>  -->
+                <a href="https://twitter.com/banana13373228" data-wow-delay = "1.5s" target="_blank" data-wow-duration=3s class="social-item wow animate__animated animate__fadeIn">
                     <img src="img/twitter.png" alt="">
                 </a>
-                <a href="https://www.livelib.ru/reader/Fantazer1337/read" data-wow-delay = "3.5s" target="_blank"data-wow-duration=3s class="social-item wow animate__animated animate__fadeIn">
+                <a href="https://www.livelib.ru/reader/Fantazer1337/read" data-wow-delay = "2.5s" target="_blank"data-wow-duration=3s class="social-item wow animate__animated animate__fadeIn">
 <img src="img/лайвлиб.png" alt="">
                 </a>
-                <a href="https://esperanto.mv.ru/Marksismo/Kapital1/" data-wow-delay = "4.5s" target="_blank" data-wow-duration=3s class="social-item wow animate__animated animate__fadeIn">
+                <a href="https://esperanto.mv.ru/Marksismo/Kapital1/" data-wow-delay = "3.5s" target="_blank" data-wow-duration=3s class="social-item wow animate__animated animate__fadeIn">
 <img src="img/ссср.png" alt="">
                 </a>
-                <a href="https://github.com/MarxAndEngels/MarxAndEngels.github.io/tree/main/dr" data-wow-delay = "5.5s" target="_blank" data-wow-duration=3s class="social-item wow animate__animated animate__fadeIn" title="Переход на гидхабыч">
+                <a href="https://github.com/MarxAndEngels/MarxAndEngels.github.io/tree/main/dr" data-wow-delay = "4.5s" target="_blank" data-wow-duration=3s class="social-item wow animate__animated animate__fadeIn" title="Переход на гидхабыч">
                     <img src="img/github_logo_icon_143772.png" alt="">
                 </a>
             </div>

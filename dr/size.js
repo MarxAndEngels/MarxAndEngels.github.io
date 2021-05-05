@@ -1,4 +1,4 @@
-if (document.documentElement.clientWidth < 993) {
+if (window.outerWidth < 993) {
     removeAtribl(mactextJS1);
     removeAtribl(mactextJS2);
     removeAtribl(mactextJS3);

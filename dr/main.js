@@ -1,13 +1,21 @@
+let toglbtn = document.querySelector(".toggle-btn");
+let sidebar = document.querySelector(".sidebar");
+let span1 = document.querySelector("#span1");
+let span2 = document.querySelector("#span2");
+let span3= document.querySelector("#span3");
 function openMenu() {
-    document.querySelector(".sidebar").classList.toggle('active');
-    document.querySelector(".toggle-btn").classList.toggle('active');
-    document.querySelector("#span1").classList.toggle('active');
-    document.querySelector("#span2").classList.toggle('active');
-    document.querySelector("#span3").classList.toggle('active');
-    document.querySelector(".toggle-btn").classList.toggle('tool');
+  sidebar.classList.toggle('active');
+  toglbtn.classList.toggle('active');
+  span1.classList.toggle('active');
+  span2.classList.toggle('active');
+  span3.classList.toggle('active');
 }
-
-
+if(window.innerHeight > 693){
+  toglbtn.classList.display = 'none';
+}
+window.onload= function(){
+  toglbtn.classList.display = 'block';
+}
 let popup = document.getElementById('mypopup'),
 popup_center = document.getElementById('popup_center'),
 popupClose= document.querySelector('.close'),
@@ -32,7 +40,7 @@ var colPict = 0;
 var imgPict = [];
 imgPict.push('img/a3ddPbRAvIU.jpg');
 imgPict.push('img/2696988810.jpg');
-imgPict.push('img/unnamed.jpg');
+imgPict.push('img/shava1.png');
 imgPict.push('img/выы.jpg');
 popupPict.src=imgPict[colPict];
 
@@ -61,9 +69,10 @@ popupPoivlenie.addEventListener('click', function(){
 
 let colPict1 = 0;
 let imgPict1 = [];
-imgPict1.push('img/NBDj.txt'); 
-imgPict1.push('img/gift.gif'); 
-imgPict1.push('img/12.png'); 
+imgPict1.push('img/source1.gif');
+imgPict1.push('img/13.png');
+imgPict1.push('img/2antoha_dance.gif');
+imgPict1.push('img/RUSSIA_KID_DANCE.gif'); 
 Pict2.src=imgPict1[colPict1];
 
 
@@ -105,16 +114,21 @@ popupClose.onclick = function(){
 }
 
 popup.addEventListener("click", function(event) {
-    // e = event || window.event
-    // if (e.target == 'popup_center') {
-    //     popup.style.display= "none";
-    // }
     if ( event.target === popup_center){
       popup.style.display= "none";
     }
+    if(event.target === popup){
+      popup.style.display= "none";
+    };
   });
 
-  
+popupPict.addEventListener('mouseover', function(){
+popupClose.classList.remove('closeMouseOver');
+}) 
+popupPict.addEventListener('mouseout', function(){
+  popupClose.classList.add('closeMouseOver');
+})   
+
 ButtPrev.addEventListener('click', PoevleniePictPrev);
 ButtNext.addEventListener('click', PoevleniePictNext);
 
@@ -167,62 +181,91 @@ function addZero(num){
   footer.addEventListener('click', () => {
     scrollTo(button);
   })
-  //
 
-  // let TopElemlet = setInterval( function TopElem() {
-  //   if (document.documentElement.scrollTop > 2292) {
-  //     footer.style.display ="block";
-  //    }
-  //    else {
-  //     footer.style.display ="none";
-  //    }
-  // } , 1000 )
+
 
    //на сколько прокрутили и высота браузера
   window.addEventListener('scroll', function() {
-    if (pageYOffset < document.documentElement.clientHeight*3){
-      footer.style.display ="none";
-    }
-    else{
-      footer.style.display ="block";
-    }
+      if(pageYOffset > document.documentElement.clientHeight-100){
+        sidebar.classList.remove('active');
+        toglbtn.classList.remove('active');
+        span1.classList.remove('active');
+        span2.classList.remove('active');
+        span3.classList.remove('active');
+        toglbtn.style.display = 'none';
+        sidebar.style.display = 'none';
+        footer.style.display='block';
+          }
+     else{
+       toglbtn.style.display = 'block';
+        sidebar.style.display = 'block';
+        footer.style.display='none';
+     }
   });
 
-   
 
 
-  let m3=document.querySelector(".mactext5");
-var svet1=  setInterval( function svet1() {
+let m3=document.querySelector(".mactext5");
+var svet1= setTimeout( function svet1() {
   m3.classList.add("mactext55");
 }, 5700);
 
 
-var svet2= setInterval( function svet2() {
+var svet2= setTimeout( function svet2() {
   m3.classList.remove("mactext55");
 }, 9000);
 
 setTimeout( () => {
-  clearInterval(svet1);
-  clearInterval(svet2);
   m3.classList.remove("mactext55");
-}, 16900);
+}, 13000);
 
+let textupper = document.querySelector('.dropup-text');
 
-setTimeout( () => {
-  document.querySelector(".toggle-btn").classList.toggle('tool');
-}, 7000);
-
-
-let range= document.getElementById('range');
-range.value = 0.45;
-
-
-range.onchange = function(){
-  let vol=document.getElementById('player');
-  vol.volume=range.value;
+let del = document.querySelector('.delete');
+del.onclick = function(){
+  if(!(Pict2.classList.contains('del'))){
+    textupper.innerHTML = 'Вернуть картинку';
+    Pict2.classList.remove('pict_krug_Animation');
+    Pict2.classList.add('del');
+    setTimeout(()=>{
+      Pict2.style.display = (Pict2.style.display == 'none') ? 'block' : 'none';
+    },1000);
+    del.src= 'img/add.png';
+  }
+  else{
+    textupper.innerHTML = 'Убрать картинку';
+    Pict2.classList.remove('del');
+    Pict2.style.display = (Pict2.style.display == 'none') ? 'block' : 'none';
+    Pict2.classList.add('pict_krug_Animation');
+    del.src= 'img/delete.png';
+  }
 }
 
 
+
+let range= document.getElementById('range');
+let vol=document.getElementById('player');
+range.value = 0.55;
+
+let upRangeText = document.querySelector('.value-upper-range');
+
+range.onchange = function(){
+  vol.volume=range.value;
+  changeOnRange();
+}
+vol.volume=range.value;
+
+function changeOnRange(){
+  upRangeText.style.display = 'inline';
+  upRangeText.style.left =Math.ceil(range.value*140)+ 'px';
+  upRangeText.innerHTML = Math.ceil(range.value*100) + '%';
+}
+range.onmouseover = function(){
+  changeOnRange();
+}
+range.onmouseout = function(){
+  upRangeText.style.display = 'none';
+}
 
 
 let playlist=[];
@@ -234,29 +277,39 @@ colMus=0;
 
 
 
-
-
 let player= document.getElementById('player');
 player.src= 'audio/' + playlist[colMus] + '.mp3';
 
+let playPict = document.querySelector('.play');
 
+let flag= true;
+function playOrPauseMus(){
+  addSoundPad();
+  if(flag === true){
+    Pict2.src=imgPict1[3];
+    flag = false;
+  }
+  if( player.paused){
+    player.play();
+    playPict.src="img/pause.png";
+  }
+  else{
+    player.pause();
+    playPict.src="img/play.png";
+  }
+}
 
-let prevMus= document.getElementById('prevMus');
-let nextMus= document.getElementById('nextMus');
+let prevMus= document.querySelector('.rewind');
+let nextMus= document.querySelector('.fast-forward');
+
+let soundPad = document.querySelector('.soundpad');
 
 let NameMusic = document.querySelector('.NameMusic');
 NameMusic.innerHTML='Song name : ' + playlist[colMus];
 
 
-function playMus(el){
- document.getElementById(el).play();
-}
- function pauseMus(el){
-   document.getElementById(el).pause();
- }
-
-
 function PoevlenieMusPrev(){
+  addSoundPad();
   colMus--;
   if(colMus === -1){
     colMus=playlist.length-1;
@@ -265,9 +318,10 @@ function PoevlenieMusPrev(){
   player.src= 'audio/' + playlist[colMus] + '.mp3';
   player.play();
   NameMusic.innerHTML='Song name : ' + playlist[colMus];
-  
+  playPict.src="img/pause.png";
 }
 function PoevlenieMusNext(){
+  addSoundPad();
   colMus++;
   if(colMus === playlist.length){
     colMus=0;
@@ -276,11 +330,16 @@ function PoevlenieMusNext(){
   player.src= 'audio/' + playlist[colMus] + '.mp3';
   player.play();
   NameMusic.innerHTML='Song name : ' + playlist[colMus];
+  playPict.src="img/pause.png";
 }
 
 function ShakeNameSong(){
   NameMusic.classList.add('active_box');
   setTimeout(function(){NameMusic.classList.remove('active_box') }, 1000);
+}
+
+function addSoundPad(){
+  soundPad.classList.add('activesound');
 }
 
 prevMus.addEventListener('click', PoevlenieMusPrev);
@@ -305,6 +364,13 @@ function proggresUpdate(){
 
   if(player.duration === player.currentTime){
     PoevlenieMusNext();
+  };
+
+  if( player.paused){
+    playPict.src="img/play.png";
+  }
+  else{
+    playPict.src="img/pause.png";
   }
 }
 
@@ -328,18 +394,10 @@ function toggle(objNameText , togl1) {
   objTextStyle.display = (objTextStyle.display == 'flex') ? 'none' : 'flex';
   togl.classList.toggle('toglactive');
   let text= document.querySelector('.products__span');
-  text.innerHTML = (text.innerHTML == 'Открой меня 😋😱😮') ? 'Закрой меня 🔘🔴🔵' : 'Открой меня 😋😱😮';
+  text.innerHTML = (text.innerHTML == 'Открой меня 😋😱😮') ? 'Закрой меня 🔘🔵💜' : 'Открой меня 😋😱😮';
 }
 
-function toggleAction(objNameText , togl2) {
-  let objTextStyle = document.querySelector(objNameText).style;
-  let togl = document.querySelector(togl2);
-  objTextStyle.display = (objTextStyle.display == 'block') ? 'none' : 'block';
-  togl.classList.toggle('togl-product-action-two');
-  document.querySelector('.togl-actions').classList.toggle('togl-actions-two');
-  let line = document.querySelector('.line').style;
-  line.display = (line.display == 'none') ? 'block' : 'none';
-}
+
 
 
 //-------------------- TO DO LIST
@@ -377,15 +435,26 @@ result.addEventListener('click', function(event){
 
  toLocalStore();
  total.innerHTML = 'Total: ' + result.getElementsByTagName('li').length;
+ 
 })
 
-button_input.addEventListener('click' , function(e){
-   if (input_do.value === '') return;
+button_input.addEventListener('click' , function() {
+  todoStart();
+})
+
+function todoStart(){
+  if (input_do.value.trim() === '') return;
   CreateAndDeleteElements(input_do.value);
-  console.log(input_do.value);
   input_do.value = '';
   toLocalStore();
   total.innerHTML = 'Total: ' + result.getElementsByTagName('li').length;
+}
+
+input_do.addEventListener('keydown', function(event){
+  if (event.key === 'Enter'){
+    event.preventDefault();
+    todoStart();
+  }
 })
 
 function CreateAndDeleteElements(value){  
@@ -408,6 +477,8 @@ if(localStorage.getItem('story')){
 
    total.innerHTML = 'Total: ' + localStorage.getItem('col');
 }
+
+
 
 let butt_stop = document.querySelector('.button-stop');
 let synth = window.speechSynthesis;
