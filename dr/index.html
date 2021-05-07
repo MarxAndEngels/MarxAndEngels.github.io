@@ -27,13 +27,13 @@
         C DNUXAY.NET
         </span>
     <nav class="header__nav">
-<a href="index.html" class="header__nav-link">HOME</a>
-<a href="flappy.html" target="_blank" class="header__nav-link" title="Flappy-Bird">GAME 1</a>
- <a href="snake.html" target="_blank" class="header__nav-link" title="Snake">GAME 2</a>
-<a href="cl.html" target="_blank" class="header__nav-link" title="Сlicker">GAME 3</a>
+<a href="#" class="header__nav-link todoscroll" pointer-events= 'none';>To Do List</a>
+<a href="#"  class="header__nav-link sound-player-scroll" pointer-events= 'none' >Sound Player</a>
+ <a href="#" class="header__nav-link calendar-scroll" pointer-events= 'none'>Сalendar</a>
+<a href="#" class="header__nav-link">Games</a>
     </nav>
             <a href="qwer.html" target="_blank" class="header__button">
-                ERROR 404
+                Error 404
             </a>
     </div>
 
@@ -113,11 +113,11 @@
             <div data-wow-duration=1s class="info--wide wow animate__animated animate__slideInUp" >
                 <video class="perviy-class-video" onloadstart="this.volume=0.6" src="video/пух.mp4" controls></video>
             </div>
-            <div data-wow-duration=1s onclick="foo()"  class="info wow animate__animated animate__slideInUp">
+            <div data-wow-duration=1s class="info wow animate__animated animate__slideInUp">
                 <img class="vtoroy-class-img" src="img/без текста.png" alt="">
-                <div class="info-content">
-                <div class="info-content-title">
-                   Всего тебе хорошего! シ
+                <div class="info-content gifinfo">
+                <div class="info-content-title firstinfo">
+                   <img src="img/click-here.png" title="кликни на меня" alt="">
                 </div>
                 </div>
             </div>
@@ -126,9 +126,9 @@
         <div  class="top-info__row">
             <div data-wow-duration=1.5s  class="info wow animate__animated animate__slideInUp">
             <img class="vtoroy-class-img" src="img/без текста.png" alt="">
-                <div class="info-content">
-                <div class="info-content-title">
-                   Всего тебе доброго! シ
+                <div class="info-content sec gifinfoswcond">
+                <div class="info-content-title secondinfo">
+                    <img src="img/mouse-cursor.png" title="кликни на меня" alt="">
                 </div>
                 </div>
             </div>
@@ -140,7 +140,7 @@
     </section>
     </main>
 
-    <div class="content">
+    <div id="conntent-srcoll-id" class="content">
         <div class="background">
         <div class="content-to-do">
             <div class="anim-to-do"></div>
@@ -162,27 +162,37 @@
     </div>
     </div>
 
-
+    <!-- <div class="wrap__overflow"> -->
     <audio id="player" src=""> </audio>
-<div class="dvoynoy">
-    <div class="dv1"><center>Песни о ДР</center>
+<div id="scroll-id-player" class="dvoynoy">
+    <div class="dv1"><center><span class="orderText">Песни о ДР</span></center>
+        <span class="pict-span-mus">
+            <span class="width-span">
         <span class="soundpad">
-        <center>
-            <p class="music_range_smile"><span class="mus-smile-volume">🔊</span></p>
+            <center>
+            <span class="range-block-span">
+            <img class="mus-pict-volume" src="img/speaker.png" alt="">
                <div class="wrapper-range">
                    <div class="value-upper-range">fdfdffd</div>
                    <input id="range" type="range" min="0" max="1" step="0.05">
-                </div> 
-        </center> 
+                </div> </span>
+        
+        <div class="block-pict-mus">
+            <img class="mus_photo" src="" alt="">
+        </div>
+    </center>
         <div class="wrap-progress">
-        <p>💽</p> 
-        <progress class="progress" max='100' value ='30'> </progress> <span class="progress-p">00:00:00</span>
+        <img class="progress-image-bg" src="img/music-player.png" width="26px" height="26px" alt="">
+        <div class="wrap-progress-up">
+            <div class="value-upper-progress"></div>
+            <progress class="progress" max='100' value ='30'> </progress>
+        </div>
+         <span class="progress-p">00:00:00</span>
     </div>
-</span>
+     </span>
          <center>
             <p class="NameMusic"></p>
          </center>
-
 
      <div class="wrapper-sound-func">
          <div class="wrapper-s-f">
@@ -190,17 +200,17 @@
          <img data-wow-duration=1.2s class="play wow animate__animated animate__bounce" onclick="playOrPauseMus()" src="img/play.png" alt="play">
          <img data-wow-duration=1.2s class="fast-forward wow animate__animated animate__fadeInRight" src="img/fast-forward.png" alt="fast-forward">
      </div></div>
-
+    </span>
+</span>
 <center>
-    <input id="prev" data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInLeft" type="submit" value="◀ Prev Picture">
-    <input id="next"  data-wow-duration=1.2s class="buuut wow animate__animated animate__fadeInRight" type="submit" value="Next Picture ▶">
+    <input id="prev" class="buuut" type="submit" value="◀ Prev Picture">
+    <input id="next"  class="buuut" type="submit" value="Next Picture ▶">
 </center>
 <div class="imgClass">
     <center>  
-        <img class="teddy" src="img/gift-box.png" width="100px" height="100px" alt="">
        <div class="dropup">
-           <div class="dropup-text">Убрать картинку</div>
-      <img src="img/delete.png" alt="" class="delete">
+           <div class="dropup-text">Открыть полный sound player</div>
+       <input data-wow-duration=1.2s type="checkbox" class='checkbox-button wow animate__animated animate__bounce'>
     </div>
     </center>
 </div> 
@@ -210,6 +220,7 @@
     <img onclick="funcRotate()" class="pict_krug" src="" alt="">
 </div>
 </div>
+<!-- </div> -->
 
 <div class="otstup6"></div>
 
@@ -312,10 +323,10 @@
 <center><div class="togl"></div></center>
 </div>
 <div class="verh">
-  <div class="Andry" data-id="nasvanie" data-text="Я Андрей , нажми на меня!">Я Андрей , нажми на меня!</div>
-  <div class="Andry" data-id="nasvanie1" data-text="Я мем , нажми на меня!">Я мем , нажми на меня!</div>
-  <div class="Andry" data-id="nasvanie2" data-text="Я подарок , нажми на меня!">Я подарок , нажми на меня!</div>
-  <div class="Andry" data-id="nasvanie3" data-text="А на меня лучше не нажимай!">А на меня лучше не нажимай!</div>
+  <div class="Andry" data-id="img/a3ddPbRAvIU.jpg" data-text="Я Андрей , нажми на меня!">Я Андрей , нажми на меня!</div>
+  <div class="Andry" data-id="img/2696988810.jpg" data-text="Я мем , нажми на меня!">Я мем , нажми на меня!</div>
+  <div class="Andry" data-id="img/shava1.png" data-text="Я подарок , нажми на меня!">Я подарок , нажми на меня!</div>
+  <div class="Andry" data-id="img/выы.jpg" data-text="А на меня лучше не нажимай!">А на меня лучше не нажимай!</div>
   <div class="ligth"></div>
 </div>
 <div class="light"></div>
@@ -339,7 +350,7 @@
 
   <div class="otstup6"></div>
 
-<div data-wow-duration=1s class="products__title wow animate__animated animate__slideInUp">Ой, а что это за дата интересная?</div>
+<div id='calendar_scroll_id' data-wow-duration=1s class="products__title wow animate__animated animate__slideInUp">Ой, а что это за дата интересная?</div>
 <div class="calendar wow animate__animated animate__slideInUp">
     <div class="calendarpolosh">
     <p id="monthName"> </p>

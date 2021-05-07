@@ -34,35 +34,25 @@ function funcRotate(){
 }
 
 
+let icon = document.querySelector('.firstinfo');
+let gif_info = document.querySelector('.gifinfo');
+icon.onclick = function(){
+  icon.classList.toggle('info-active');
+  gif_info.classList.toggle('activeinfo');
+}
 
+let secondicon = document.querySelector('.secondinfo');
+let gif_info_second = document.querySelector('.gifinfoswcond');
+secondicon.onclick = function(){
+  secondicon.classList.toggle('info-active');
+  gif_info_second.classList.toggle('activeinfo');
+}
 
-var colPict = 0;
-var imgPict = [];
-imgPict.push('img/a3ddPbRAvIU.jpg');
-imgPict.push('img/2696988810.jpg');
-imgPict.push('img/shava1.png');
-imgPict.push('img/выы.jpg');
-popupPict.src=imgPict[colPict];
 
 let popupPoivlenie = document.querySelector('.verh');
 popupPoivlenie.addEventListener('click', function(){
   let dataID = event.target.dataset.id;
-  if(dataID === 'nasvanie') {
-    colPict=0;
-    popupPict.src=imgPict[colPict];
-  }
-  if(dataID === 'nasvanie1'){
-    colPict=1;
-    popupPict.src=imgPict[colPict];
-  }
-  if(dataID === 'nasvanie2'){
-    colPict=2;
-    popupPict.src=imgPict[colPict];
-  }
-  if(dataID === 'nasvanie3'){
-    colPict=3;
-    popupPict.src=imgPict[colPict];
-  }
+  popupPict.src = dataID;
   popup.style.display= "block";
 })
 
@@ -171,18 +161,32 @@ function addZero(num){
   function scrollTo(element) {
     window.scroll({
       left: 0, 
-      top: element.offsetTop, 
+      top: element.offsetTop - 30, 
       behavior: 'smooth'
     })
   }
   var button = document.querySelector('#top');
   var footer = document.querySelector('.up-main');
-  
+
+let todo_scroll = document.querySelector('.todoscroll');
+let contend_scroll_id = document.getElementById('conntent-srcoll-id');
+let sound_player_scroll = document.querySelector('.sound-player-scroll');
+let sound_player_scroll_id = document.getElementById('scroll-id-player');
+let calendar_scroll =document.querySelector('.calendar-scroll');
+let calendar_scroll_id =document.getElementById('calendar_scroll_id');
+
   footer.addEventListener('click', () => {
     scrollTo(button);
+  });
+  todo_scroll.addEventListener('click', () => {
+    scrollTo(contend_scroll_id);
   })
-
-
+  sound_player_scroll.addEventListener('click', () => {
+    scrollTo(sound_player_scroll_id);
+  })
+  calendar_scroll.addEventListener('click',function(){
+    scrollTo(calendar_scroll_id);
+  })
 
    //на сколько прокрутили и высота браузера
   window.addEventListener('scroll', function() {
@@ -221,27 +225,57 @@ setTimeout( () => {
 
 let textupper = document.querySelector('.dropup-text');
 
-let del = document.querySelector('.delete');
-del.onclick = function(){
-  if(!(Pict2.classList.contains('del'))){
-    textupper.innerHTML = 'Вернуть картинку';
-    Pict2.classList.remove('pict_krug_Animation');
-    Pict2.classList.add('del');
-    setTimeout(()=>{
-      Pict2.style.display = (Pict2.style.display == 'none') ? 'block' : 'none';
-    },1000);
-    del.src= 'img/add.png';
+// let del = document.querySelector('.delete');
+// del.onclick = function(){
+//   if(!(Pict2.classList.contains('del'))){
+//     textupper.innerHTML = 'Вернуть картинку';
+//     Pict2.classList.remove('pict_krug_Animation');
+//     Pict2.classList.add('del');
+//     setTimeout(()=>{
+//       Pict2.style.display = (Pict2.style.display == 'none') ? 'block' : 'none';
+//     },1000);
+//     del.src= 'img/add.png';
+//   }
+//   else{
+//     textupper.innerHTML = 'Убрать картинку';
+//     Pict2.classList.remove('del');
+//     Pict2.style.display = (Pict2.style.display == 'none') ? 'block' : 'none';
+//     Pict2.classList.add('pict_krug_Animation');
+//     del.src= 'img/delete.png';
+//   }
+// }
+
+let checkbox_button = document.querySelector('.checkbox-button');
+let butt_arr = document.querySelectorAll('.buuut');
+let block_pict_mus = document.querySelector('.block-pict-mus');
+
+checkbox_button.onclick = function(){
+  if(this.checked){
+    for(let el of butt_arr){
+      el.style.display= 'none';
+    }
+          Pict2.classList.remove('pict_krug_Animation');
+          Pict2.classList.add('del');
+          setTimeout(()=>{
+            Pict2.style.display = 'none';
+          },1000);
+          setTimeout(()=>{
+            block_pict_mus.style.display = 'flex';
+          },1200);
+   addSoundPad();  
+   textupper.innerHTML = 'Закрыть полный sound player';    
   }
   else{
-    textupper.innerHTML = 'Убрать картинку';
+    for(let el of butt_arr){
+      el.style.display= 'inline';
+    }
     Pict2.classList.remove('del');
-    Pict2.style.display = (Pict2.style.display == 'none') ? 'block' : 'none';
+    Pict2.style.display = 'block';
     Pict2.classList.add('pict_krug_Animation');
-    del.src= 'img/delete.png';
+    block_pict_mus.style.display = 'none';
+    textupper.innerHTML = 'Открыть полный sound player';
   }
 }
-
-
 
 let range= document.getElementById('range');
 let vol=document.getElementById('player');
@@ -251,18 +285,28 @@ let upRangeText = document.querySelector('.value-upper-range');
 
 range.onchange = function(){
   vol.volume=range.value;
-  changeOnRange();
 }
 vol.volume=range.value;
 
 function changeOnRange(){
   upRangeText.style.display = 'inline';
-  upRangeText.style.left =Math.ceil(range.value*140)+ 'px';
-  upRangeText.innerHTML = Math.ceil(range.value*100) + '%';
+  let w = range.offsetWidth;
+  let pos = event.offsetX;
+   let current = Math.ceil((pos/w)*100);
+   if(event.offsetX >= 200){
+    upRangeText.style.display = 'none';
+   } if(event.offsetX < 0){
+    upRangeText.style.display = 'none';
+   }
+  upRangeText.style.left =Math.ceil(current*1.3)+ 'px';
+  upRangeText.innerHTML = current + '%';
 }
+
 range.onmouseover = function(){
-  changeOnRange();
+  upRangeText.style.display = 'inline';
+  range.addEventListener('mousemove', changeOnRange);
 }
+
 range.onmouseout = function(){
   upRangeText.style.display = 'none';
 }
@@ -275,7 +319,13 @@ playlist.push('Грустный день рождения');
 
 colMus=0;
 
+let PictPlaylist =[];
+PictPlaylist.push('img/mus1.png');
+PictPlaylist.push('img/mus2.png');
+PictPlaylist.push('img/mus3.png');
 
+let mus_photo = document.querySelector('.mus_photo');
+mus_photo.src= PictPlaylist[colMus];
 
 let player= document.getElementById('player');
 player.src= 'audio/' + playlist[colMus] + '.mp3';
@@ -318,6 +368,7 @@ function PoevlenieMusPrev(){
   player.src= 'audio/' + playlist[colMus] + '.mp3';
   player.play();
   NameMusic.innerHTML='Song name : ' + playlist[colMus];
+  mus_photo.src= PictPlaylist[colMus];
   playPict.src="img/pause.png";
 }
 function PoevlenieMusNext(){
@@ -330,6 +381,7 @@ function PoevlenieMusNext(){
   player.src= 'audio/' + playlist[colMus] + '.mp3';
   player.play();
   NameMusic.innerHTML='Song name : ' + playlist[colMus];
+  mus_photo.src= PictPlaylist[colMus];
   playPict.src="img/pause.png";
 }
 
@@ -346,21 +398,27 @@ prevMus.addEventListener('click', PoevlenieMusPrev);
 nextMus.addEventListener('click', PoevlenieMusNext);
 
 
+let value_progress_up = document.querySelector('.value-upper-progress');
+
+
 let proggres = document.querySelector('.progress');
 
 let ptime = document.querySelector('.progress-p');
 
+
+let hoursMus;
+let minMus;
+let secMus;
+let hoursMusMouse;
+let minMusMouse;
+let secMusMouse;
 player.ontimeupdate = proggresUpdate;
 function proggresUpdate(){
   let d = Math.floor(player.duration);
   let c = Math.floor(player.currentTime + 0,0001);
   proggres.value = c/d*100;
-  let hours = Math.floor(c/(60*60));
-  c = c-hours*60*60;
-  let min = Math.floor(c/(60));
-  c= c-min*60;
-  let sec = c;
-  ptime.innerHTML = addZero(hours) + ':' + addZero(min) + ':' + addZero(sec);
+  MusTimeDefine(c);
+  ptime.innerHTML = addZero(hoursMus) + ':' + addZero(minMus) + ':' + addZero(secMus);
 
   if(player.duration === player.currentTime){
     PoevlenieMusNext();
@@ -384,6 +442,40 @@ function MusRewind(){
   player.currentTime= player.duration*(pos/w);
   player.play();
 }
+
+function MusTimeDefine(c){
+  hoursMus = Math.floor(c/(60*60));
+  c = c-hoursMus*60*60;
+  minMus = Math.floor(c/(60));
+  c= c- minMus*60;
+  secMus = Math.floor(c);
+}
+
+function MusTimeDefineMouse(c){
+  hoursMusMouse = Math.floor(c/(60*60));
+  c = c-hoursMusMouse*60*60;
+  minMusMouse = Math.floor(c/(60));
+  c= c- minMusMouse*60;
+  secMusMouse = Math.floor(c);
+}
+
+proggres.onmouseover = function(){
+  value_progress_up.style.display ='inline';
+ proggres.addEventListener('mousemove', function(){
+  let w = proggres.offsetWidth;
+  let pos = event.offsetX;
+  let time = player.duration*(pos/w);
+  MusTimeDefineMouse(time);
+  value_progress_up.innerHTML = addZero(hoursMusMouse) + ':' + addZero(minMusMouse) + ':' + addZero(secMusMouse);
+  value_progress_up.style.left = Math.ceil(time/1.3) + 'px';
+ })
+}
+proggres.onmouseout = function(){
+  value_progress_up.style.display ='none';
+}
+
+
+
 
 
 

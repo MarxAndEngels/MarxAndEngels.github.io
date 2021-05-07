@@ -93,7 +93,7 @@ body{
     margin-right: 10%;
     font-family: 'Montserrat', sans-serif;
     color:black;
-    font-size: 28px;
+    font-size: 27px;
     font-weight: 640;
     list-style: none;
     padding-bottom: 10px;
@@ -250,23 +250,19 @@ top: 0;
 
 .mactext1, .mactext2{
     font-family: 'Montserrat', sans-serif;
-    font-size: 46px;
+    font-size: 44px;
     color: snow;
 }
 
 .mactext3, .mactext4, .mactext5 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 67px;
+    font-size: 65px;
     color: snow;
     font-weight: 800;
     transition-duration: 2.5s;
 }
 
 .mactext5:hover{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 67px;
-    color: snow;
-    font-weight: 800;
     text-shadow:
     0 0 2px rgba(255,255,255,.8),
     0 0 8px rgba(255,255,255,.8),
@@ -277,10 +273,7 @@ top: 0;
 }
 
 .mactext55{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 67px;
-    color: snow;
-    font-weight: 800;
+
     text-shadow:
     0 0 2px rgba(255,255,255,.8),
     0 0 8px rgba(255,255,255,.8),
@@ -447,38 +440,62 @@ top: 0;
 }
 .info-content{
     display: block;
-    opacity: 0;
+    opacity: 0.9;
     position: absolute;
     top:0;
     left:0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 76, 255, 0.75);
+    /* background-color: rgba(0, 76, 255, 0.75); */
     font-family: 'Teko' , sans-serif;
     transition: opacity 0.2s ease-in;
     transition-duration: 0.8s;
 }
-.info-content:hover{
-    opacity: 0.4;
-    cursor: pointer;
+.info-content::before , .info-content.sec::before{
+    content: '';
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 90%;
+    transition-duration: 1.5s;
+    transform: scale(0, 0);
+}
+.info-content::before{
+    background-image: url('img/RUSSIA_KID_DANCE.gif');
+    background-size: cover;
+}
+.info-content.sec::before{
+    background-image: url('img/tenor.gif');
+    background-size: cover;
+}
+
+.info-content.activeinfo::before{
+    transform: scale(0.4, 0.4);
 }
 
 .info-content-title{
     position:absolute;
     width: 100%;
-    top: 0;
+    bottom: 0;
     left:0;
-    padding: 150px 100px;
+    padding: 156px 100px;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     font-size: 24px;
     font-weight: 600;
     color:snow;
     z-index: 10;
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
+.info-active{
+    padding: 0px 100px; 
+    bottom: 2%;
 }
 
 .content{
-    margin-top: 30px;
+    /* margin-top: 30px; */
     margin-bottom: 60px;
     display: flex;
     align-items: center;
@@ -1058,6 +1075,11 @@ transform: translate(10px,-10px);
     height: 580px;
     max-width: 670px;
     cursor: pointer;
+    display: block;
+}
+.orderText{
+    display: block;
+    margin-bottom: 16px;
 }
 
 .pict_krug_Animation{
@@ -1085,8 +1107,8 @@ transform: translate(10px,-10px);
     display: none;
     position: absolute;
     color: snow;
-    font-size: 13px;
-    width: 130px;
+    font-size: 14px;
+    width: 220px;
     background-color: #9370DB;
 }
 .dropup:hover .dropup-text{
@@ -1094,6 +1116,38 @@ transform: translate(10px,-10px);
 }
 
 
+.checkbox-button{
+    cursor: pointer;
+    margin-top: 26px;
+    position: relative;
+    width: 80px;
+    height: 40px;
+    -webkit-appearance: none;
+    background-color: floralwhite;
+    outline: none;
+    border-radius: 20px;
+    box-shadow: 0 0 5px rgb(0, 0, 0, .2);
+    transition: 0.5s;
+}
+.checkbox-button:checked{
+    background-color: #a984f3;
+}
+.checkbox-button::before{
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    top: 0;
+    left: 0;
+    background-color: rgb(131, 97, 199);
+    transition: 0.5s;
+    transform: scale(0.8,0.8);
+}
+.checkbox-button:checked::before{
+    left: 40px;
+    background-color: #665eaf;
+}
 
 .del{
     animation: deletePict 1s ease-in-out;
@@ -1176,21 +1230,26 @@ to{
 #range{
     display: inline;
     width: 100%;
-    max-width: 200px;
+    max-width: 184px;
     cursor: pointer;
     transition-duration: 0.6s;
     -webkit-appearance: none;
-    margin: 10px 0;
+    margin-bottom: 20px;
     /* vertical-align: middle; */
 }
 
+.mus-pict-volume{
+    width: 28px;
+    height: 28px;
+    display: inline-block;
+    transform: translate3d(0, 8px ,0);
+}
   #range:focus {
     outline: none;
   }
   #range::-webkit-slider-runnable-track {
     width: 100%;
     height: 10px;
-    margin-bottom: 5px;
     cursor: pointer;
     background: #bb9ff3;
     border-radius: 1px;
@@ -1198,8 +1257,8 @@ to{
   }
   #range::-webkit-slider-thumb {
     border: 2px solid #665eaf;
-    height: 23px;
-    width: 23px;
+    height: 22px;
+    width: 22px;
     border-radius: 23px;
     background: #665eaf;
     cursor: pointer;
@@ -1214,22 +1273,22 @@ to{
     height: 10px;
     cursor: pointer;
     background: #bb9ff3;
-    margin-bottom: 5px;
+    /* margin-bottom: 5px; */
     border-radius: 1px;
     border: 1px solid #bb9ff3;
   }
   #range::-moz-range-thumb {
     border: 2px solid #665eaf;
-    height: 23px;
-    width: 23px;
-    border-radius: 23px;
+    height: 22px;
+    width: 22px;
+    border-radius: 22px;
     background: #665eaf;
     cursor: pointer;
+    margin-top: -7px;
   }
   #range:-ms-track {
     width: 100%;
     height: 10px;
-    margin-bottom: 5px;
     cursor: pointer;
     background: transparent;
     border-color: transparent;
@@ -1248,11 +1307,12 @@ to{
   #range::-ms-thumb {
     margin-top: 1px;
     border: 2px solid #665eaf;
-    height: 23px;
-    width: 23px;
+    height: 22px;
+    width: 22px;
     border-radius: 23px;
     background: #665eaf;
     cursor: pointer;
+    margin-top: -7px;
   }
   #range:focus::-ms-fill-lower {
     background: #665eaf;
@@ -1264,22 +1324,28 @@ to{
     transform: translate3d(0px, -1px, 0px);  
 }
 .music_range_smile{
-    margin: 10px;
     display: inline;
 }
 
-.mus-smile-volume{
-    font-size: 28px;
-    /* vertical-align: middle; */
- }
+
 
 .NameMusic{
     font-size: 20px;
     font-family: 'Montserrat', sans-serif;
     color: #fff;
 }
+.pict-span-mus{
+    width: 100%;
+    max-width: 540px;
+    padding: 20px 60px;
+    background-color: rgb(53, 53, 53);
+    display: inline-block;
+    border-radius: 20px;
+}
+
 
     .buuut{
+       display: inline;
        width: 170px;
        height: 50px;
        background-color:#9370DB; 
@@ -1299,28 +1365,33 @@ color: #fff;
 transform: translate3d(0px, -2px, 0px);     
 border: 4px solid #9370DB;    
 }
+
+
 .soundpad{
     display: none;
 }
+.width-span{
+    width: 330px;
+    display: inline-block;
+}
+
 .activesound{
     display: block;
     animation: leftmus 1s ease-in-out;
 }
 @keyframes leftmus{
     from{
-        opacity: 0.6;
-        transform: scale(0.3,0.3);
+        opacity: 0.3;
     }
     to{
         opacity: 1;
-        transform: scale(1,1);
      }
 }
 
 
 .wrapper-sound-func{
     margin-top: 30px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1352,12 +1423,20 @@ border: 4px solid #9370DB;
     width: 35px;
     height: 70px;
 }
-.progress{
-    margin-top: 10px;
-    width: 100%;
-    max-width: 180px;
+
+.progress-image-bg{
+    width: 28px;
     height: 28px;
+    margin-top: 16px;
+    margin-right: 8px;
+}
+.progress{
+    margin-top: 20px;
+    margin-bottom: 0;
+    width: 154px;
+    height: 24px; 
     cursor: pointer;
+    display: block;
     transition-duration: 0.2s;
     border: none;
     appearance: none;
@@ -1371,30 +1450,56 @@ progress::-webkit-progress-bar {
     background: #bb9ff3;
     }
 progress::-moz-progress-bar {
-    background: #824fe7;
-    border-right: 3px solid #232323;
+    background: #bb9ff3;
     }
     progress::-webkit-progress-value {
-        background: #824fe7;
+        background: #6A56CF;
         border-right: 3px solid #232323;
         }    
-.progress:hover , .rewind:hover , .fast-forward:hover, .play:hover {
+.rewind:hover , .fast-forward:hover, .play:hover {
     transform: translate3d(0px, -1px, 0px);  
 }
 
 .progress-p{
-    margin: 12px;
+    margin-top: 20px;
+    margin-left: 10px;
     font-size: 22px;
+    margin-bottom: 0;
 }
 .wrap-progress{
     display: flex;
     justify-content: center;
 }
-.wrap-progress > p{
-  font-size: 28px;
-  margin:4px 12px ;
+.wrap-progress > p {
+    font-size: 28px;
+    margin-top: 10px;
+    margin-right: 6px;
+    margin-bottom: 5px;
+}
+.wrap-progress-up{
+    position: relative;
+} 
+.value-upper-progress{
+    position: absolute;
+    width: 60px;
+    height: 20px;
+    font-size: 13px;
+    background-color: #665eaf;
+    display: none;
+    left: 2px;
+    top: -10px;
+    text-align: center;
 }
 
+.block-pict-mus{
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    display: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    animation: openPict 1s ease-in-out;
+}
 #buuut_dec {
   position: absolute;
   right: 2%;
@@ -1692,19 +1797,27 @@ progress::-moz-progress-bar {
     .dv1{
         text-align: center;
     }
-    .dv2{
+    /* .dv2{
         display: flex;
         justify-content: center;
+    } */
+    .dv2{
+        display: none;
     }
     .imgClass{
+        display: none;
+    }
+    .buuut{
         display: none;
     }
     .otstup_cross{
         margin-top: 12em;
     }
-    .pict_krug{
-        margin-right: 2em;
-        margin-top: 60px;
+    .soundpad {
+        display: block;
+    }
+    .block-pict-mus{
+        display: flex;
     }
     .footer_row{
         flex-direction: column;
@@ -1746,11 +1859,9 @@ progress::-moz-progress-bar {
         margin-top: 40px;
     }
  
-    .info{
-        transform: rotate(90deg); 
+    .info{ 
         max-width: 418px;
         margin-top: 40px;
-        animation: info-anum 3s ease-in-out linear;
     } 
 
     .sidebarul {
@@ -1900,9 +2011,10 @@ progress::-moz-progress-bar {
 
 
 @media( max-width: 589px){
-    .toggle-btn {
-        top: auto;
-        bottom: 1%;
+    .wrapper-side {
+        position: absolute;
+        left: 290px;
+        top: 80px;
     }
     .pict_krug{
         max-width: 460px;
@@ -1910,7 +2022,9 @@ progress::-moz-progress-bar {
         max-height: 340px;
     }
 
-    
+    .pict-span-mus{
+        padding: 20px 0;
+    }
 }
 
 @media ( max-width: 569px){
@@ -2164,9 +2278,6 @@ progress::-moz-progress-bar {
     max-height: 360px;
     
 }
-.info-content-title {
-    padding: 114px 100px;
-}
 .background {
     max-width: 360px;
 }
@@ -2212,9 +2323,6 @@ progress::-moz-progress-bar {
     .info{
         max-width: 320px;
         max-height: 320px;  
-    }
-    .info-content-title {
-        font-size: 20px;
     }
     .pict_krug{
         max-width: 400px;
@@ -2309,9 +2417,6 @@ progress::-moz-progress-bar {
         max-width: 300px;
         max-height: 300px;  
     }
-    .info-content-title {
-        font-size: 16px;
-    }
     .background {
         max-width: 295px;
     }
@@ -2329,8 +2434,8 @@ progress::-moz-progress-bar {
     .sidebar {
         width: 260px;
     }
-    .toggle-btn {
-        left: 271px;
+    .wrapper-side {
+        left: 281px;
     }
     .info--wide{
         max-width: 280px;
@@ -2345,8 +2450,9 @@ progress::-moz-progress-bar {
         max-width: 280px;
         max-height: 280px;  
     }
-    .info-content-title {
-        font-size: 13px;
-    }
+    .width-span {
+    width: 320px;
+    display: inline-block;
+} 
 
 }
