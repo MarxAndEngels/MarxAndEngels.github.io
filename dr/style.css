@@ -72,6 +72,48 @@ body{
     font-weight: 300;
 }
 
+.games-drop{
+    display: inline-block;
+    position: relative;
+}
+.game-drop-down{
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: auto;
+    max-width: 100px;
+    background-color: #f3e1d5;
+    z-index: 3;
+    transition-duration: 1s;
+    animation: opacity-text 0.8s ease-in-out;
+}
+.drop-game-block{
+   display: block;
+}
+.wrapper-text-game{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.game-text{
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    font-size: 15px;
+    margin-left: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    padding-top: 7px;
+    padding-left: 3px;
+    padding-right: 3px;
+    transition-duration: 0.2s;
+}
+.game-text:last-child{
+    padding-bottom: 7px;
+}
+.game-text:hover{
+    color: rgb(133, 133, 133);
+}
 .sidebar{
     border-radius: 0 45px 45px 0;
     position: fixed;
@@ -1797,10 +1839,6 @@ progress::-moz-progress-bar {
     .dv1{
         text-align: center;
     }
-    /* .dv2{
-        display: flex;
-        justify-content: center;
-    } */
     .dv2{
         display: none;
     }
@@ -1880,20 +1918,51 @@ progress::-moz-progress-bar {
      
     /* переписываем header__nav-row */
     .header__nav-row{
-        background: cornflowerblue;
+        background: #8E9EDE;
         position: absolute;
-        top: 20%;
+        top: 26%;
         left: 0;
         display: none;
         width: 100%;
         transition-duration: 3s;
     }
     .header__nav-row a{
+        padding: 4px 0;
         border-bottom: 1px solid snow;
         width: 100%;
         text-align: center;
         transition-duration: 1s;
     }
+    .header__logo{
+        padding: 4px 0;
+        border-bottom: 1px solid snow;
+        width: 100%;
+        font-size: 24px;
+        text-align: center;
+        transition-duration: 1s;
+    }
+    .games-drop{
+        display: block;
+        width: 100%;
+        text-align: center;
+        position: static;
+    }
+    .game-drop-down {
+        position: auto;
+        text-align: center;
+        position: static;
+        max-width: 100%;
+    }
+    .drop-game-block{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+     }
+     .game-text{
+        border-bottom: 3px solid black;
+        padding: 3px 0;
+        z-index: 1;
+     }
     .header__nav-row a:hover{
        color: #000;
     }

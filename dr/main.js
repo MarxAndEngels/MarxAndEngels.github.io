@@ -61,7 +61,7 @@ let colPict1 = 0;
 let imgPict1 = [];
 imgPict1.push('img/source1.gif');
 imgPict1.push('img/13.png');
-imgPict1.push('img/2antoha_dance.gif');
+// imgPict1.push('img/2antoha_dance.gif');
 imgPict1.push('img/RUSSIA_KID_DANCE.gif'); 
 Pict2.src=imgPict1[colPict1];
 
@@ -225,25 +225,17 @@ setTimeout( () => {
 
 let textupper = document.querySelector('.dropup-text');
 
-// let del = document.querySelector('.delete');
-// del.onclick = function(){
-//   if(!(Pict2.classList.contains('del'))){
-//     textupper.innerHTML = 'Вернуть картинку';
-//     Pict2.classList.remove('pict_krug_Animation');
-//     Pict2.classList.add('del');
-//     setTimeout(()=>{
-//       Pict2.style.display = (Pict2.style.display == 'none') ? 'block' : 'none';
-//     },1000);
-//     del.src= 'img/add.png';
-//   }
-//   else{
-//     textupper.innerHTML = 'Убрать картинку';
-//     Pict2.classList.remove('del');
-//     Pict2.style.display = (Pict2.style.display == 'none') ? 'block' : 'none';
-//     Pict2.classList.add('pict_krug_Animation');
-//     del.src= 'img/delete.png';
-//   }
-// }
+let games = document.querySelector('.games');
+let game_drop = document.querySelector('.game-drop-down');
+document.querySelector('.header').onclick = function GameDrop(e){
+  if(e.target.classList.contains('games')){
+    game_drop.classList.toggle('drop-game-block');
+  }
+  else{
+    game_drop.classList.remove('drop-game-block');
+  }
+};
+
 
 let checkbox_button = document.querySelector('.checkbox-button');
 let butt_arr = document.querySelectorAll('.buuut');
@@ -336,7 +328,7 @@ let flag= true;
 function playOrPauseMus(){
   addSoundPad();
   if(flag === true){
-    Pict2.src=imgPict1[3];
+    Pict2.src=imgPict1[2];
     flag = false;
   }
   if( player.paused){
