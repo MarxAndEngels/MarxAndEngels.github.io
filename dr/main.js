@@ -60,8 +60,8 @@ popupPoivlenie.addEventListener('click', function(){
 let colPict1 = 0;
 let imgPict1 = [];
 imgPict1.push('img/source1.gif');
-imgPict1.push('img/13.png');
-// imgPict1.push('img/2antoha_dance.gif');
+imgPict1.push('img/13.png')
+imgPict1.push('img/JCVDdance.gif');
 imgPict1.push('img/RUSSIA_KID_DANCE.gif'); 
 Pict2.src=imgPict1[colPict1];
 
@@ -328,7 +328,7 @@ let flag= true;
 function playOrPauseMus(){
   addSoundPad();
   if(flag === true){
-    Pict2.src=imgPict1[2];
+    Pict2.src=imgPict1[3];
     flag = false;
   }
   if( player.paused){

@@ -504,7 +504,7 @@ top: 0;
     transform: scale(0, 0);
 }
 .info-content::before{
-    background-image: url('img/RUSSIA_KID_DANCE.gif');
+    background-image: url('img/moyo_pochtenie_podnimayu_bokal_Za_Vas_Dikaprio.gif');
     background-size: cover;
 }
 .info-content.sec::before{
