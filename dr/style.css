@@ -1925,6 +1925,7 @@ progress::-moz-progress-bar {
         display: none;
         width: 100%;
         transition-duration: 3s;
+        z-index: 4;
     }
     .header__nav-row a{
         padding: 4px 0;
