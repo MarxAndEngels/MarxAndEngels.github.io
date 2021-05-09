@@ -48,19 +48,21 @@ secondicon.onclick = function(){
   gif_info_second.classList.toggle('activeinfo');
 }
 
+let popups = document.querySelectorAll('.Andry');
+for(let el of popups){
+  el.addEventListener('click', function(){
+    let dataID = event.target.dataset.id;
+    popupPict.src = dataID;
+    popup.style.display= "block";
+  })
+}
 
-let popupPoivlenie = document.querySelector('.verh');
-popupPoivlenie.addEventListener('click', function(){
-  let dataID = event.target.dataset.id;
-  popupPict.src = dataID;
-  popup.style.display= "block";
-})
 
 
 let colPict1 = 0;
 let imgPict1 = [];
 imgPict1.push('img/source1.gif');
-imgPict1.push('img/13.png')
+imgPict1.push('img/13.png');
 imgPict1.push('img/JCVDdance.gif');
 imgPict1.push('img/RUSSIA_KID_DANCE.gif'); 
 Pict2.src=imgPict1[colPict1];
@@ -188,6 +190,10 @@ let calendar_scroll_id =document.getElementById('calendar_scroll_id');
     scrollTo(calendar_scroll_id);
   })
 
+
+  if(pageYOffset > document.documentElement.clientHeight-100){
+    toglbtn.style.display = 'none';
+  }
    //на сколько прокрутили и высота браузера
   window.addEventListener('scroll', function() {
       if(pageYOffset > document.documentElement.clientHeight-100){
@@ -255,7 +261,9 @@ checkbox_button.onclick = function(){
             block_pict_mus.style.display = 'flex';
           },1200);
    addSoundPad();  
-   textupper.innerHTML = 'Закрыть полный sound player';    
+   setTimeout(()=>{
+    textupper.innerHTML = 'Закрыть полный sound player'; 
+  },800);
   }
   else{
     for(let el of butt_arr){
@@ -265,7 +273,9 @@ checkbox_button.onclick = function(){
     Pict2.style.display = 'block';
     Pict2.classList.add('pict_krug_Animation');
     block_pict_mus.style.display = 'none';
-    textupper.innerHTML = 'Открыть полный sound player';
+    setTimeout(()=>{
+      textupper.innerHTML = 'Открыть полный sound player';
+    },800);
   }
 }
 
@@ -478,7 +488,9 @@ function toggle(objNameText , togl1) {
   objTextStyle.display = (objTextStyle.display == 'flex') ? 'none' : 'flex';
   togl.classList.toggle('toglactive');
   let text= document.querySelector('.products__span');
-  text.innerHTML = (text.innerHTML == 'Открой меня 😋😱😮') ? 'Закрой меня 🔘🔵💜' : 'Открой меня 😋😱😮';
+  setTimeout(()=>{
+    text.innerHTML = (text.innerHTML == 'Открой меня 😋😱😮') ? 'Закрой меня 🔘🔵💜' : 'Открой меня 😋😱😮';
+  },800);
 }
 
 

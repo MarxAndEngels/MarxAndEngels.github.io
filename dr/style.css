@@ -164,7 +164,7 @@ body{
     border-radius: 12px;
     cursor: pointer;
     z-index: 3;
-    display: none;
+    display: block;
 }
 
 /* .toggle-btn::after{
