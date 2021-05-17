@@ -160,10 +160,10 @@ function addZero(num){
 
 
   //якорь
-  function scrollTo(element) {
+  function scrollTo(element,y=30) {
     window.scroll({
       left: 0, 
-      top: element.offsetTop - 30, 
+      top: element.offsetTop - y,
       behavior: 'smooth'
     })
   }
@@ -184,10 +184,10 @@ let calendar_scroll_id =document.getElementById('calendar_scroll_id');
     scrollTo(contend_scroll_id);
   })
   sound_player_scroll.addEventListener('click', () => {
-    scrollTo(sound_player_scroll_id);
+    scrollTo(sound_player_scroll_id , 90);
   })
   calendar_scroll.addEventListener('click',function(){
-    scrollTo(calendar_scroll_id);
+    scrollTo(calendar_scroll_id , 70);
   })
 
 
