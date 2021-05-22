@@ -1,0 +1,121 @@
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Press Start 2P';
+}
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.div{
+    color: #000;
+}
+.letter{
+    display: inline-block;
+    font-size: 55px;
+    font-weight: 500;
+    opacity: 0;
+    animation: anim 3s linear forwards;
+    font-family: 'Press Start 2P';
+    z-index: 1;
+}
+.letter:nth-child(1){
+    animation-delay: 1s;
+}
+.letter:nth-child(2){
+    animation-delay: 1.5s;
+}
+.letter:nth-child(3){
+    animation-delay: 1.8s;
+}
+.letter:nth-child(4){
+    animation-delay: 2.3s;
+}
+.letter:nth-child(5){
+    animation-delay: 2.8s;
+}
+.letter:nth-child(6){
+    animation-delay: 3.2s;
+}
+.letter:nth-child(7){
+    animation-delay: 3.7s;
+}
+.letter:nth-child(8){
+    animation-delay: 4.2s;
+}
+.letter:nth-child(9){
+    animation-delay: 4.7s;
+} 
+.letter:nth-child(10){
+    animation-delay: 5.2s;
+} 
+.letter:nth-child(11){
+    animation-delay: 5.7s;
+} 
+.letter:nth-child(12){
+    animation-delay: 6.2s;
+} 
+
+@keyframes anim{
+    0%{
+        transform: scale(20);opacity:0;
+    }
+    3%{opacity: 1;}
+    12%,85%{transform: scale(1);opacity:1;}
+    100%{opacity:1; transform: scale(1)} 
+}
+.remove{
+    display: none;
+}
+.text-pososi{
+    display: none;
+    animation: faidAnim 1s ease-in-out;
+}
+.text-pososi.active{
+    display: inline; 
+}
+@keyframes faidAnim {
+    from{
+     opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.letter-pos{
+    display: inline-block;
+    font-size: 55px;
+    font-weight: 500;
+    font-family: 'Press Start 2P';
+}
+.wrapper-picts{
+    text-align: center;
+    margin-top: 100px;
+    z-index: 1000;
+}
+.wrapper-picts a{
+    margin-left: 10px;
+}
+.toggle_pict{
+    display: none;
+    cursor: pointer;
+    transition-duration: 1s;
+    animation: faidAnim 1s ease-in-out;
+}
+.toggle_pict.active{
+    transform: rotate(180deg);
+}
+.vk{
+    display: none;
+    transition-duration: 0.6s;
+    animation: faidAnim 1s ease-in-out;
+}
+.vk:hover{
+    transform: translate3d(0, -5px, 0);
+}
