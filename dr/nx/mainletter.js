@@ -1,10 +1,12 @@
 let items_none = document.querySelectorAll('.none');
 let text_pososi = document.querySelector('.text-pososi');
+let wrapper = document.querySelector('.wrapper');
 
 let toggle_pict= document.querySelector('.toggle_pict');
 toggle_pict.onclick = ()=>{
     toggle_pict.classList.toggle('active');
     let els = document.querySelectorAll('.letter');
+    wrapper.classList.toggle('faid-in');
     for(let e of els){
         e.style.animationName ='none';
         e.style.opacity = '1';

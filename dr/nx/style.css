@@ -119,3 +119,32 @@ body {
 .vk:hover{
     transform: translate3d(0, -5px, 0);
 }
+
+.faid-in{
+    animation: faid-in 0.5s ease-in-out;
+}
+
+@keyframes faid-in {
+    from{
+        opacity: 0; 
+    }
+    to{
+        opacity: 1;   
+    }
+}
+@media( max-width: 480px){
+    .letter {
+        font-size: 42px;
+    }
+    .letter-pos {
+        font-size: 42px;
+    }
+}
+@media( max-width: 366px){
+    .letter {
+        font-size: 36px;
+    }
+    .letter-pos {
+        font-size: 36px;
+    }
+}
