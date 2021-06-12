@@ -57,6 +57,20 @@ for(let el of popups){
   })
 }
 
+let videos = document.querySelectorAll('.perviy-class-video');
+let blocks_video = document.querySelectorAll('.info--wide');
+
+for(let el of blocks_video){
+  el.addEventListener('click', OnFirstClickVideo);
+}
+
+function OnFirstClickVideo(){
+  let nextel = this.children[0];
+  if(!nextel.played){
+    nextel.play();
+  }
+  this.removeEventListener('click', OnFirstClickVideo);
+}
 
 
 let colPict1 = 0;
@@ -124,7 +138,24 @@ popupPict.addEventListener('mouseout', function(){
 ButtPrev.addEventListener('click', PoevleniePictPrev);
 ButtNext.addEventListener('click', PoevleniePictNext);
 
+for(let el of videos){
+  el.addEventListener('click', ChangeVideo);
+}
 
+function ChangeVideo(){
+  let arr = [1,2];
+  let num = this.dataset.count;
+  if(num == arr[0]){
+    if(videos[1].played){
+      videos[1].pause();
+    }
+  }
+   if(num == arr[1]){
+     if(videos[0].played){
+      videos[0].pause();
+     }
+  }
+}
 
 let time=document.querySelector(".parallax-text");
 timer();
