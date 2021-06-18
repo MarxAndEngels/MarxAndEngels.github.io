@@ -66,7 +66,7 @@ for(let el of blocks_video){
 
 function OnFirstClickVideo(){
   let nextel = this.children[0];
-  if(!nextel.played){
+  if(nextel.paused){
     nextel.play();
   }
   this.removeEventListener('click', OnFirstClickVideo);
