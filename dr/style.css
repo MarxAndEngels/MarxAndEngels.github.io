@@ -38,6 +38,9 @@ body{
     background-size: cover;
     background-position: center;
 }
+.containerfix{
+    /* с фикксед просто надо везде width 100% указать */
+}
 
 ::selection{
     background-color: #665eaf;
@@ -48,7 +51,6 @@ body{
     justify-content: space-around;
     align-items: center;
 }
-
 
 .header__logo{
     font-family: 'Montserrat', sans-serif;
@@ -460,14 +462,6 @@ top: 0;
     font-size: calc(0.5vw + 1em);
 }
 
-
-
-.comtainer{
-    max-width: 1060px;
-    margin-left: auto;
-    margin-right: auto;
-    overflow: hidden; 
-}
 .container2{
     max-width: 1350px;
     margin-left: auto;
