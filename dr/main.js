@@ -192,7 +192,6 @@ function addZero(num){
 
 function FastScroll(element,bg, y=30) {
   bg = document.querySelector('.'+bg);
-  console.log(bg);
   window.scroll({
     left: 0, 
     top: element.offsetTop - y,
@@ -237,7 +236,7 @@ let calendar_scroll_id =document.getElementById('calendar_scroll_id');
     scrollTo(sound_player_scroll_id , 90);
   })
   calendar_scroll.addEventListener('click',function(){
-    scrollTo(calendar_scroll_id , 70);
+    FastScroll(calendar_scroll_id ,'buuut_prevv' , 70);
   })
 
 
