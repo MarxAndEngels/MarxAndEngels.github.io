@@ -27,8 +27,8 @@
         C DNUXAY.NET
         </span>
     <nav class="header__nav">
-<a href="#" class="header__nav-link todoscroll" pointer-events= 'none';>To Do List</a>
 <a href="#"  class="header__nav-link sound-player-scroll" pointer-events= 'none' >Sound Player</a>
+<a href="#" class="header__nav-link todoscroll" pointer-events= 'none'>To Do List</a>
  <a href="#" class="header__nav-link calendar-scroll" pointer-events='none'>Сalendar</a>
  <div class="games-drop">
 <a href="#" pointer-events='none' class="header__nav-link games">Games</a>
@@ -113,6 +113,8 @@
 </div>
     
 
+
+
 <!-- страничка 2 -->
     <main>
     <section class="top-info">
@@ -149,6 +151,65 @@
     </section>
     </main>
 
+    <audio id="player" src=""> </audio>
+    <div id="scroll-id-player" class="dvoynoy">
+        <div class="dv1"><center><span class="orderText">Песни о ДР</span></center>
+            <span class="pict-span-mus">
+                <span class="width-span">
+            <span class="soundpad">
+                <center>
+                <span class="range-block-span">
+                <img class="mus-pict-volume" src="img/speaker.png" alt="">
+                   <div class="wrapper-range">
+                       <div class="value-upper-range">fdfdffd</div>
+                       <input id="range" type="range" min="0" max="1" step="0.05">
+                    </div> </span>
+            
+            <div class="block-pict-mus">
+                <img class="mus_photo" src="" alt="">
+            </div>
+        </center>
+            <div class="wrap-progress">
+            <img class="progress-image-bg" src="img/music-player.png" width="26px" height="26px" alt="">
+            <div class="wrap-progress-up">
+                <div class="value-upper-progress"></div>
+                <progress class="progress" max='100' value ='30'> </progress>
+            </div>
+             <span class="progress-p">00:00:00</span>
+        </div>
+         </span>
+             <center>
+                <p class="NameMusic"></p>
+             </center>
+    
+         <div class="wrapper-sound-func">
+             <div class="wrapper-s-f">
+             <img data-wow-delay = "0.9s" class="rewind wow animate__animated animate__fadeIn" src="img/rewind.png" alt="rewind">
+             <img data-wow-delay = "0.1s" class="play wow animate__animated animate__fadeIn" onclick="playOrPauseMus()" src="img/play.png" alt="play">
+             <img  data-wow-delay = "0.5s" class="fast-forward wow animate__animated animate__fadeIn" src="img/fast-forward.png" alt="fast-forward">
+         </div></div>
+        </span>
+    </span>
+    <center>
+        <input id="prev" class="buuut" type="submit" value="◀ Prev Picture">
+        <input id="next"  class="buuut" type="submit" value="Next Picture ▶">
+    </center>
+    <div class="imgClass">
+        <center>  
+           <div class="dropup">
+               <div class="dropup-text">Открыть полный sound player</div>
+           <input type="checkbox" class='checkbox-button'>
+        </div>
+        </center>
+    </div> 
+    
+    </div>
+    <div class="dv2">
+        <img onclick="funcRotate()" class="pict_krug" src="" alt="">
+    </div>
+    </div>
+    <div class="otstup6"></div>
+
     <div id="conntent-srcoll-id" class="content">
         <div class="background">
         <div class="content-to-do">
@@ -172,66 +233,9 @@
     </div>
 
     <!-- <div class="wrap__overflow"> -->
-    <audio id="player" src=""> </audio>
-<div id="scroll-id-player" class="dvoynoy">
-    <div class="dv1"><center><span class="orderText">Песни о ДР</span></center>
-        <span class="pict-span-mus">
-            <span class="width-span">
-        <span class="soundpad">
-            <center>
-            <span class="range-block-span">
-            <img class="mus-pict-volume" src="img/speaker.png" alt="">
-               <div class="wrapper-range">
-                   <div class="value-upper-range">fdfdffd</div>
-                   <input id="range" type="range" min="0" max="1" step="0.05">
-                </div> </span>
-        
-        <div class="block-pict-mus">
-            <img class="mus_photo" src="" alt="">
-        </div>
-    </center>
-        <div class="wrap-progress">
-        <img class="progress-image-bg" src="img/music-player.png" width="26px" height="26px" alt="">
-        <div class="wrap-progress-up">
-            <div class="value-upper-progress"></div>
-            <progress class="progress" max='100' value ='30'> </progress>
-        </div>
-         <span class="progress-p">00:00:00</span>
-    </div>
-     </span>
-         <center>
-            <p class="NameMusic"></p>
-         </center>
 
-     <div class="wrapper-sound-func">
-         <div class="wrapper-s-f">
-         <img data-wow-delay = "0.9s" class="rewind wow animate__animated animate__fadeIn" src="img/rewind.png" alt="rewind">
-         <img data-wow-delay = "0.1s" class="play wow animate__animated animate__fadeIn" onclick="playOrPauseMus()" src="img/play.png" alt="play">
-         <img  data-wow-delay = "0.5s" class="fast-forward wow animate__animated animate__fadeIn" src="img/fast-forward.png" alt="fast-forward">
-     </div></div>
-    </span>
-</span>
-<center>
-    <input id="prev" class="buuut" type="submit" value="◀ Prev Picture">
-    <input id="next"  class="buuut" type="submit" value="Next Picture ▶">
-</center>
-<div class="imgClass">
-    <center>  
-       <div class="dropup">
-           <div class="dropup-text">Открыть полный sound player</div>
-       <input type="checkbox" class='checkbox-button'>
-    </div>
-    </center>
-</div> 
-
-</div>
-<div class="dv2">
-    <img onclick="funcRotate()" class="pict_krug" src="" alt="">
-</div>
-</div>
 <!-- </div> -->
 
-<div class="otstup6"></div>
 
 <!-- <div class="parallax">
     <div class="parallax-content">

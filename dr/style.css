@@ -8,6 +8,18 @@
    overflow: hidden;
    max-width: 100%;
 }
+.wrap__overflow .scroll{
+    animation: activeBackGround 0.3s ease-in-out;
+}
+
+@keyframes activeBackGround {
+    from{
+        transform: scale(0.9, 0.9);
+    }
+    to{
+        transform: scale(1, 1);
+    }
+}
 body{
     margin: 0;
     font-family: 'Tahoma', sans-serif;

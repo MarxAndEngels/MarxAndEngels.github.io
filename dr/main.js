@@ -187,8 +187,27 @@ function addZero(num){
   return num;
 }
 
+// let back_gr = document.querySelector('.header');
+// let content_todo = document.querySelector('.content');
 
-
+function FastScroll(element,bg, y=30) {
+  bg = document.querySelector('.'+bg);
+  console.log(bg);
+  window.scroll({
+    left: 0, 
+    top: element.offsetTop - y,
+  });
+  if(player){
+    if(player.played){player.pause() }
+  }
+  for(let video of videos){
+     if(video.played){
+      video.pause();
+     }
+  }
+  bg.classList.add('scroll');
+  setTimeout( () => { bg.classList.remove('scroll') }, 1000);
+}
 
   //якорь
   function scrollTo(element,y=30) {
@@ -209,7 +228,7 @@ let calendar_scroll =document.querySelector('.calendar-scroll');
 let calendar_scroll_id =document.getElementById('calendar_scroll_id');
 
   footer.addEventListener('click', () => {
-    scrollTo(button);
+    FastScroll(button , 'header');
   });
   todo_scroll.addEventListener('click', () => {
     scrollTo(contend_scroll_id);
