@@ -54,6 +54,7 @@ for(let el of popups){
     let dataID = event.target.dataset.id;
     popupPict.src = dataID;
     popup.style.display= "block";
+    document.body.style.overflow='hidden';
   })
 }
 
@@ -117,15 +118,19 @@ function animatePictOpacity(){
 
 popupClose.onclick = function(){
     popup.style.display= "none";
+    document.body.style.overflow='auto';
 }
 
 popup.addEventListener("click", function(event) {
     if ( event.target === popup_center){
       popup.style.display= "none";
+      document.body.style.overflow='auto';
     }
     if(event.target === popup){
       popup.style.display= "none";
+      document.body.style.overflow='auto';
     };
+    
   });
 
 popupPict.addEventListener('mouseover', function(){
