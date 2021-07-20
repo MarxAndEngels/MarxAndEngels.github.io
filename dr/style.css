@@ -1075,9 +1075,7 @@ transform: scale(1.1,1.1);
     cursor: pointer;
     transition-duration: 0.3s;
 }
-.button_menu_bottom:hover{
-    color: #9370DB;
-}
+
 
 .games-menu{
     position: relative;
