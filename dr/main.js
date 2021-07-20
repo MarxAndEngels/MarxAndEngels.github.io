@@ -201,9 +201,9 @@ function FastScroll(element,bg, y=30) {
     left: 0, 
     top: element.offsetTop - y,
   });
-  if(player){
-    if(player.played){player.pause() }
-  }
+  // if(player){
+  //   if(player.played){player.pause() }
+  // }
   for(let video of videos){
      if(video.played){
       video.pause();
@@ -212,6 +212,7 @@ function FastScroll(element,bg, y=30) {
   bg.classList.add('scroll');
   setTimeout( () => { bg.classList.remove('scroll') }, 1000);
 }
+
 
   //якорь
   function scrollTo(element,y=30) {
@@ -231,26 +232,84 @@ let sound_player_scroll_id = document.getElementById('scroll-id-player');
 let calendar_scroll =document.querySelector('.calendar-scroll');
 let calendar_scroll_id =document.getElementById('calendar_scroll_id');
 
+let sp_mouse = document.querySelector('.sp');
+let tdl =document.querySelector('.tdl');
+let clndr = document.querySelector('.clndr');
+let endButt = document.querySelector('.endButt');
+let flag_parallax = document.querySelector('.flag_parallax');
+let openIt = document.querySelector('.openIt');
+let flag_openit = document.querySelector('.flag_openit');
+
   footer.addEventListener('click', () => {
     FastScroll(button , 'header');
   });
   todo_scroll.addEventListener('click', () => {
     scrollTo(contend_scroll_id);
-  })
+  });
   sound_player_scroll.addEventListener('click', () => {
     scrollTo(sound_player_scroll_id , 90);
-  })
+  });
   calendar_scroll.addEventListener('click',function(){
     FastScroll(calendar_scroll_id ,'buuut_prevv' , 70);
+  });
+
+
+
+
+  sp_mouse.addEventListener('click', function(){
+    FastScroll(sound_player_scroll_id ,'buuut_prevv' , 90);
+  });
+  tdl.addEventListener('click' , function(){
+    FastScroll(contend_scroll_id ,'buuut_prevv' );
+  });
+  clndr.addEventListener('click',function(){
+    FastScroll(calendar_scroll_id ,'buuut_prevv', 70 );
+  });
+  endButt.addEventListener('click' , function(){
+    FastScroll(flag_parallax ,'buuut_prevv', 70 );
+  });
+  openIt.addEventListener('click', function(){
+    FastScroll(flag_openit ,'buuut_prevv',110 );
+  });
+
+
+
+  let buttons_menu_bottom = document.querySelectorAll('.button_menu_bottom');
+  let open_text_menu_name = document.querySelector('.text-menu-name');
+  for(let el of buttons_menu_bottom){
+    el.addEventListener('mousemove', function(){
+      open_text_menu_name.classList.add('active');
+      open_text_menu_name.innerHTML = el.dataset.namebutt;
+    });
+    el.addEventListener('mouseout', function(){
+      open_text_menu_name.classList.remove('active');
+    })
+  }
+
+  let gamesButton = document.querySelector('.games-menu');
+  let text_game_menu = document.querySelector('.text-game-menu');
+
+  let flagA = 0;
+  document.body.addEventListener('click',function(){
+      if(flagA === 1 ){
+        text_game_menu.classList.remove('active');
+        flagA = 0;
+    }
   })
 
+  gamesButton.addEventListener('click', function(){
+    text_game_menu.classList.toggle('active');
+    if(text_game_menu.classList.contains('active')){
+      setTimeout(()=>{flagA = 1;}, 100 );
+    }
+  });
 
-  if(pageYOffset > document.documentElement.clientHeight-100){
-    toglbtn.style.display = 'none';
-  }
+  let menu_click =document.querySelector('.menu-click');
+
+
    //на сколько прокрутили и высота браузера
   window.addEventListener('scroll', function() {
-      if(pageYOffset > document.documentElement.clientHeight-100){
+      if(pageYOffset > document.documentElement.clientHeight-200){
         sidebar.classList.remove('active');
         toglbtn.classList.remove('active');
         span1.classList.remove('active');
@@ -264,7 +323,11 @@ let calendar_scroll_id =document.getElementById('calendar_scroll_id');
        toglbtn.style.display = 'block';
         sidebar.style.display = 'block';
         footer.style.display='none';
+        menu_click.classList.remove('active');
      }
+     if(pageYOffset > 150){
+         menu_click.classList.add('active'); 
+    }
   });
 
 

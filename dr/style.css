@@ -12,6 +12,7 @@
     animation: activeBackGround 0.3s ease-in-out;
 }
 
+
 @keyframes activeBackGround {
     from{
         transform: scale(0.9, 0.9);
@@ -149,7 +150,7 @@ body{
     -moz-transition: all 1200ms;
     -webkit-transition: all 1200ms;
     transition: all 1200ms;
-    z-index: 5;
+    z-index: 5000001;
 }
 .sidebar.active{
         left:0;
@@ -1040,6 +1041,110 @@ transform: scale(1.1,1.1);
  }
 }
 
+.menu-click{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    max-width: 100px;
+    max-height: 160px;
+    background-color: snow;
+    left: 2%;
+    bottom: 4%;
+    z-index: 1000000;
+    border-radius: 10px;
+    border: 1px solid rgb(53, 53, 53);
+    display: none;
+}
+.menu-click.active{
+    display: block;
+    animation: leftName 0.2s ease-in-out;
+}
+
+.separate_menu{
+    position: relative;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.button_menu_bottom{
+    padding: 10px;
+    flex: 1;
+    font-size: 18px;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+.button_menu_bottom:hover{
+    color: #9370DB;
+}
+
+.games-menu{
+    position: relative;
+}
+.text-game-menu{
+    position: absolute;
+    top:0;
+    left:105%;
+    width: 110px;
+    height: 75px;
+    background-color: snow;
+    display: flex;
+    flex-direction: column;
+    padding: 3px;
+    display: none;
+    z-index: 1000000;
+    border: 1px solid rgb(53, 53, 53);
+}
+.text-game-menu.active{
+    display: block;
+}
+.text-game-menu a{
+  display: block;
+}
+ 
+.menu-text-game-bottom{
+    text-decoration: none;
+    font-size: 15px;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+}
+.menu-text-game-bottom:hover{
+    color: rgb(80, 79, 79);
+}
+
+.todo-menu{
+    position: relative; 
+}
+
+.text-menu-name{
+    position: absolute;
+    top:4px;
+    left:105%;
+    width: 110px;
+    height: 24px;
+    background-color: snow; 
+    padding: 2px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    display: none;
+    z-index: 1000000;
+    border: 1px solid rgb(53, 53, 53);
+}
+
+.text-menu-name.active{
+    display: block;
+    animation: leftName 0.4s ease-in-out;
+}
+@keyframes leftName {
+    from{
+       opacity: 0.5;
+    }
+    to{
+        opacity: 1;
+    }
+}
 
 .verh{
     margin: 0;
@@ -1756,12 +1861,12 @@ progress::-moz-progress-bar {
     right: 2%;
     opacity: 0.5;
     display: none;
-    animation: animateup 1.5s ease-in-out;
+    animation: animateup 1s ease-in-out;
     z-index: 9999999;
 }
 @keyframes animateup{
     from{
-        bottom: 600px;
+        bottom: 100px;
     }
     to{
         bottom: 5%; 
