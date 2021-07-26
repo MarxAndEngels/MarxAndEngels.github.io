@@ -225,7 +225,7 @@ function FastScroll(element,bg, y=30) {
   var button = document.querySelector('#top');
   var footer = document.querySelector('.up-main');
 
-let todo_scroll = document.querySelector('.todoscroll');
+let roulette = document.querySelector('.roulette');
 let contend_scroll_id = document.getElementById('conntent-srcoll-id');
 let sound_player_scroll = document.querySelector('.sound-player-scroll');
 let sound_player_scroll_id = document.getElementById('scroll-id-player');
@@ -243,8 +243,8 @@ let flag_openit = document.querySelector('.flag_openit');
   footer.addEventListener('click', () => {
     FastScroll(button , 'header');
   });
-  todo_scroll.addEventListener('click', () => {
-    scrollTo(contend_scroll_id);
+  roulette.addEventListener('click', () => {
+    FastScroll(flag_openit ,'buuut_prevv',60 );
   });
   sound_player_scroll.addEventListener('click', () => {
     scrollTo(sound_player_scroll_id , 90);
@@ -269,7 +269,7 @@ let flag_openit = document.querySelector('.flag_openit');
     FastScroll(flag_parallax ,'buuut_prevv', 70 );
   });
   openIt.addEventListener('click', function(){
-    FastScroll(flag_openit ,'buuut_prevv',110 );
+    FastScroll(flag_openit ,'buuut_prevv',60 );
   });
 
 
@@ -611,7 +611,129 @@ function toggle(objNameText , togl1) {
 }
 
 
+//рулеточка
 
+let button_roulette = document.querySelector('.button-roulette');
+let roulette_earth = document.querySelector('.oveflow-hidden-roulette');
+let main_route = document.querySelector('.mainRoutte');
+let result_roulette_img = document.querySelector('.result-roulette-img');
+let countButtonRoulette = 0;
+let chance= document.querySelector('.takeTextImgСhance');
+
+button_roulette.addEventListener('click' , function(){
+  button_roulette.disabled=true;
+  roulette_earth.style.transitionDuration = '3.5s'; 
+  roulette_earth.classList.add('active');
+  let img = main_route.src;
+  setTimeout(()=> { 
+    result_roulette_img.src=main_route.src;
+    result_roulette_img.classList.add('active_data');
+    setTimeout(()=> {  result_roulette_img.classList.remove('active_data');},1000);
+    checkImg(img);
+    roulette_earth.style.transitionDuration= '0s';
+    roulette_earth.classList.remove('active');
+    button_roulette.disabled=false;
+    
+    if(countButtonRoulette=== 0){
+      button_roulette.innerHTML = 'Крутить еще!';
+      countButtonRoulette = 1;
+    }
+    for(let el of img_routte_pict){
+    el.src=random(arr);
+    }
+   } , 4000 );
+})
+
+//функция нахожд. случайного числа
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function random(arr) {
+  let key = getRandomInt(0, arr.length - 1);
+  return arr[key];
+}
+let arr = [
+  'img/null.png','img/birthday-cake.png', 'img/candy.png','img/empty.png',
+   'img/balloons.png', 'img/null.png', 'img/empty.png' , 'img/muffin.png',
+    'img/null.png', 'img/money.png', 'img/money.png', 'img/null.png', 
+    'img/empty.png', 'img/empty.png'
+];
+let chanceNull = 0;
+let chaceBirthdayCake= 0;
+let chaceEmpty= 0;
+let chaceMoney= 0;
+let chaceBalloons= 0;
+let chanceMuffin = 0;
+let chanceCandy = 0;
+
+for(let el of arr){
+  switch(el){
+    case 'img/null.png':
+      chanceNull++;
+      break;
+    case 'img/birthday-cake.png':
+      chaceBirthdayCake++;
+      break;
+    case 'img/empty.png':
+      chaceEmpty++;
+      break;
+    case 'img/balloons.png':
+      chaceBalloons++;
+      break;
+    case 'img/money.png':
+      chaceMoney++;
+      break;
+      case 'img/muffin.png':
+      chanceMuffin++;
+    break;
+      case 'img/candy.png':
+        chanceCandy++;
+    break;
+  }
+}
+
+
+let img_routte_pict= document.querySelectorAll('.img-roulette');
+
+for(let el of img_routte_pict){
+  el.src=random(arr);
+}
+let takeTextImg = document.querySelector('.takeTextImg');
+
+let mychanse=0;
+function checkImg(img){
+  if(/birthday-cake/.test(img)){
+    takeTextImg.textContent= 'Ваш выигрыш - Тортик';
+    mychanse = chaceBirthdayCake/arr.length;
+  }
+  if(/candy/.test(img)){
+    takeTextImg.textContent= 'Ваш выигрыш - Конфета';
+    mychanse = chanceCandy/arr.length;
+  }
+  if(/muffin/.test(img)){
+    takeTextImg.textContent= 'Ваш выигрыш - Маффин';
+    mychanse = chanceMuffin / arr.length;
+  }
+  if(/empty/.test(img)){
+    takeTextImg.textContent='Ваш выигрыш - Ничего :)))';
+    mychanse = chaceEmpty/arr.length;
+  }
+  if(/balloons/.test(img)){
+    takeTextImg.textContent='Ваш выигрыш - Шарики';
+    mychanse = chaceBalloons/arr.length;
+  }
+  if(/null/.test(img)){
+    takeTextImg.textContent='Ваш выигрыш - Ничаго :D';
+    mychanse = chanceNull/arr.length;
+  }
+  if(/money/.test(img)){
+    takeTextImg.textContent='Ваш выигрыш - Деньги O_o';
+    mychanse = chaceMoney/arr.length;
+  }
+  chance.innerHTML = 'Шанс '+ Math.round(mychanse*100) + '%';
+}
+//roulette end
 
 //-------------------- TO DO LIST
 let input_do = document.querySelector('.input-to-do');
