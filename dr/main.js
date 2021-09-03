@@ -260,7 +260,7 @@ let flag_openit = document.querySelector('.flag_openit');
     FastScroll(sound_player_scroll_id ,'buuut_prevv' , 90);
   });
   tdl.addEventListener('click' , function(){
-    FastScroll(contend_scroll_id ,'buuut_prevv' );
+    FastScroll(contend_scroll_id ,'buuut_prevv', 240 );
   });
   clndr.addEventListener('click',function(){
     FastScroll(calendar_scroll_id ,'buuut_prevv', 70 );
