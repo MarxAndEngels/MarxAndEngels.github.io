@@ -32,35 +32,23 @@ body {
     animation-delay: 1.5s;
 }
 .letter:nth-child(3){
-    animation-delay: 1.8s;
+    animation-delay: 2s;
 }
 .letter:nth-child(4){
-    animation-delay: 2.3s;
-}
-.letter:nth-child(5){
     animation-delay: 2.8s;
 }
-.letter:nth-child(6){
+.letter:nth-child(5){
     animation-delay: 3.2s;
 }
+.letter:nth-child(6){
+    animation-delay: 3.6s;
+}
 .letter:nth-child(7){
-    animation-delay: 3.7s;
+    animation-delay: 4s;
 }
 .letter:nth-child(8){
-    animation-delay: 4.2s;
+    animation-delay: 4.4s;
 }
-.letter:nth-child(9){
-    animation-delay: 4.7s;
-} 
-.letter:nth-child(10){
-    animation-delay: 5.2s;
-} 
-.letter:nth-child(11){
-    animation-delay: 5.7s;
-} 
-.letter:nth-child(12){
-    animation-delay: 6.2s;
-} 
 
 @keyframes anim{
     0%{

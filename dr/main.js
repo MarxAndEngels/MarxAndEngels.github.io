@@ -215,120 +215,66 @@ function FastScroll(element,bg, y=30) {
 
 
   //якорь
-  function scrollTo(element,y=30) {
-    window.scroll({
-      left: 0, 
-      top: element.offsetTop - y,
-      behavior: 'smooth'
-    })
-  }
-  var button = document.querySelector('#top');
-  var footer = document.querySelector('.up-main');
+  // function scrollTo(element,y=30) {
+  //   window.scroll({
+  //     left: 0, 
+  //     top: element.offsetTop - y,
+  //     behavior: 'smooth'
+  //   })
+  // }
+//   var button = document.querySelector('#top');
+//   var footer = document.querySelector('.up-main');
 
-let roulette = document.querySelector('.roulette');
-let contend_scroll_id = document.getElementById('conntent-srcoll-id');
-let sound_player_scroll = document.querySelector('.sound-player-scroll');
-let sound_player_scroll_id = document.getElementById('scroll-id-player');
-let calendar_scroll =document.querySelector('.calendar-scroll');
-let calendar_scroll_id =document.getElementById('calendar_scroll_id');
+// let roulette = document.querySelector('.roulette');
+// let contend_scroll_id = document.getElementById('conntent-srcoll-id');
+// let sound_player_scroll = document.querySelector('.sound-player-scroll');
+// let sound_player_scroll_id = document.getElementById('scroll-id-player');
+// let calendar_scroll =document.querySelector('.calendar-scroll');
+// let calendar_scroll_id =document.getElementById('calendar_scroll_id');
 
-let sp_mouse = document.querySelector('.sp');
-let tdl =document.querySelector('.tdl');
-let clndr = document.querySelector('.clndr');
-let endButt = document.querySelector('.endButt');
-let flag_parallax = document.querySelector('.flag_parallax');
-let openIt = document.querySelector('.openIt');
-let flag_openit = document.querySelector('.flag_openit');
+// let sp_mouse = document.querySelector('.sp');
+// let tdl =document.querySelector('.tdl');
+// let clndr = document.querySelector('.clndr');
+// let endButt = document.querySelector('.endButt');
+// let flag_parallax = document.querySelector('.flag_parallax');
+// let openIt = document.querySelector('.openIt');
+// let flag_openit = document.querySelector('.flag_openit');
 
-  footer.addEventListener('click', () => {
-    FastScroll(button , 'header');
-  });
-  roulette.addEventListener('click', () => {
-    FastScroll(flag_openit ,'buuut_prevv',60 );
-  });
-  sound_player_scroll.addEventListener('click', () => {
-    scrollTo(sound_player_scroll_id , 90);
-  });
-  calendar_scroll.addEventListener('click',function(){
-    FastScroll(calendar_scroll_id ,'buuut_prevv' , 70);
-  });
-
-
-
-
-  sp_mouse.addEventListener('click', function(){
-    FastScroll(sound_player_scroll_id ,'buuut_prevv' , 90);
-  });
-  tdl.addEventListener('click' , function(){
-    FastScroll(contend_scroll_id ,'buuut_prevv', 240 );
-  });
-  clndr.addEventListener('click',function(){
-    FastScroll(calendar_scroll_id ,'buuut_prevv', 70 );
-  });
-  endButt.addEventListener('click' , function(){
-    FastScroll(flag_parallax ,'buuut_prevv', 70 );
-  });
-  openIt.addEventListener('click', function(){
-    FastScroll(flag_openit ,'buuut_prevv',60 );
-  });
+//   footer.addEventListener('click', () => {
+//     FastScroll(button , 'header');
+//   });
+//   roulette.addEventListener('click', () => {
+//     FastScroll(flag_openit ,'buuut_prevv',60 );
+//   });
+//   sound_player_scroll.addEventListener('click', () => {
+//     scrollTo(sound_player_scroll_id , 90);
+//   });
+//   calendar_scroll.addEventListener('click',function(){
+//     FastScroll(calendar_scroll_id ,'buuut_prevv' , 70);
+//   });
 
 
 
-  let buttons_menu_bottom = document.querySelectorAll('.button_menu_bottom');
-  let open_text_menu_name = document.querySelector('.text-menu-name');
-  for(let el of buttons_menu_bottom){
-    el.addEventListener('mousemove', function(){
-      open_text_menu_name.classList.add('active');
-      open_text_menu_name.innerHTML = el.dataset.namebutt;
-    });
-    el.addEventListener('mouseout', function(){
-      open_text_menu_name.classList.remove('active');
-    })
-  }
 
-  let gamesButton = document.querySelector('.games-menu');
-  let text_game_menu = document.querySelector('.text-game-menu');
+//   sp_mouse.addEventListener('click', function(){
+//     FastScroll(sound_player_scroll_id ,'buuut_prevv' , 90);
+//   });
+//   tdl.addEventListener('click' , function(){
+//     FastScroll(contend_scroll_id ,'buuut_prevv', 240 );
+//   });
+//   clndr.addEventListener('click',function(){
+//     FastScroll(calendar_scroll_id ,'buuut_prevv', 70 );
+//   });
+//   endButt.addEventListener('click' , function(){
+//     FastScroll(flag_parallax ,'buuut_prevv', 70 );
+//   });
+//   openIt.addEventListener('click', function(){
+//     FastScroll(flag_openit ,'buuut_prevv',60 );
+//   });
 
-  let flagA = 0;
-  document.body.addEventListener('click',function(){
-      if(flagA === 1 ){
-        text_game_menu.classList.remove('active');
-        flagA = 0;
-    }
-  })
-
-  gamesButton.addEventListener('click', function(){
-    text_game_menu.classList.toggle('active');
-    if(text_game_menu.classList.contains('active')){
-      setTimeout(()=>{flagA = 1;}, 100 );
-    }
-  });
+ 
 
   let menu_click =document.querySelector('.menu-click');
-
-
-   //на сколько прокрутили и высота браузера
-  window.addEventListener('scroll', function() {
-      if(pageYOffset > document.documentElement.clientHeight-200){
-        sidebar.classList.remove('active');
-        toglbtn.classList.remove('active');
-        span1.classList.remove('active');
-        span2.classList.remove('active');
-        span3.classList.remove('active');
-        toglbtn.style.display = 'none';
-        sidebar.style.display = 'none';
-        footer.style.display='block';
-          }
-     else{
-       toglbtn.style.display = 'block';
-        sidebar.style.display = 'block';
-        footer.style.display='none';
-        menu_click.classList.remove('active');
-     }
-     if(pageYOffset > 150){
-         menu_click.classList.add('active'); 
-    }
-  });
 
 
 
@@ -348,16 +294,16 @@ setTimeout( () => {
 
 let textupper = document.querySelector('.dropup-text');
 
-let games = document.querySelector('.games');
-let game_drop = document.querySelector('.game-drop-down');
-document.querySelector('.header').onclick = function GameDrop(e){
-  if(e.target.classList.contains('games')){
-    game_drop.classList.toggle('drop-game-block');
-  }
-  else{
-    game_drop.classList.remove('drop-game-block');
-  }
-};
+// let games = document.querySelector('.games');
+// let game_drop = document.querySelector('.game-drop-down');
+// document.querySelector('.header').onclick = function GameDrop(e){
+//   if(e.target.classList.contains('games')){
+//     game_drop.classList.toggle('drop-game-block');
+//   }
+//   else{
+//     game_drop.classList.remove('drop-game-block');
+//   }
+// };
 
 
 let checkbox_button = document.querySelector('.checkbox-button');
@@ -657,7 +603,7 @@ let arr = [
   'img/null.png','img/birthday-cake.png', 'img/candy.png','img/empty.png',
    'img/balloons.png', 'img/null.png', 'img/empty.png' , 'img/muffin.png',
     'img/null.png', 'img/money.png', 'img/money.png', 'img/null.png', 
-    'img/empty.png', 'img/empty.png'
+    'img/empty.png', 'img/empty.png', 'img/empty.png'
 ];
 let chanceNull = 0;
 let chaceBirthdayCake= 0;
@@ -704,34 +650,34 @@ let takeTextImg = document.querySelector('.takeTextImg');
 let mychanse=0;
 function checkImg(img){
   if(/birthday-cake/.test(img)){
-    takeTextImg.textContent= 'Ваш выигрыш - Тортик';
+    takeTextImg.innerHTML= 'Ваш выигрыш - <b>Тортик</b>';
     mychanse = chaceBirthdayCake/arr.length;
   }
   if(/candy/.test(img)){
-    takeTextImg.textContent= 'Ваш выигрыш - Конфета';
+    takeTextImg.innerHTML= 'Ваш выигрыш - <b>Конфета</b>';
     mychanse = chanceCandy/arr.length;
   }
   if(/muffin/.test(img)){
-    takeTextImg.textContent= 'Ваш выигрыш - Маффин';
+    takeTextImg.innerHTML= 'Ваш выигрыш - <b>Маффин</b>';
     mychanse = chanceMuffin / arr.length;
   }
   if(/empty/.test(img)){
-    takeTextImg.textContent='Ваш выигрыш - Ничего :)))';
+    takeTextImg.innerHTML='Ваш выигрыш - <b>Ничего :)))</b>';
     mychanse = chaceEmpty/arr.length;
   }
   if(/balloons/.test(img)){
-    takeTextImg.textContent='Ваш выигрыш - Шарики';
+    takeTextImg.innerHTML='Ваш выигрыш - <b>Шарики</b>';
     mychanse = chaceBalloons/arr.length;
   }
   if(/null/.test(img)){
-    takeTextImg.textContent='Ваш выигрыш - Ничаго :D';
+    takeTextImg.innerHTML='Ваш выигрыш - <b>Ничаго :D</b>';
     mychanse = chanceNull/arr.length;
   }
   if(/money/.test(img)){
-    takeTextImg.textContent='Ваш выигрыш - Деньги O_o';
+    takeTextImg.innerHTML='Ваш выигрыш - <b>Деньги O_o</b>';
     mychanse = chaceMoney/arr.length;
   }
-  chance.innerHTML = 'Шанс '+ Math.round(mychanse*100) + '%';
+  chance.innerHTML = 'Шанс <b>'+ Math.round(mychanse*100) + ' %</b>';
 }
 //roulette end
 
@@ -763,8 +709,15 @@ result.addEventListener('click', function(event){
    let inner = event.target.parentNode;
    let listen = inner.firstChild.textContent;
    let utterance = new SpeechSynthesisUtterance(listen);
-   utterance.rate = 0.8;
+   let voices = window.speechSynthesis.getVoices();
+   utterance.rate = 1;
+   //max-10 , min 0,1
+   utterance.pitch = 0; 
+   //max-2 ,min 0;
+   console.log(voices);
+  //  utterance.lang = "ru-RU";
    utterance.lang = "ru-RU";
+  //  utterance.lang = voices[0];
    speechSynthesis.speak(utterance);
  }
 
@@ -823,3 +776,83 @@ butt_stop.onclick = function stopTalking(){
 }
 
 //--------------------------------------------------------------------
+
+//change
+
+
+
+
+let mainBlockReact = document.querySelectorAll('.canChange');
+
+
+  let buttons_menu_bottom = document.querySelectorAll('.button_menu_bottom');
+  let open_text_menu_name = document.querySelector('.text-menu-name');
+
+
+  for(let el of buttons_menu_bottom){
+    el.addEventListener('mousemove', function(){
+      open_text_menu_name.classList.add('active');
+      open_text_menu_name.innerHTML = el.dataset.namebutt;
+    });
+    el.addEventListener('mouseout', function(){
+      open_text_menu_name.classList.remove('active');
+    })
+    el.addEventListener('click',changeIcon);
+  }
+
+
+ function changeIcon(){
+   for(let el of buttons_menu_bottom){
+     el.style.color = 'black';
+   }
+   if(!this.classList.contains('games-menu')){
+    this.style.color = 'green';
+   
+   for(let canCh of mainBlockReact){
+    canCh.style.display = 'none';
+   }
+   for(let canCh of mainBlockReact){
+    if(canCh.dataset.ch == this.dataset.namebutt){
+      canCh.style.display = 'block';
+      player.pause();
+      playPict.src="img/play.png";
+      for(let el of blocks_video){
+        el.children[0].pause();
+      }
+    }
+   }
+  }
+ }
+
+
+ for(let canCh of mainBlockReact){
+  if(canCh.dataset.ch == 'Home'){
+    canCh.style.display = 'block';
+    player.pause();
+    playPict.src="img/play.png";
+    firstHome.style.color = 'green';
+  }else{
+    canCh.style.display = 'none';
+    
+  }
+ }
+ 
+
+
+  let gamesButton = document.querySelector('.games-menu');
+  let text_game_menu = document.querySelector('.text-game-menu');
+
+  let flagA = 0;
+  document.body.addEventListener('click',function(){
+      if(flagA === 1 ){
+        text_game_menu.classList.remove('active');
+        flagA = 0;
+    }
+  })
+
+  gamesButton.addEventListener('click', function(){
+    text_game_menu.classList.toggle('active');
+    if(text_game_menu.classList.contains('active')){
+      setTimeout(()=>{flagA = 1;}, 100 );
+    }
+  });

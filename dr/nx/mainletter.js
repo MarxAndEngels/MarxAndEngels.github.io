@@ -25,7 +25,7 @@ setTimeout(()=>{
     toggle_pict.style.display = 'inline';
 document.querySelector('.vk').style.display = 'inline';
 },500);
-}, 8000);
+}, 7000);
 let AddPos = setTimeout(() => {
     text_pososi.classList.add('active');
-}, 8000);
+}, 7000);

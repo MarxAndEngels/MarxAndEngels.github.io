@@ -21,6 +21,8 @@
 </head>
 <body>
 <!-- страничка 1 -->
+
+<div data-ch='Home' class='canChange'>
 <div class="wrap__overflow">
 <header id="top" class="header">
     <div class="containerfix">
@@ -29,19 +31,10 @@
         C DNUXAY.NET
         </span>
     <nav class="header__nav">
-        <a  class="header__nav-link roulette" pointer-events= 'none'><i class="fa fa-usd" ></i> Roulette</a>
- <a  class="header__nav-link calendar-scroll" pointer-events='none'><i class="far fa-calendar"></i> Сalendar</a>
-<a  class="header__nav-link sound-player-scroll" pointer-events='none' ><i class="fas fa-music"></i> Sound Player</a>
- <div class="games-drop">
-<a href="#" pointer-events='none' class="header__nav-link games"><i class="fas fa-gamepad"></i> Games</a>
- <div class="game-drop-down">
-    <div class="wrapper-text-game">
-    <a href="flappy.html" target="_blank" class="game-text">1. Flappy Bird</a>
-    <a href="snake.html" target="_blank" class="game-text">2. Snake</a>
-    <a href="cl.html" target="_blank" class="game-text">3. Clicker</a>
-</div>
- </div>
-</div>
+        <a href='https://vk.com/id145594406' target="_blank" class="header__nav-link"><i class="fa fa-vk" aria-hidden="true"></i> Вконтакте </a>
+ <a href='https://twitter.com/banana13373228' target="_blank" class="header__nav-link" ><i class="fa fa-twitter" aria-hidden="true"></i> Твиттер</a>
+ <a href="https://www.livelib.ru/reader/Fantazer1337/read" target="_blank" class="header__nav-link games"><i class="fa fa-address-book" aria-hidden="true"></i> Лайвлиб</a>
+ <a href='https://github.com/MarxAndEngels/MarxAndEngels.github.io/tree/main/dr' target="_blank" class="header__nav-link"><i class="fa fa-github" aria-hidden="true"></i> Гитхаб</a>
     </nav>
             <a href="qwer.html" target="_blank" class="header__button">
                 Error 404
@@ -50,7 +43,7 @@
 </div>
     <div class="sidebar">
         <div class="wrapper-side">
-        <div data-wow-delay = "17.5s" data-wow-duration=2s class="toggle-btn" onclick="openMenu()">
+        <div class="toggle-btn" onclick="openMenu()">
             <span id='span1'></span>
             <span id='span2'></span>
             <span id='span3'></span>
@@ -113,37 +106,54 @@
     </div>
     </header>
 </div>
+</div>
+
 <div class="menu-click">
+   <center><p style='font-family: "Montserrat", sans-serif;'>Меню сайта</p></center>
  <div class="separate_menu">
-    <div data-namebutt='Sound Player' class="button_menu_bottom sp"><i class="fa fa-music" aria-hidden="true"></i></div> 
-    <div data-namebutt='Show me' class="button_menu_bottom todo-menu tdl"><i class="fa fa-eye"></i></div> 
+    <div id='firstHome' data-namebutt='Home' class="button_menu_bottom sp"> <i class="fa fa-home" aria-hidden="true"></i></div> 
+    <div data-namebutt='Calendar' class="button_menu_bottom todo-menu tdl"><i class="far fa-calendar"></i></div> 
     <div class="text-menu-name">fuck</div>
- </div>    
- <div class="separate_menu">
-    <div data-namebutt='Сalendar' class="button_menu_bottom clndr"><i class="far fa-calendar"></i></div>
-    <div data-namebutt='The End' class="button_menu_bottom endButt"><i class="fa fa-battery-quarter" ></i></div>  
  </div>  
  <div class="separate_menu">
-    <div data-namebutt='Roulette' class="button_menu_bottom todo-menu openIt"><i class="fa fa-usd" ></i></div> 
+    <div style='margin-left: 4px;' data-namebutt='Roulette' class="button_menu_bottom clndr"><i class="fa fa-usd"></i></div>
+    <div style='margin-right: 5px;' data-namebutt='Music' class="button_menu_bottom endButt"><i class="fa fa-music" aria-hidden="true"></i></div>  
+ </div>  
+ <div class="separate_menu">
+    <div data-namebutt='Time' class="button_menu_bottom clndr"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
+    <div data-namebutt='Show me' class="button_menu_bottom endButt"><i class="fa fa-eye"></i></div>  
+ </div>    
+
+ <div class="separate_menu">
+    <div style='margin-left:2px;' data-namebutt='Todo' class="button_menu_bottom endButt"><i class="fa fa-book" aria-hidden="true"></i></div> 
     <div data-namebutt='Games' class="button_menu_bottom games-menu"><i class="fas fa-gamepad"></i></div>
     <div class="text-game-menu">
         <a href="flappy.html" target="_blank" class="menu-text-game-bottom">1. Flappy Bird</a>
     <a href="snake.html" target="_blank" class="menu-text-game-bottom">2. Snake</a>
     <a href="cl.html" target="_blank" class="menu-text-game-bottom">3. Clicker</a>
     </div> 
- </div>    
+ </div>  
 </div>
 
 <!-- страничка 2 -->
+<script>
+if (!("speechSynthesis" in window)) {
+  console.log("Your browser does not support the Web Speech API.");
+} else {
+    console.log("Ваш бразуер поддерживает");
+}
+</script>
+
+<div data-ch='Video' class='canChange'>
     <main>
     <section class="top-info">
     <div class="container2">
 
         <div class="top-info__row">
-            <div data-wow-duration=1s class="info--wide wow animate__animated animate__slideInUp" >
+            <div class="info--wide" >
                 <video class="perviy-class-video" data-count="1" onloadstart="this.volume=0.6" src="video/пух.mp4"  type="video/mp4" codecs="H.264, AAC"  controls></video>
             </div>
-            <div data-wow-duration=1s class="info wow animate__animated animate__slideInUp">
+            <div class="info">
                 <img class="vtoroy-class-img" src="img/computer.png" alt="">
                 <div class="info-content gifinfo">
                 <div class="info-content-title firstinfo">
@@ -154,7 +164,7 @@
         </div>
 
         <div  class="top-info__row">
-            <div data-wow-duration=1.5s  class="info wow animate__animated animate__slideInUp">
+            <div  class="info">
             <img class="vtoroy-class-img" src="img/computer.png" alt="">
                 <div class="info-content sec gifinfoswcond">
                 <div class="info-content-title secondinfo">
@@ -162,14 +172,17 @@
                 </div>
                 </div>
             </div>
-            <div data-wow-duration=1.5s  class="info--wide wow animate__animated animate__slideInUp" >
+            <div class="info--wide" >
                 <video class="perviy-class-video" data-count="2" onloadstart="this.volume=0.7" type="video/mp4" codecs="H.264, AAC" src="video/винни.mp4" controls></video>
             </div>
             </div>
     </div>
     </section>
     </main>
+</div>
 
+
+<div style='margin-top:100px' data-ch='Music' class='canChange'>
     <audio id="player" src=""> </audio>
     <div id="scroll-id-player" class="dvoynoy">
         <div class="dv1"><center><span class="orderText">Песни о ДР</span></center>
@@ -203,9 +216,9 @@
     
          <div class="wrapper-sound-func">
              <div class="wrapper-s-f">
-             <img data-wow-delay = "0.9s" class="rewind wow animate__animated animate__fadeIn" src="img/rewind.png" alt="rewind">
-             <img data-wow-delay = "0.1s" class="play wow animate__animated animate__fadeIn" onclick="playOrPauseMus()" src="img/play.png" alt="play">
-             <img  data-wow-delay = "0.5s" class="fast-forward wow animate__animated animate__fadeIn" src="img/fast-forward.png" alt="fast-forward">
+             <img class="rewind" src="img/rewind.png" alt="rewind">
+             <img class="play" onclick="playOrPauseMus()" src="img/play.png" alt="play">
+             <img  class="fast-forward" src="img/fast-forward.png" alt="fast-forward">
          </div></div>
         </span>
     </span>
@@ -229,8 +242,15 @@
     </div>
     <div class="otstup6"></div>
 
+</div>
+
+
+
+<div style='margin-top:10px' data-ch='Roulette' class='canChange'>
+    <div class="otstup6"></div>
+
     <span class="flag_openit"></span>
-    <div class="container-section wow animate__animated animate__slideInUp">
+    <div class="container-section">
         <div class="main-block-roulette">
             <div class="container-roulette-result">
             <p class="takeTextImg">Испытай свою удачу</p>
@@ -273,10 +293,14 @@
         </div>
         
     </div>
+</div>
+
+
+<div data-ch='Show me' class='canChange'>
     <div class="otstup6"></div>
     <div id="conntent-srcoll-id">
     <div class="togl-product" onclick="toggle('.verh','.togl')">
-        <div data-wow-duration=1s class="products__title1" ><span class="products__span">Открой меня 😋😱😮</span></div>
+        <div class="products__title1" ><span class="products__span">Открой меня 😋😱😮</span></div>
     <center><div class="togl"></div></center>
     </div>
     <div class="verh">
@@ -298,9 +322,20 @@
        </div>
        <!-- <div class="otstup6"></div> -->
 
+       <div class="otstup6"></div>    
+       <div class="parallax1">
+        <div class="parallax-content">
+        </div>
+        <div class="mask"></div>
+    </div>
+    <div class="otstup6"></div>
+    </div>
+
     
-    <!-- <div class="otstup6"></div> -->
-    <div id="conntent-srcoll-id" style="display:none" class="content">
+
+    <div data-ch='Todo' class='canChange'>
+    <div class="otstup6"></div>
+    <div id="conntent-srcoll-id" class="content">
         <div class="background">
         <div class="content-to-do">
             <div class="anim-to-do"></div>
@@ -321,7 +356,7 @@
         </div>
     </div>
     </div>
-
+</div>
     <!-- <div class="wrap__overflow"> -->
 
 <!-- </div> -->
@@ -342,8 +377,6 @@
 
 <!-- страничка 3 -->
 <main>
-<div class="products">
-</div>
 <!-- 
 <div data-wow-duration=1s class="products__title wow animate__animated animate__slideInUp">Расчитать расходы</div>
 <div class="otstup7"></div>
@@ -422,18 +455,11 @@
 
 <div class="otstup6"></div> -->
 
- <div class="otstup6"></div>    
-   <div class="parallax1">
-    <div class="parallax-content">
-    </div>
-    <div class="mask"></div>
-</div>
-<div class="otstup6"></div>
 
-  <div class="otstup6"></div>
-
-<div id='calendar_scroll_id' data-wow-duration=1s class="products__title">Ой, а что это за дата интересная?</div>
-<div class="calendar wow animate__animated animate__slideInUp">
+  <div data-ch='Calendar' class='canChange'>
+    <div class="otstup6"></div>
+<div id='calendar_scroll_id' class="products__title">Ой, а что это за дата интересная?</div>
+<div class="calendar">
     <div class="calendarpolosh">
     <p id="monthName"> </p>
     <p id="dayName"> </p>
@@ -483,7 +509,12 @@
     </script>
   </div>
   </div>
-  <div class="otstup6"></div>
+  </div>
+
+
+
+  <div data-ch='Time' class='canChange'>
+  <!-- <div class="otstup6"></div> -->
   <div class="otstup_cross"></div>
   <span class="flag_parallax"></span>
 <div class="parallax">
@@ -495,12 +526,10 @@
     </div>
     <div class="mask1"></div>
 </div>
-<div class="otstup1"></div>
+</div>
 
-<div class="up-main" title="Вверх к меню"> <img src="img/up.png" width="40px" height="40px"> </div>
 
-<div class="otstup6"></div>
-
+<div style='margin-top:200px' data-ch='Social' class='canChange'>
 <!-- страничка 4 -->
 <footer class="footer">
     <div class="container5">
@@ -576,6 +605,7 @@
    </div>
 
     </footer>
+    <div>
 </main>
 
 <script src="main.js" >   </script>
