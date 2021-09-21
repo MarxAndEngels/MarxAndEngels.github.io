@@ -1,3 +1,5 @@
+startConfetti();
+
 let toglbtn = document.querySelector(".toggle-btn");
 let sidebar = document.querySelector(".sidebar");
 let span1 = document.querySelector("#span1");
@@ -652,6 +654,7 @@ function checkImg(img){
   if(/birthday-cake/.test(img)){
     takeTextImg.innerHTML= 'Ваш выигрыш - <b>Тортик</b>';
     mychanse = chaceBirthdayCake/arr.length;
+    startConfetti()
   }
   if(/candy/.test(img)){
     takeTextImg.innerHTML= 'Ваш выигрыш - <b>Конфета</b>';
@@ -668,6 +671,7 @@ function checkImg(img){
   if(/balloons/.test(img)){
     takeTextImg.innerHTML='Ваш выигрыш - <b>Шарики</b>';
     mychanse = chaceBalloons/arr.length;
+    startConfetti()
   }
   if(/null/.test(img)){
     takeTextImg.innerHTML='Ваш выигрыш - <b>Ничаго :D</b>';
@@ -676,10 +680,20 @@ function checkImg(img){
   if(/money/.test(img)){
     takeTextImg.innerHTML='Ваш выигрыш - <b>Деньги O_o</b>';
     mychanse = chaceMoney/arr.length;
+    startConfetti()
   }
   chance.innerHTML = 'Шанс <b>'+ Math.round(mychanse*100) + ' %</b>';
 }
 //roulette end
+
+function startConfetti(){
+  setTimeout(()=>{
+     confetti.start();
+  },500);
+  setTimeout(()=>{
+     confetti.stop();
+  },2000);
+}
 
 //-------------------- TO DO LIST
 let input_do = document.querySelector('.input-to-do');
