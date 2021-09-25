@@ -2060,6 +2060,30 @@ progress::-moz-progress-bar {
 }
 
 @media( max-width: 850px){
+    .menu-click{
+        max-height: 430px;
+        max-width: 68px;
+        bottom: 4%;
+        text-align: center;
+    }
+
+    .tdl{
+        margin: 0;
+    }
+    .separate_menu{
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 5px;
+    }
+    .clndr, .endButt, .tod{
+        margin: 0;
+    }
+    .tod{
+        margin-right: 2px;
+    }
+    .roulp{
+        margin-right: 4px;
+    }
     
     .top-info__row{
         flex-direction: column;
