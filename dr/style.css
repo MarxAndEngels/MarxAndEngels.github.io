@@ -1908,6 +1908,30 @@ progress::-moz-progress-bar {
 
 }
 
+.message-left{
+    display: none;
+    width: 240px;
+    height: 200px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    clip-path: polygon(0 0, 100% 8%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    animation: opacity-text 1.5s ease-in-out;
+}
+.title-message{
+    font-size: 20px;
+    padding-top: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.message-left.active{
+    display: block;
+}
 
 .up-main{
     position: fixed;

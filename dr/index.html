@@ -111,7 +111,7 @@
 </div>
 
 <div class="menu-click">
-   <center><p style='font-family: "Montserrat", sans-serif;'>Меню сайта</p></center>
+   <center>  <p style='font-family: "Montserrat", sans-serif;'>Меню сайта</p></center>
  <div class="separate_menu">
     <div id='firstHome' data-namebutt='Home' class="button_menu_bottom sp"> <i class="fa fa-home" aria-hidden="true"></i></div> 
     <div data-namebutt='Calendar' class="button_menu_bottom todo-menu tdl"><i class="far fa-calendar"></i></div> 
@@ -459,6 +459,9 @@ if (!("speechSynthesis" in window)) {
 
 
   <div data-ch='Calendar' class='canChange'>
+      <div class="message-left">
+          <div class="title-message">Ты зачем в 2007 переместился??</div>
+      </div>
     <div class="otstup6"></div>
 <div id='calendar_scroll_id' class="products__title">Ой, а что это за дата интересная?</div>
 <div class="calendar">
@@ -470,6 +473,9 @@ if (!("speechSynthesis" in window)) {
     <p id="year"> </p>
     <input  id="buuut_dec" type="submit" value="😱 Вернуть 2007">
     <script> 
+let message_left = document.querySelector('.message-left');
+
+
   const lang= navigator.language;
   let date = new Date();
   let dayNumber= date.getDate();
@@ -484,6 +490,11 @@ if (!("speechSynthesis" in window)) {
   };
 
   function DateJs(){
+    let synth = window.speechSynthesis;
+    synth.cancel(); 
+
+    message_left.classList.remove('active');
+
     buuut_prev.disabled=true; 
     buuut_dec.disabled=false;
   document.getElementById('monthName').innerHTML= monthName;
@@ -492,9 +503,21 @@ if (!("speechSynthesis" in window)) {
   document.getElementById('year').innerHTML= year;
   document.getElementById('dayNumber').classList.toggle('active_data');
    setTimeout( function(){document.getElementById('dayNumber').classList.remove('active_data')}, 1000);
+
+   let utterance = new SpeechSynthesisUtterance('Ура я вернулся в '+ year);
+   utterance.rate = 1;
+   utterance.lang = "ru-RU";
+   speechSynthesis.speak(utterance);
+
   };
   DateJs();
+
   buuut_dec.onclick = function(){
+    let synth = window.speechSynthesis;
+    synth.cancel(); 
+
+    message_left.classList.add('active');
+
     buuut_prev.disabled=false; 
     buuut_dec.disabled=true;
     document.getElementById('year').innerHTML=2007;
