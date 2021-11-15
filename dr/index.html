@@ -489,6 +489,8 @@ let message_left = document.querySelector('.message-left');
     DateJs();
   };
 
+  let sound = 0;
+
   function DateJs(){
     let synth = window.speechSynthesis;
     synth.cancel(); 
@@ -503,12 +505,15 @@ let message_left = document.querySelector('.message-left');
   document.getElementById('year').innerHTML= year;
   document.getElementById('dayNumber').classList.toggle('active_data');
    setTimeout( function(){document.getElementById('dayNumber').classList.remove('active_data')}, 1000);
+   
+   sound++;
 
+   if(sound){
    let utterance = new SpeechSynthesisUtterance('Ура я вернулся в '+ year);
    utterance.rate = 1;
    utterance.lang = "ru-RU";
    speechSynthesis.speak(utterance);
-
+   }
   };
   DateJs();
 
