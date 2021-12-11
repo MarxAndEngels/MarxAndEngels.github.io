@@ -816,6 +816,8 @@ let mainBlockReact = document.querySelectorAll('.canChange');
 
 
  function changeIcon(){
+  let synth = window.speechSynthesis;
+  synth.cancel(); 
    for(let el of buttons_menu_bottom){
      el.style.color = 'black';
    }

@@ -491,6 +491,9 @@ let message_left = document.querySelector('.message-left');
 
   let sound = 0;
 
+//   let synth = window.speechSynthesis;
+//     synth.cancel(); 
+
   function DateJs(){
     let synth = window.speechSynthesis;
     synth.cancel(); 
@@ -508,12 +511,12 @@ let message_left = document.querySelector('.message-left');
    
    sound++;
 
-   if(sound){
-   let utterance = new SpeechSynthesisUtterance('Ура я вернулся в '+ year);
-   utterance.rate = 1;
-   utterance.lang = "ru-RU";
-   speechSynthesis.speak(utterance);
-   }
+//    if(sound){
+//    let utterance = new SpeechSynthesisUtterance('Ура я вернулся в '+ year);
+//    utterance.rate = 1;
+//    utterance.lang = "ru-RU";
+//    speechSynthesis.speak(utterance);
+//    }
   };
   DateJs();
 
