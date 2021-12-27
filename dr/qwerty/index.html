@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css">
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js'></script>
+</head>
+<body>
+
+ 
+    <!-- контент -->
+<div class="container pt-3 head">
+<header>
+    <nav class="navbar navbar-expand-lg">
+         <!--fixed-top - фиксированное меню   navbar-expand-lg - разрешение экрана 
+         navbar-dark - тема          fixed-top - фиксация        style='backgound-color:red'-->
+         <div class="container">
+         <span class="header__logo">
+            <img class='image-logo' src="img/logo.png" alt="">
+            </span>
+            <button class="navbar-toggler bg-dark navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+         <!--data-target - target    aria-expanded="false" - меню в закрытом виде -->
+        <div class="collapse navbar-collapse " id="navbarScroll">
+           <ul class="navbar-nav my-2 my-lg-0 navbar-nav-scroll marg" style="--bs-scroll-height: 100px;">
+             <li class="nav-item">
+               <a class="nav-link" aria-current="page" href="#">ИСТОРИЯ БАТТЛОВ</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="#">ПРИЗЫ</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="#">ПРАВИЛА</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="#">СУДЬИ</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="#">ПОДДЕРЖКАТЬ ПРОЕКТ</a>
+             </li>
+           </ul>
+
+           <form class="d-flex">
+             <button class="btn btn-dark create" type="submit">CДАТЬ ТРЕК</button>
+           </form>
+       </div>
+         </div>
+     </nav>
+   </header>
+
+   <section>
+   <div class="container pt-3">
+    <div class="row">
+      <div style='position: relative;' class="col-lg col-md-3">
+          <div class='d-flex flex-column'>
+        <a href=""> <div class='tittle-cont bold-text'>ГЛАВНАЯ</div></a>
+        <a href=""><div class='tittle-cont mt-3'>УЧАСТНИКИ</div></a>
+        <a href=""><div class='tittle-cont mt-3'>СУДЬИ</div></a>
+        <a href=""><div class='tittle-cont mt-3'>СТАТИСТИКА</div></a>
+        <a href=""><div class='tittle-cont mt-3'>ПРАВА УЧАСТНИКОВ</div></a>
+
+         <div class='fot-social'>
+            <a href=""><div class='tittle-cont mt-3'>РЕГИСТРАЦИЯ</div></a>
+            <a href=""><div class='tittle-cont mt-3 mb-3'>ВЫХОД</div></a>
+        <a href=""><img src="img/vk.png" alt=""></a>
+        <a href=""><img src="img/tel.png" alt=""></a>
+        <a href=""><img src="img/youtube.png" alt=""></a>
+    </div>
+         </div>
+      </div>
+      <div class="col-lg-6 col-md-9 main-panel-cont">
+        <div class='d-flex justify-content-between'>
+            <div class='tittle-cont'>ПАНЕЛЬ АДМИНИСТРАТОРА</div>
+            <div class='tittle-cont'>НАСТРОЙКИ ГЛАВНОЙ</div>
+        </div>
+        <div class='main-content'>
+        <div class='tittle-cont-little p-2'> ШАПКА ГЛАВНОЙ</div>
+        <div>
+            <div class='wrapp-cont'>
+            <img class='logo-main' src="img/logo_main.png" alt="">
+            <p class='text-rel'>АНОНС 18 НЕЗАВИСИМОГО БАТТЛА HIP-HOP.RU</p>
+            <p class='text-rel-bottom'>СТАРТ В ДЕКАБРЕ-ЯНВАРЕ ЭТОЙ ЗИМЫ</p>
+        </div>
+        </div>
+
+        <div style='padding-left:10px;'>
+        <div class='tittle-cont-low p-1'>Изображения шапки</div>
+        <input class='p-2' type="file">
+        <div class='tittle-cont-low p-1'>Заголовок шапки</div>
+        <input type="text" style='font-weight: 600;' class="form-control w-75 mt-1" placeholder="АНОНС 18 НЕЗАВИСИМОГО БАТТЛА HIP-HOP.RU">
+        <div class='tittle-cont-low p-1'>Текст события</div>
+        <input type="text" style='font-weight: 600;' class="form-control w-75 mt-1 mb-1" placeholder="СТАРТ В ДЕКАБРЕ-ЯНВАРЕ ЭТОЙ ЗИМЫ">
+    </div>
+    <div>
+        <div class='tittle-cont'>НАСТРОЙКИ ТАЙМЕРА</div>
+        <div class="d-flex justify-content-between">
+            <div style='width:100%;max-width: 300px;'>
+                <!-- data -->
+        <div class='tittle-cont-low p-1'>Таймер временного отрезка</div>
+        <select style='width:100%; max-width:80px; font-size:17px; display: inline-block; margin-right: 10px;' class="form-select form-select-lg mb-3 sel-ap" aria-label=".form-select-lg example">
+            <option selected>20</option>
+            <option>21</option>
+          </select>
+        <select style='width:100%; max-width:80px; font-size:17px;display: inline-block; margin-right: 10px;' class="form-select form-select-lg mb-3 sel-ap" aria-label=".form-select-lg example">
+            <option selected>12</option>
+            <option>11</option>
+          </select>
+        <select style='width:100%; max-width:100px; font-size:17px;display: inline-block; margin-right: 10px;' class="form-select form-select-lg mb-3 sel-ap" aria-label=".form-select-lg example">
+            <option selected>2021</option>
+            <option>2020</option>
+          </select>
+
+              <!-- data -->
+        </div>
+        <div style='margin-right: 30px;'>
+            <div class='tittle-cont-low p-1'>Заголовок таймера</div>
+            <div class='tittle-cont mt-1'>ВРЕМЯ НА СУДЕЙСТВО</div>
+            </div>
+        </div>
+        <div class='tittle-cont-low p-1'>Заголовок временного отрезка</div>
+    </div>
+
+      </div>
+    </div>
+
+       <div style='margin-left: 20px;' class="col-lg">
+        <div class='d-flex justify-content-end'>
+          <div class='tittle-cont'>УВЕДОМЛЕНИЯ</div>
+        </div>
+         <div class='tittle-cont-little pt-4'>ПОСЕЩЕНИЯ САЙТА</div>
+         <div class='tittle-cont-little pt-1'>Сейчас онлайн <div class='circle-green'></div></div>
+         <div class='tittle-cont-low pt-1'>Гости: 12345</div>
+         <div class='tittle-cont-low pt-1'>Участники: 12</div>
+
+           <!-- графики -->
+           <div class="chart-container">
+            <canvas id="chart"></canvas>
+        </div>
+        <script>
+            var data = {
+  labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+  datasets: [{
+    label: "Dataset #1",
+    backgroundColor: "rgba(255,99,132,0.2)",
+    borderColor: "rgba(255,99,132,1)",
+    borderWidth: 2,
+    hoverBackgroundColor: "rgba(255,99,132,0.4)",
+    hoverBorderColor: "rgba(255,99,132,1)",
+    data: [65, 59, 20, 81, 56, 55, 40],
+  }]
+};
+
+var options = {
+  maintainAspectRatio: false,
+  scales: {
+    y: {
+      stacked: true,
+      grid: {
+        display: true,
+        color: "rgba(255,99,132,0.2)"
+      }
+    },
+    x: {
+      grid: {
+        display: false
+      }
+    }
+  }
+};
+
+new Chart('chart', {
+  type: 'bar',
+  options: options,
+  data: data
+});
+        </script>
+             <!-- графики -->
+
+         <div class='tittle-cont-little pt-4'>СУДЬИ</div>
+         <div class='tittle-cont-low p-1'>Уведомления: <span class='message-response'>123+</span></div>
+         <div class='tittle-cont-low p-1'>Оценки: <span class='message-response'>123+</span></div>
+         <div class='tittle-cont-low p-1'>Сеансы: <span class='message-response'>123+</span></div>
+
+         <div class='tittle-cont-little pt-4'>УЧАСТНИКИ</div>
+         <div class='tittle-cont-low p-1'>Треков: <span class='message-response'>12345</span></div>
+         <div class='tittle-cont-low p-1'>Новые в плеер: <img style='width:20px;height:20px;' src="img/play.png" alt=""></div>
+    </div>
+    </div>
+
+  </div>
+
+  <div class="container pt-3">
+    <div class="row bot-panel bot-mus-panel">
+      <div class="col-lg-3 tittle-mus order-2 order-lg-1 marg">
+          <div class='market-tittle'>2021-2022 © hip-hop.ru</div>
+          <div class='market-tittle'>S&T DIGITAL</div>
+      </div>
+      <div class="col-lg-9 panel-mus-n order-1 order-lg-2">
+        <div class='row'>
+          <div class="col-lg-4 col-md-12">
+        <img style='padding-bottom: 26px;' src="img/Group 517.png" alt=""> 
+        <div class='mus-content'>
+            <div>Участник - Название группы</div>
+            <div>round 1</div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-12">
+        <div class='mus-content panel'>
+            <center>
+            <div>
+                <img src="img/Vector1.png" alt="">
+                <img style='margin-right: 15px;' src="img/Vector.png" alt="">
+                <img src="img/pause.png" alt="">
+                <img style='margin-left: 15px;' src="img/VectorRight.png" alt="">
+                <img src="img/Vector121.png" alt="">
+            </div></center>
+            <div>
+                <span>00:38</span>
+                <progress class="progress" max='100' value ='30'> </progress>   <span>01:25</span>
+            </div>
+        </div>
+      </div>
+         
+      <div class="col-lg-2 col-md-12">
+        <div class='mus-content' style='position: relative; top:0;left: 0;'>
+            <img  class='load' src="img/load.png" alt="">
+        </div>
+        <div class='mus-content volume-panel'>
+            <img  src="img/volume.png" alt="">
+            <img  src="img/volume1.png" alt="">
+            <img  src="img/volume2.png" alt="">
+            <input id="range" type="range" min="0" max="1" step="0.05">
+        </div>
+      </div>
+      </div>
+
+    </div>
+
+    </div>
+  </div>
+</section>
+    
+</div>
+
+
+
+  <!-- контент -->
+      <!-- JavaScript bootsrtap -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>

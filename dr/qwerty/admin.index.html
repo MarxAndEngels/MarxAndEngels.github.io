@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css">
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js'></script>
+</head>
+<body>
+    <!-- контент -->
+<div class="container pt-3 head">
+<header>
+    <nav class="navbar navbar-expand-lg">
+         <!--fixed-top - фиксированное меню   navbar-expand-lg - разрешение экрана 
+         navbar-dark - тема          fixed-top - фиксация        style='backgound-color:red'-->
+         <div class="container">
+         <span class="header__logo">
+            <img class='image-logo' src="img/logo.png" alt="">
+            </span>
+            <button class="navbar-toggler bg-dark navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+         <!--data-target - target    aria-expanded="false" - меню в закрытом виде -->
+        <div class="collapse navbar-collapse " id="navbarScroll">
+           <ul class="navbar-nav my-2 my-lg-0 navbar-nav-scroll marg" style="--bs-scroll-height: 100px;">
+             <li class="nav-item">
+               <a class="nav-link" aria-current="page" href="#">ИСТОРИЯ БАТТЛОВ</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="#">ПРИЗЫ</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="#">ПРАВИЛА</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="#">СУДЬИ</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="#">ПОДДЕРЖКАТЬ ПРОЕКТ</a>
+             </li>
+           </ul>
+
+           <form class="d-flex">
+             <button class="btn btn-dark create" type="submit">CДАТЬ ТРЕК</button>
+           </form>
+       </div>
+         </div>
+     </nav>
+   </header>
+
+   <section>
+   <div class="container pt-3">
+    <div class="row">
+      <div style='position: relative;' class="col-lg col-md-3">
+          <div class='d-flex flex-column'>
+        <a href=""> <div class='tittle-cont bold-text'>ГЛАВНАЯ</div></a>
+        <a href=""><div class='tittle-cont mt-3'>УЧАСТНИКИ</div></a>
+        <a href=""><div class='tittle-cont mt-3'>СУДЬИ</div></a>
+        <a href=""><div class='tittle-cont mt-3'>СТАТИСТИКА</div></a>
+        <a href=""><div class='tittle-cont mt-3'>ПРАВА УЧАСТНИКОВ</div></a>
+
+         <div class='fot-social'>
+            <a href=""><div class='tittle-cont mt-3'>РЕГИСТРАЦИЯ</div></a>
+            <a href=""><div class='tittle-cont mt-3 mb-3'>ВЫХОД</div></a>
+        <a href=""><img src="img/vk.png" alt=""></a>
+        <a href=""><img src="img/tel.png" alt=""></a>
+        <a href=""><img src="img/youtube.png" alt=""></a>
+    </div>
+         </div>
+      </div>
+
+      <!-- content center -->
+      <div class="col-lg-6 col-md-9 main-panel-cont">
+        <div class='d-flex justify-content-between'>
+            <div class='tittle-cont'>ПАНЕЛЬ АДМИНИСТРАТОРА</div>
+            <div class='tittle-cont'>УЧАСТНИКИ</div>
+        </div>
+        <div class='main-content pl-2'>
+          <div class='box-wrap-cont'>
+          <div class="d-flex justify-content-between">
+        <div class='tittle-cont-low m-3'> Поиск Участника</div>
+        <div style='float:left !important;' class='tittle-cont-low m-3'> ID, Никнейм, E-mail</div>
+      </div>
+        <input type="text" style='font-weight: 600; padding:10px 20px 10px 20px' class="form-control w-85 mt-1" placeholder="ST1M">
+        </div>
+
+        
+
+        <div>
+
+            <div class='wrapp-cont'>
+              <div class="d-flex justify-content-lg-between">
+                <div style='font-size: 18px;' class='tittle-cont m-3'>ST1M</div>
+                <div style='float:left !important; font-size: 18px;' class='tittle-cont m-3'> ID 3255</div>
+              </div>
+
+              <div>
+                    <div class="row">
+                      <div class="col-lg gr-0 mr-0 desc-side-vbar">
+                        <img src="img/person.png" alt="">
+                      </div>
+                      <div class="col-lg-5 g-0 desc-side-vbar" >
+                        <div><span class='desc-people'>IP:</span> 168:172:49:50</div>
+                        <div><span class='desc-people'>Город:</span> Таллен</div>
+                        <div><span class='desc-people'>E-mail:</span> st1m@gmail.com</div>
+                      </div>
+                      <div class="col-lg-4 desc-side-vbar">
+                        <div class='desc-people'>Зарегестрирован:</div> 
+                        <div> 24.11.2021 в 21:25:46</div>
+                        <div class='desc-people'>Последний вход:</div> 
+                        <div> 21.12.2021 в 23:15:36</div>
+                      </div>
+                    </div>
+              </div>
+
+              <div>
+                <div class="d-flex justify-content-lg-between flex-md-row flex-column">
+                  <div style='font-size: 18px;' class='tittle-cont m-3'>ТРЕКИ УЧАСТНИКА</div>
+                  <div style='float:left !important; font-size: 16px;' class='tittle-cont m-3'> <button style='width:199px' class="btn btn-dark" type="submit">ЗАБЛОКИРОВАТЬ</button></div>
+                </div>
+               
+                <div class='row'>
+                       <div class='col-lg-5 desc-people mt-3'>1. ROUND 1</div>
+                       <div class='col-lg desc-people'>
+                         <img style='cursor:pointer' src="img/plus.png" alt="">
+                         <img style='margin-left:16px; cursor:pointer' src="img/playPeople.png" alt="">
+                         <span style='cursor:pointer; display: inline-block; margin-left:16px; margin-top: 12px; padding: 2px 6px;' class='message-response'>ТЕКСТ</span>
+                         <img style='margin-left:16px; cursor:pointer;' src="img/load.png" alt="">
+                         <span style='margin-left:16px;'>-00:00</span>
+                         <span style='cursor:pointer; display: inline-block; margin-left:16px; margin-top: 12px; padding: 2px 6px;' class='message-response'>ОЦЕНКИ</span>
+                        </div>
+                </div>
+                <div class='d-flex justify-content-end'>
+                  <div style='cursor:pointer; margin-right: 30px; margin-top:10px' class='desc-people'>ЗАГРУЗИТЬ ТРЕК</div>
+                  <div style='cursor:pointer;  margin-right: 30px; margin-top:10px' class='desc-people'>УДАЛИТЬ</div>
+                </div>
+                <div class='row'>
+                       <div class='col-lg-5 desc-people mt-3'>2. ROUND 2</div>
+                       <div class='col-lg desc-people'>
+                         <img style='cursor:pointer' src="img/plus.png" alt="">
+                         <img style='margin-left:16px; cursor:pointer' src="img/playPeople.png" alt="">
+                         <span style='cursor:pointer; display: inline-block; margin-left:16px; margin-top: 12px; padding: 2px 6px;' class='message-response'>ТЕКСТ</span>
+                         <img style='margin-left:16px; cursor:pointer;' src="img/load.png" alt="">
+                         <span style='margin-left:16px;'>-00:00</span>
+                         <span style='cursor:pointer; display: inline-block; margin-left:16px; margin-top: 12px; padding: 2px 6px;' class='message-response'>ОЦЕНКИ</span>
+                        </div>
+                </div>
+                <div class='d-flex justify-content-end'>
+                  <div style='cursor:pointer; margin-right: 30px; margin-top:10px' class='desc-people'>ЗАГРУЗИТЬ ТРЕК</div>
+                  <div style='cursor:pointer; margin-right: 30px; margin-top:10px' class='desc-people'>УДАЛИТЬ</div>
+                </div>
+                <div class='row'>
+                       <div class='col-lg-5 desc-people mt-3'>3. ROUND 3</div>
+                       <div class='col-lg desc-people'>
+                         <img style='cursor:pointer' src="img/plus.png" alt="">
+                         <img style='margin-left:16px; cursor:pointer' src="img/playPeople.png" alt="">
+                         <span style='cursor:pointer; display: inline-block; margin-left:16px; margin-top: 12px; padding: 2px 6px;' class='message-response'>ТЕКСТ</span>
+                         <img style='margin-left:16px; cursor:pointer;' src="img/load.png" alt="">
+                         <span style='margin-left:16px;'>-00:00</span>
+                         <span style='cursor:pointer; display: inline-block; margin-left:16px; margin-top: 12px; padding: 2px 6px;' class='message-response'>ОЦЕНКИ</span>
+                        </div>
+                </div>
+                <div class='d-flex justify-content-end'>
+                  <div style='cursor:pointer; margin-right: 30px; margin-top:10px' class='desc-people'>ЗАГРУЗИТЬ ТРЕК</div>
+                  <div style='cursor:pointer; margin-right: 30px; margin-top:10px' class='desc-people'>УДАЛИТЬ</div>
+                </div>
+
+                
+
+
+              </div>
+
+        </div>
+
+        </div>
+
+          <p style='margin-top:20px'></p>
+
+      </div>
+    </div>
+      <!-- content center -->
+
+
+            <!-- content right -->
+       <div style='margin-left: 20px;' class="col-lg">
+        <div class='d-flex justify-content-end'>
+        <div class='tittle-cont'>УВЕДОМЛЕНИЯ</div>
+      </div>
+         <p style='opacity: 0;'></p>
+         <div class='vsidebar-right'>
+
+          <div class='mb-2'>
+           <div class='tittle-cont-little-small'> <div class='circle-green'></div> <b> 10.01.21 Судья </b> поставил оценку в 00:00</div>
+           <div class='d-flex justify-content-end'>
+            <div style='margin-right: 14px;' class='tittle-cont'>5+3+2=10</div>
+          </div>
+        </div>
+          <div class='mb-2'>
+           <div class='tittle-cont-little-small'> <div class='circle-green'></div> <b> 10.01.21 Судья </b> поставил оценку в 00:00</div>
+           <div class='d-flex justify-content-end'>
+            <div style='margin-right: 14px;' class='tittle-cont'>5+3+2=10</div>
+          </div>
+        </div>
+          <div class='mb-2'>
+           <div class='tittle-cont-little-small'> <b> 10.01.21 Судья </b> поставил оценку в 00:00</div>
+           <div class='d-flex justify-content-end'>
+            <div style='margin-right: 14px;' class='tittle-cont'>5+3+2=10</div>
+          </div>
+        </div>
+          <div class='mb-2'>
+           <div class='tittle-cont-little-small'> <b> 10.01.21 Судья </b> поставил оценку в 00:00</div>
+           <div class='d-flex justify-content-end'>
+            <div style='margin-right: 14px;' class='tittle-cont'>5+3+2=10</div>
+          </div>
+        </div>
+          <div class='mb-2'>
+           <div class='tittle-cont-little-small'> <b> 10.01.21 Судья </b> поставил оценку в 00:00</div>
+           <div class='d-flex justify-content-end'>
+            <div style='margin-right: 14px;' class='tittle-cont'>5+3+2=10</div>
+          </div>
+        </div>
+          <div class='mb-2'>
+           <div class='tittle-cont-little-small'> <b> 10.01.21 Судья </b> поставил оценку в 00:00</div>
+           <div class='d-flex justify-content-end'>
+            <div style='margin-right: 14px;' class='tittle-cont'>5+3+2=10</div>
+          </div>
+        </div>
+          <div class='mb-2'>
+           <div class='tittle-cont-little-small'> <b> 10.01.21 Судья </b> поставил оценку в 00:00</div>
+           <div class='d-flex justify-content-end'>
+            <div style='margin-right: 14px;' class='tittle-cont'>5+3+2=10</div>
+          </div>
+        </div>
+          <div class='mb-2'>
+           <div class='tittle-cont-little-small'> <b> 10.01.21 Судья </b> поставил оценку в 00:00</div>
+           <div class='d-flex justify-content-end'>
+            <div style='margin-right: 14px;' class='tittle-cont'>5+3+2=10</div>
+          </div>
+        </div>
+          <div class='mb-2'>
+           <div class='tittle-cont-little-small'> <b> 10.01.21 Судья </b> поставил оценку в 00:00</div>
+           <div class='d-flex justify-content-end'>
+            <div style='margin-right: 14px;' class='tittle-cont'>5+3+2=10</div>
+          </div>
+        </div>
+          <div class='mb-2'>
+           <div class='tittle-cont-little-small'> <b> 10.01.21 Судья </b> поставил оценку в 00:00</div>
+           <div class='d-flex justify-content-end'>
+            <div style='margin-right: 14px;' class='tittle-cont'>5+3+2=10</div>
+          </div>
+        </div>
+         
+   
+          
+
+
+         </div>
+
+    
+    </div>
+    </div>
+
+  </div>
+      <!-- content right -->
+
+  <div class="container pt-3">
+    <div class="row bot-panel bot-mus-panel">
+      <div class="col-lg-3 tittle-mus order-2 order-lg-1 marg">
+          <div class='market-tittle'>2021-2022 © hip-hop.ru</div>
+          <div class='market-tittle'>S&T DIGITAL</div>
+      </div>
+      <div class="col-lg-9 panel-mus-n order-1 order-lg-2">
+        <div class='row'>
+          <div class="col-lg-4 col-md-12">
+        <img style='padding-bottom: 26px;' src="img/Group 517.png" alt=""> 
+        <div class='mus-content'>
+            <div>Участник - Название группы</div>
+            <div>round 1</div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-12">
+        <div class='mus-content panel'>
+            <center>
+            <div>
+                <img src="img/Vector1.png" alt="">
+                <img style='margin-right: 15px;' src="img/Vector.png" alt="">
+                <img src="img/pause.png" alt="">
+                <img style='margin-left: 15px;' src="img/VectorRight.png" alt="">
+                <img src="img/Vector121.png" alt="">
+            </div></center>
+            <div>
+                <span>00:38</span>
+                <progress class="progress" max='100' value ='30'> </progress>   <span>01:25</span>
+            </div>
+        </div>
+      </div>
+         
+      <div class="col-lg-2 col-md-12">
+        <div class='mus-content' style='position: relative; top:0;left: 0;'>
+            <img  class='load' src="img/load.png" alt="">
+        </div>
+        <div class='mus-content volume-panel'>
+            <img  src="img/volume.png" alt="">
+            <img  src="img/volume1.png" alt="">
+            <img  src="img/volume2.png" alt="">
+            <input id="range" type="range" min="0" max="1" step="0.05">
+        </div>
+      </div>
+      </div>
+
+    </div>
+
+    </div>
+  </div>
+</section>
+    
+</div>
+
+
+
+
+  <!-- контент -->
+      <!-- JavaScript bootsrtap -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
