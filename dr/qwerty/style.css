@@ -142,6 +142,13 @@
 .panel img{
     cursor: pointer;
 }
+.sel-ap{
+    width:100%; 
+    max-width:80px; 
+    font-size:17px; 
+    display: inline-block;
+     margin-right: 10px;
+}
 .box-wrap-cont{
     border: 1px solid #D0CFD4;
      border-radius: 10px;
@@ -179,6 +186,9 @@ progress::-moz-progress-bar {
             position: absolute; 
             left:-40px;
              top:7px;
+        }
+        .lef-sid{
+            margin-left: 20px;
         }
         .volume{
             width: 24px;
@@ -342,7 +352,9 @@ progress::-moz-progress-bar {
     .desc-side-vbar{
         padding-left: 30px;
     }
-
+    .lef-sid{
+        margin: 0;
+    }
 }
 
  @media ( max-width: 800px){
@@ -372,15 +384,21 @@ progress::-moz-progress-bar {
     .tittle-cont{
         font-size: 15px; 
     }
-    .sel-ap option{
+    .sel-ap{
         font-size: 15px !important;
     }
 
 }
 
+@media ( max-width: 390px){
+    .progress{
+        max-width: 140px;
+    }
+
+}
 @media ( max-width: 360px){
     .progress{
-        max-width: 160px;
+        max-width: 140px;
     }
 
 }
