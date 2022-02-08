@@ -1,0 +1,13 @@
+body{
+    background-color: #000;
+}
+p{
+    background-image: url('img/fe4c83da46aa6c902100996d13d3afc502115d0f-scaled.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    -webkit-background-clip: text;
+    color: transparent;
+    line-height: 16px;
+    font-size: 26px;
+}
