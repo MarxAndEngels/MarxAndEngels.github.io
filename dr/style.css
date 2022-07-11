@@ -794,6 +794,15 @@ top: 0;
     margin-bottom: 45px;
     text-align: center;
 }
+.products__title-little{
+    color:snow;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 45px;
+    text-align: center;
+}
 .products__title.act{
     margin-bottom: 15px;
 }
@@ -1956,6 +1965,10 @@ progress::-moz-progress-bar {
     opacity: 0.9;
 }
 
+.cal-width{
+    overflow: hidden;
+}
+
 
 
 @media ( max-width: 1199px){
@@ -2080,6 +2093,9 @@ progress::-moz-progress-bar {
     }
     .popup_content{
         width: 60%;
+    }
+    .cal-width{
+        overflow: visible;
     }
 }
 

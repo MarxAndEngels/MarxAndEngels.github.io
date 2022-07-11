@@ -835,6 +835,14 @@ let mainBlockReact = document.querySelectorAll('.canChange');
       for(let el of blocks_video){
         el.children[0].pause();
       }
+
+      if(canCh.dataset.ch == 'Calendar'){
+        startConfetti()
+        let utterance = new SpeechSynthesisUtterance('С днем рождения тебя! С днем рождения тебя!');
+        utterance.rate = 0.9;
+        utterance.lang = "ru-RU";
+        speechSynthesis.speak(utterance);
+      };
     }
    }
   }

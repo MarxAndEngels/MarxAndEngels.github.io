@@ -257,7 +257,9 @@ if (!("speechSynthesis" in window)) {
             <div class="container-roulette-result">
             <p class="takeTextImg">Испытай свою удачу</p>
             <center> <img class="result-roulette-img" src="img/roulette.png" alt=""></center>
-            <p class="takeTextImgСhance"></p></div>
+            <p class="takeTextImgСhance"></p>
+
+        </div>
             <div class="empty-roulette"></div>  
              <div class="oveflow-hidden-roulette">
                  <div class="main-flex-center-roulette"> 
@@ -342,7 +344,7 @@ if (!("speechSynthesis" in window)) {
         <div class="content-to-do">
             <div class="anim-to-do"></div>
             <div class="text-to-do">- TO DO LIST -</div>
-            <p class="name-to-do">💬 (Это список дел. Можешь записать в этот список все свои "важные" дела или мечты, чтобы не забыть о них.)💬 </p>
+            <p class="name-to-do">🎈🎁 (Это список дел. Можешь записать в этот список все свои желания на день рождения. Они все сбудутся! Честно! Честно!)🎈🎁  </p>
                 <div class="wrapper-todo">
          <textarea class="input-to-do" placeholder="Введите новое дело..." type="text"></textarea>
          <div class="button-wrap">
@@ -456,13 +458,13 @@ if (!("speechSynthesis" in window)) {
 <div class="otstup6"></div> -->
 
 
-  <div data-ch='Calendar' class='canChange'>
-      <div class="message-left">
+  <div data-ch='Calendar' class='canChange cal-width' >
+      <!-- <div class="message-left">
           <div class="title-message">Ты зачем в 2007 переместился??</div>
-      </div>
+      </div> -->
     <div class="otstup6"></div>
 <div id='calendar_scroll_id' class="products__title">Ой, а что это за дата интересная?</div>
-<div style="font-size:20px" class="products__title">Ааа, сегодня же днюха твоя!</div>
+<div style="font-size:20px" class="products__title-little">Ааа, сегодня же днюха твоя!</div>
 
 <div class="calendar">
     <div class="calendarpolosh">
@@ -473,8 +475,6 @@ if (!("speechSynthesis" in window)) {
     <p id="year"> </p>
     <input  id="buuut_dec" type="submit" value="😱 Вернуть 2007">
     <script> 
-let message_left = document.querySelector('.message-left');
-
 
   const lang= navigator.language;
   let date = new Date();
@@ -484,6 +484,8 @@ let message_left = document.querySelector('.message-left');
   let monthName= date.toLocaleString(lang,{month: 'long'})
   let year= date.getFullYear()
   
+ 
+
 
   buuut_prev.onclick = function (){
     DateJs();
@@ -491,14 +493,20 @@ let message_left = document.querySelector('.message-left');
 
   let sound = 0;
 
+
+  let textAboutDr = document.querySelector('.products__title-little');
+
 //   let synth = window.speechSynthesis;
 //     synth.cancel(); 
 
   function DateJs(){
-    let synth = window.speechSynthesis;
-    synth.cancel(); 
-
-    message_left.classList.remove('active');
+    // let synth = window.speechSynthesis;
+    // synth.cancel(); 
+    textAboutDr.innerHTML = 'Ааа, сегодня же днюха твоя!';
+    textAboutDr.classList.add('active_data');
+    setTimeout(()=>{
+        textAboutDr.classList.remove('active_data');
+    },1000)
 
     buuut_prev.disabled=true; 
     buuut_dec.disabled=false;
@@ -521,10 +529,14 @@ let message_left = document.querySelector('.message-left');
   DateJs();
 
   buuut_dec.onclick = function(){
-    let synth = window.speechSynthesis;
-    synth.cancel(); 
+    // let synth = window.speechSynthesis;
+    // synth.cancel(); 
 
-    message_left.classList.add('active');
+    textAboutDr.innerHTML = 'А сегодня же 2007 год. Верните мне мой 2007!';
+    textAboutDr.classList.add('active_data');
+    setTimeout(()=>{
+        textAboutDr.classList.remove('active_data');
+    },1000)
 
     buuut_prev.disabled=false; 
     buuut_dec.disabled=true;
@@ -534,10 +546,10 @@ let message_left = document.querySelector('.message-left');
     document.getElementById('monthName').innerHTML='январь';
     document.getElementById('dayNumber').innerHTML= 1;
     document.getElementById('dayName').innerHTML= 'понедельник';
-    let utterance = new SpeechSynthesisUtterance('Верните мне мой 2007-ой');
-   utterance.rate = 1;
-   utterance.lang = "ru-RU";
-   speechSynthesis.speak(utterance);
+//     let utterance = new SpeechSynthesisUtterance('Верните мне мой 2007-ой');
+//    utterance.rate = 1;
+//    utterance.lang = "ru-RU";
+//    speechSynthesis.speak(utterance);
   };
     </script>
   </div>
