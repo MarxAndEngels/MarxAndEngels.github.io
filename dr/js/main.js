@@ -838,7 +838,7 @@ let mainBlockReact = document.querySelectorAll('.canChange');
 
       if(canCh.dataset.ch == 'Calendar'){
         startConfetti()
-        let utterance = new SpeechSynthesisUtterance('С днем рождения тебя! С днем рождения тебя!');
+        let utterance = new SpeechSynthesisUtterance('С днем рождения тебя!');
         utterance.rate = 0.9;
         utterance.lang = "ru-RU";
         speechSynthesis.speak(utterance);
