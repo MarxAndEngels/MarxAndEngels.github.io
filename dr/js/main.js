@@ -307,6 +307,12 @@ let textupper = document.querySelector('.dropup-text');
 //   }
 // };
 
+let closePopapMini = document.querySelector('.close_butt');
+let message_left = document.querySelector('.message-left');
+closePopapMini.onclick = () =>{
+  message_left.classList.remove('active');
+}
+
 
 let checkbox_button = document.querySelector('.checkbox-button');
 let butt_arr = document.querySelectorAll('.buuut');
@@ -346,7 +352,7 @@ checkbox_button.onclick = function(){
 
 let range= document.getElementById('range');
 let vol=document.getElementById('player');
-range.value = 0.55;
+range.value = 0.5;
 
 let upRangeText = document.querySelector('.value-upper-range');
 
@@ -842,6 +848,10 @@ let mainBlockReact = document.querySelectorAll('.canChange');
         utterance.rate = 0.9;
         utterance.lang = "ru-RU";
         speechSynthesis.speak(utterance);
+      };
+      if(canCh.dataset.ch == 'Music'){
+        checkbox_button.checked = false;
+        checkbox_button.click();
       };
     }
    }

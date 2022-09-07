@@ -106,6 +106,14 @@
 
     </div>
     </div>
+
+      <div data-wow-delay = "6.5s" class="message-left active wow animate__animated animate__fadeIn">
+        <div class="close_butt">x</div>  
+        <div class="title-message">Хотите послушать музыку под Ваш праздник?</div>
+          <center>
+            <button class="button_menu_bottom endButt button-roulette-adv small" data-namebutt='Music'>Хочу</button>
+          </center>
+      </div>
     </header>
 </div>
 </div>
@@ -184,7 +192,7 @@ if (!("speechSynthesis" in window)) {
 </div>
 
 
-<div style='margin-top:100px' data-ch='Music' class='canChange'>
+<div style='margin-top:50px' data-ch='Music' class='canChange'>
     <audio id="player" src=""> </audio>
     <div id="scroll-id-player" class="dvoynoy">
         <div class="dv1"><center><span class="orderText">Песни о ДР</span></center>
@@ -218,9 +226,9 @@ if (!("speechSynthesis" in window)) {
     
          <div class="wrapper-sound-func">
              <div class="wrapper-s-f">
-             <img class="rewind" src="img/rewind.png" alt="rewind">
-             <img class="play" onclick="playOrPauseMus()" src="img/play.png" alt="play">
-             <img  class="fast-forward" src="img/fast-forward.png" alt="fast-forward">
+             <img class="rewind" src="img/rewind.png" alt="rewind" title="Назад">
+             <img class="play" onclick="playOrPauseMus()" src="img/play.png" alt="play" title="Проигрыватель">
+             <img  class="fast-forward" src="img/fast-forward.png" alt="fast-forward" title="Дальше">
          </div></div>
         </span>
     </span>

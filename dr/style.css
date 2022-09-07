@@ -584,7 +584,7 @@ top: 0;
   width: 50px;
   height: 50px;
 }
-.button-roulette{
+.button-roulette,.button-roulette-adv{
     background-color: #232323;
     padding: 10px;
     width: 220px;
@@ -602,6 +602,12 @@ top: 0;
     border: 4px solid #232323;
     transform: translate3d(0px, -2px, 0px);
 }
+.button-roulette-adv:hover{
+    background-color: snow !important;
+    color: #232323 !important;
+    border: 4px solid #28a745 !important;
+    transform: translate3d(0px, -2px, 0px) !important;
+}
 
 .container-roulette-result{
     width: 100%;
@@ -610,6 +616,22 @@ top: 0;
     background-color: snow;
 }
 
+.small{
+    margin-top: 14px !important;
+    width: 100px !important;
+    font-size: 14px !important;
+    height: 40px !important;
+    padding: 0 !important;
+    background-color: #28a745 !important;
+    border: 4px solid #28a745 !important;
+}
+.close_butt{
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
 
 
 .content{
@@ -1922,21 +1944,24 @@ progress::-moz-progress-bar {
     width: 240px;
     height: 200px;
     font-family: 'Montserrat', sans-serif;
-    padding: 20px;
+    padding: 10px;
     background-color: rgb(255, 255, 255);
     clip-path: polygon(0 0, 100% 8%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
     position: absolute;
     right: 30px;
-    bottom: 30px;
+    bottom: 10px;
     animation: opacity-text 1.5s ease-in-out;
 }
-.title-message{
-    font-size: 20px;
+.title-message,.title-message-decoration{
+    font-size: 14px;
     padding-top: 36px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+.title-message-decoration{
+    border: 1px solid transparent;
 }
 .message-left.active{
     display: block;
