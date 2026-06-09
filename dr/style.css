@@ -1,8 +1,42 @@
-*{
-    box-sizing: border-box;
+
+/* @font-face {
+  font-family: 'Montserrat';
+  src: url('fonts/Montserrat-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+@font-face {
+  font-family: 'Montserrat';
+  src: url('fonts/Montserrat-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+} */
+@font-face {
+  font-family: 'Montserrat';
+  src: url('fonts/Montserrat-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('fonts/Montserrat-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+*{
+    box-sizing: border-box;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+}
+
 
 .wrap__overflow{
    overflow: hidden;
@@ -27,7 +61,6 @@
 }
 body{
     margin: 0;
-    font-family: 'Tahoma', sans-serif;
     background-color: #232323;
 }
 .header{
@@ -54,7 +87,6 @@ body{
 }
 
 .header__logo{
-    font-family: 'Montserrat', sans-serif;
     color: #f3e1d5;
     font-weight: 600;
     text-decoration: none;
@@ -62,7 +94,6 @@ body{
 }
 
 .header__nav-link{
-    font-family: 'Montserrat', sans-serif;
     color: #f3e1d5;
     text-decoration: none;
     margin-right: 52px;
@@ -90,7 +121,6 @@ body{
 }
 .header__button{
     color: #f3e1d5;
-    font-family: 'Montserrat', sans-serif;
     text-decoration: none;
     cursor: progress;
     font-size: 15px;
@@ -101,7 +131,7 @@ body{
     border-radius: 0 45px 45px 0;
     position: fixed;
     width: 275px;
-    height: 524px;
+    height: 580px;
     background-color: #5e56a5;
     border-right: 4px solid #5e56a5;
     left: -280px;
@@ -116,7 +146,6 @@ body{
 
 .sidebarul{
     margin-right: 10%;
-    font-family: 'Montserrat', sans-serif;
     color:black;
     font-size: 27px;
     font-weight: 640;
@@ -127,7 +156,6 @@ body{
 
 .sidebarli{
     margin-right: 10%;
-    font-family: 'Montserrat', sans-serif;
   color:black;
     font-size: 21px;
     list-style: none;
@@ -274,14 +302,12 @@ top: 0;
 
 
 .mactext1, .mactext2{
-    font-family: 'Montserrat', sans-serif;
     font-size: 44px;
     color: snow;
 }
 
 .mactext3, .mactext4, .mactext5 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 65px;
+    font-size: 68px;
     color: snow;
     font-weight: 800;
     transition-duration: 2.5s;
@@ -324,12 +350,10 @@ left:0;
 top: 0;
 }
 .mactext6,.mactext7 {
-    font-family: 'Montserrat', sans-serif;
     font-size: 26px;
     color: snow;
 }
 .mactext8, .mactext9, .mactext10{
-    font-family: 'Montserrat', sans-serif;
     font-size: 38px;
     color: snow;
     font-weight: 800;
@@ -361,12 +385,10 @@ left:0;
 top: 0;
 }
 .mactext11, .mactext12 {
-    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     color: snow;
 }
 .mactext13, .mactext14, .mactext15 {
-    font-family: 'Montserrat', sans-serif;
     font-size: 26px;
     color: snow;
     font-weight: 800;
@@ -498,7 +520,6 @@ top: 0;
     left:0;
     padding: 156px 100px;
     text-align: center;
-    font-family: 'Montserrat', sans-serif;
     font-size: 24px;
     font-weight: 600;
     color:snow;
@@ -558,14 +579,12 @@ top: 0;
 .takeTextImg{
     text-align: center;
     font-size: 20px;
-    font-family: 'Montserrat', sans-serif;
     padding-top: 10px;
     margin-top: 50px;
 }
 .takeTextImgСhance{
     text-align: center;
     font-size: 20px;
-    font-family: 'Montserrat', sans-serif;
     padding-bottom: 10px;
 }
 
@@ -589,7 +608,6 @@ top: 0;
     padding: 10px;
     width: 220px;
     font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
     color: snow;
     margin-bottom: 30px;
     border: 4px solid #232323;
@@ -656,14 +674,13 @@ top: 0;
   .name-to-do{
     color: snow;
     padding: 14px;
-    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     background: #232323;
+    font-weight: 400;
   }
   .text-to-do{
       text-align: center;
       color: snow;
-      font-family: 'Montserrat', sans-serif;
       font-size: 30px;
       font-weight: 700;
       background: #232323;
@@ -702,7 +719,6 @@ top: 0;
     margin-top: 20px;
     margin-bottom: 50px;
     font-size: 17px;
-    font-family: 'Montserrat', sans-serif;
   }
   
   .wrapper-todo{
@@ -743,7 +759,6 @@ top: 0;
     text-transform: capitalize;
     word-break:break-all;
     font-size: 17px;
-    font-family: 'Montserrat', sans-serif;
     transition-duration: 1.5s;
     cursor: pointer;
   }
@@ -763,7 +778,6 @@ top: 0;
     margin-left: 8px;
     background-color: #232323;
     text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
     color: #fff;
     cursor: pointer;
     width: 60px;
@@ -779,7 +793,6 @@ top: 0;
     margin-top: 20px;
     background-color: #232323;
     text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
     color: #fff;
     cursor: pointer;
     width: 60px;
@@ -792,7 +805,6 @@ top: 0;
    }
 
   .input-to-do{
-    font-family: 'Montserrat', sans-serif;
     font-size: 17px;
     padding: 10px 12px;
     width: 150%;
@@ -808,7 +820,6 @@ top: 0;
 
 .products__title{
     color:snow;
-    font-family: 'Montserrat', sans-serif;
     font-size: 48px;
     font-weight: 800;
     line-height: 1.3;
@@ -818,7 +829,6 @@ top: 0;
 }
 .products__title-little{
     color:snow;
-    font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     font-weight: 500;
     text-transform: uppercase;
@@ -833,7 +843,6 @@ top: 0;
 
 .products__title1{
     color:snow;
-    font-family: 'Montserrat', sans-serif;
     font-size: 50px;
     font-weight: 800;
     text-transform: uppercase;
@@ -894,7 +903,6 @@ top: 0;
     align-items: center;
 }
 .buttonCalc{
-    font-family: 'Montserrat', sans-serif;
     width: 50px;
     height: 50px;
     font-size: 16px;
@@ -911,7 +919,6 @@ top: 0;
 }
 
 .textweu{
-    font-family: 'Montserrat', sans-serif;
     width: 210px;
     height: 120px;
     margin-bottom: 3px;
@@ -928,7 +935,6 @@ top: 0;
 }
 
 .buttonCalcEval{
-    font-family: 'Montserrat', sans-serif;
     width: 47px;
     height: 102px;
     outline: none;
@@ -947,7 +953,6 @@ top: 0;
     cursor: pointer;
 } 
 .buttonCalcC{
-    font-family: 'Montserrat', sans-serif;
     height: 46px;
     width: 102px;
     outline: none;
@@ -988,21 +993,18 @@ top: 0;
 }
 
 .footer_title{
-    font-family: 'Montserrat', sans-serif;
      font-size: 22px;
     font-weight: 600;
     line-height: 1px;
 }
 
 .footer_text{
-    font-family: 'Montserrat', sans-serif;
     font-size: 19px;
     line-height: 1.5;
     font-weight: 350;
 }
 
 .footer-list{
-    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -1044,7 +1046,6 @@ flex-direction: row;
     
 }
 .coopyight-text{
-    font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     font-size: 18px;
     color: snow;
@@ -1053,7 +1054,6 @@ flex-direction: row;
 
 }
 .coopyight-text1{
-    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     font-size: 18px;
     color: snow;
@@ -1192,7 +1192,6 @@ transform: scale(1.1,1.1);
     text-decoration: none;
     font-size: 15px;
     color: black;
-    font-family: 'Montserrat', sans-serif;
     width: 100%;
 }
 .menu-text-game-bottom:hover{
@@ -1211,7 +1210,6 @@ transform: scale(1.1,1.1);
     height: 24px;
     background-color: snow; 
     padding: 2px;
-    font-family: 'Montserrat', sans-serif;
     font-size: 15px;
     display: none;
     z-index: 1000000;
@@ -1260,7 +1258,6 @@ transform: scale(1.1,1.1);
     -webkit-text-stroke: 1px #fff;
     font-size: 80px;
     font-weight: 900;
-    font-family: 'Montserrat', sans-serif;
 }
 .Andry:hover{
     color: #fff;
@@ -1301,7 +1298,6 @@ transform: translate(10px,-10px);
 .dv1{
     color: snow;
     font-size: 52px;
-    font-family: 'Montserrat', sans-serif;
     flex-flow: 1;
 }
 .dv2{
@@ -1579,7 +1575,6 @@ to{
 
 .NameMusic{
     font-size: 20px;
-    font-family: 'Montserrat', sans-serif;
     color: #fff;
 }
 .pict-span-mus{
@@ -1599,7 +1594,6 @@ to{
        background-color:#9370DB; 
        text-decoration: none;
        border: 1px solid #000;
-       font-family: 'Montserrat', sans-serif;
        color: snow;
        font-size: 17px;
        cursor: pointer;
@@ -1757,7 +1751,6 @@ progress::-moz-progress-bar {
   background-color: #fff;
   text-decoration: none;
   border: 1px solid #000;
-  font-family: 'Montserrat', sans-serif;
   color: #7B68EE; 
   font-size: 14px;
   border-radius: 12px;
@@ -1776,7 +1769,6 @@ progress::-moz-progress-bar {
   background-color: #fff;
   text-decoration: none;
   border: 1px solid #000;
-  font-family: 'Montserrat', sans-serif;
   color: #7B68EE; 
   font-size: 14px;
   border-radius: 12px;
@@ -1899,7 +1891,6 @@ progress::-moz-progress-bar {
 }
 
 #monthName{
-    font-family: 'Montserrat', sans-serif;
     margin-top: 0 ;
     padding: 10px 10px;
     background: #9370DB;
@@ -1909,7 +1900,6 @@ progress::-moz-progress-bar {
 }
 
 #dayName{
-    font-family: 'Montserrat', sans-serif;
     margin-top: 20px ;
     margin-bottom: 12px ;
     line-height: 1em;
@@ -1918,7 +1908,6 @@ progress::-moz-progress-bar {
     color: #999;
 }
 #dayNumber{
-    font-family: 'Montserrat', sans-serif;
     margin-top: 0 ;
     line-height: 1em;
     margin-bottom: 10px ;
@@ -1931,7 +1920,6 @@ progress::-moz-progress-bar {
     10px 10px 12px rgb(108, 101, 153),
     10px 10px 16px rgb(108, 101, 153); */
 #year{
-    font-family: 'Montserrat', sans-serif;
     margin-bottom: 20px ;
     font-size: 23px;
     font-weight: 500;
@@ -1943,7 +1931,6 @@ progress::-moz-progress-bar {
     display: none;
     width: 240px;
     height: 200px;
-    font-family: 'Montserrat', sans-serif;
     padding: 10px;
     background-color: rgb(255, 255, 255);
     clip-path: polygon(0 0, 100% 8%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
