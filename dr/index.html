@@ -109,11 +109,13 @@
 
       <div data-wow-delay = "3s" class="message-left active wow animate__animated animate__fadeIn">
         <div class="close_butt">x</div>  
-        <div class="title-message" id="music-message-title"> C днюхой! Пока ты это читаешь, кто-то уже режет торт.</div>
+        <div class="title-message" id="music-message-title"> C днюхой! Где нарезанный торт? Мы уже с тарелками.</div>
         <script>
           const today = new Date();
           if (today.getMonth() === 10 && today.getDate() === 26) {
-            document.getElementById('music-message-title').textContent = 'С днюхой, Илюха! Пока ты это читаешь, кто-то уже режет торт.';
+            document.getElementById('music-message-title').textContent = 'С днюхой, Илюха! Где нарезанный торт? Мы уже с тарелками.';
+          } else if (today.getMonth() === 7 && today.getDate() === 23) {
+            document.getElementById('music-message-title').textContent = 'С днюхой, Анна Юдина! Где нарезанный торт? Мы уже с тарелками.';
           }
         </script>
           <!-- <center>
