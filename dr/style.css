@@ -1930,7 +1930,7 @@ progress::-moz-progress-bar {
 .message-left{
     display: none;
     width: 240px;
-    height: 200px;
+    height: 160px;
     padding: 10px;
     background-color: rgb(255, 255, 255);
     clip-path: polygon(0 0, 100% 8%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
